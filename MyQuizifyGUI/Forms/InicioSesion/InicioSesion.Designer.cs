@@ -115,7 +115,7 @@ namespace MyQuizifyGUI
             this.textBoxCheckPassword.Name = "textBoxCheckPassword";
             this.textBoxCheckPassword.Size = new System.Drawing.Size(364, 22);
             this.textBoxCheckPassword.TabIndex = 5;
-            this.textBoxCheckPassword.TextChanged += new System.EventHandler(this.textBoxCheckPassword_TextChanged);
+            
             // 
             // label3
             // 
@@ -207,8 +207,7 @@ namespace MyQuizifyGUI
             this.buttonInstructor.UseVisualStyleBackColor = true;
             this.buttonInstructor.CheckedChanged += new System.EventHandler(this.buttonInstructor_CheckedChanged);
             // 
-            // InicioSesion
-            // 
+ 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 671);

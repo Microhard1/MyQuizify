@@ -55,7 +55,11 @@ namespace MyQuizifyGUI.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            int pesoQuiz = Int32.Parse(textBoxPeso.Text);
+            if (pesoQuiz < 5 || pesoQuiz > 65)
+            {
+                MessageBox.Show("El peso del quiz debe estar entre 5% y 65%");
+            }
         }
 
         private void comboBoxTipos_SelectedIndexChanged(object sender, EventArgs e)

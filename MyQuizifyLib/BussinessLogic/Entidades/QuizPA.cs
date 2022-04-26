@@ -12,7 +12,7 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
     {
         ConexionBD cf = ConexionBD.getInstancia();
 
-        public QuizPA(string nombreQuiz, Instructor creadoPor, int duracion,int peso, string dificultad,
+        public QuizPA(string nombreQuiz, Instructor creadoPor, int duracion, int peso, string dificultad,
                 DateTime inicio, DateTime fin, string estado, Curso asignatura) :
             base(nombreQuiz, creadoPor, duracion, peso, dificultad, inicio, fin, estado, asignatura)
         {

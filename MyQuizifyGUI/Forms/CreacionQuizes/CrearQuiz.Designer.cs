@@ -35,17 +35,21 @@ namespace MyQuizifyGUI
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridPreguntas = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
+            this.ColumnaSelecciona = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.ColumnaSelecciona = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPreguntas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +75,7 @@ namespace MyQuizifyGUI
             // dateTimePicker2
             // 
             this.dateTimePicker2.AccessibleName = "dateTimePickerFin";
-            this.dateTimePicker2.Location = new System.Drawing.Point(569, 120);
+            this.dateTimePicker2.Location = new System.Drawing.Point(569, 108);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 2;
@@ -80,7 +84,7 @@ namespace MyQuizifyGUI
             // 
             this.label1.AccessibleName = "fechaInicio";
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(569, 39);
+            this.label1.Location = new System.Drawing.Point(566, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 3;
@@ -90,7 +94,7 @@ namespace MyQuizifyGUI
             // 
             this.label2.AccessibleName = "fechaFin";
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(569, 101);
+            this.label2.Location = new System.Drawing.Point(566, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 4;
@@ -102,25 +106,20 @@ namespace MyQuizifyGUI
             this.dataGridPreguntas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridPreguntas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnaSelecciona});
-            this.dataGridPreguntas.Location = new System.Drawing.Point(33, 58);
+            this.dataGridPreguntas.Location = new System.Drawing.Point(33, 67);
             this.dataGridPreguntas.Name = "dataGridPreguntas";
             this.dataGridPreguntas.Size = new System.Drawing.Size(498, 354);
             this.dataGridPreguntas.TabIndex = 5;
             // 
-            // label3
+            // ColumnaSelecciona
             // 
-            this.label3.AccessibleName = "labelPreguntasQuiz";
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Preguntas del Quiz";
+            this.ColumnaSelecciona.HeaderText = "Selecciona";
+            this.ColumnaSelecciona.Name = "ColumnaSelecciona";
             // 
             // textBox1
             // 
             this.textBox1.AccessibleName = "textBoxMin";
-            this.textBox1.Location = new System.Drawing.Point(702, 177);
+            this.textBox1.Location = new System.Drawing.Point(700, 158);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(46, 20);
             this.textBox1.TabIndex = 7;
@@ -128,7 +127,7 @@ namespace MyQuizifyGUI
             // textBox2
             // 
             this.textBox2.AccessibleName = "textBoxHora";
-            this.textBox2.Location = new System.Drawing.Point(613, 177);
+            this.textBox2.Location = new System.Drawing.Point(610, 158);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(46, 20);
             this.textBox2.TabIndex = 8;
@@ -137,7 +136,7 @@ namespace MyQuizifyGUI
             // 
             this.label4.AccessibleName = "labelHora";
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(569, 180);
+            this.label4.Location = new System.Drawing.Point(566, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 9;
@@ -147,21 +146,11 @@ namespace MyQuizifyGUI
             // 
             this.label5.AccessibleName = "labelMin";
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(673, 180);
+            this.label5.Location = new System.Drawing.Point(668, 161);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "min:";
-            // 
-            // label6
-            // 
-            this.label6.AccessibleName = "labelDuracion";
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(569, 161);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Duracion";
             // 
             // label7
             // 
@@ -198,26 +187,79 @@ namespace MyQuizifyGUI
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 15;
             // 
-            // ColumnaSelecciona
+            // label6
             // 
-            this.ColumnaSelecciona.HeaderText = "Selecciona";
-            this.ColumnaSelecciona.Name = "ColumnaSelecciona";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(566, 190);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Peso :";
+            // 
+            // textBox5
+            // 
+            this.textBox5.AccessibleName = "textBoxHora";
+            this.textBox5.Location = new System.Drawing.Point(610, 187);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(46, 20);
+            this.textBox5.TabIndex = 17;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Baterias",
+            "Preguntas"});
+            this.comboBox1.Location = new System.Drawing.Point(410, 39);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(345, 42);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Filtrar por : ";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(685, 300);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(84, 21);
+            this.comboBox2.TabIndex = 20;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(682, 285);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 13);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Curso : ";
             // 
             // CrearQuiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridPreguntas);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -241,16 +283,20 @@ namespace MyQuizifyGUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridPreguntas;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnaSelecciona;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label9;
     }
 }

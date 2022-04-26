@@ -13,7 +13,7 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
         ConexionBD cf = ConexionBD.getInstancia();
         public ICollection<Pregunta> preguntasMO;
 
-        public QuizMO(string nombreQuiz, Instructor creadoPor, int duracion, string dificultad, int peso,
+        public QuizMO(string nombreQuiz, Instructor creadoPor, int duracion, int peso, string dificultad,
                 DateTime inicio, DateTime fin, string estado, Curso asignatura) : 
             base(nombreQuiz, creadoPor, duracion, peso, dificultad, inicio, fin, estado, asignatura)
         {
