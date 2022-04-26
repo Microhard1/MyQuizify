@@ -93,52 +93,52 @@
     <Compile Include="Forms\AlumnoQuizes.Designer.cs">
       <DependentUpon>AlumnoQuizes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CreacionDeQuizes.cs">
+    <Compile Include="Forms\CreacionQuizes\CreacionDeQuizes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CreacionDeQuizes.Designer.cs">
+    <Compile Include="Forms\CreacionQuizes\CreacionDeQuizes.Designer.cs">
       <DependentUpon>CreacionDeQuizes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CrearQuiz.cs">
+    <Compile Include="Forms\CreacionQuizes\CrearQuiz.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CrearQuiz.Designer.cs">
+    <Compile Include="Forms\CreacionQuizes\CrearQuiz.Designer.cs">
       <DependentUpon>CrearQuiz.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormAbierto.cs">
+    <Compile Include="Forms\Quizzes\FormAbierto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormAbierto.Designer.cs">
+    <Compile Include="Forms\Quizzes\FormAbierto.Designer.cs">
       <DependentUpon>FormAbierto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormMO.cs">
+    <Compile Include="Forms\Quizzes\FormMO.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormMO.Designer.cs">
+    <Compile Include="Forms\Quizzes\FormMO.Designer.cs">
       <DependentUpon>FormMO.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormVF.cs">
+    <Compile Include="Forms\Quizzes\FormVF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormVF.Designer.cs">
+    <Compile Include="Forms\Quizzes\FormVF.Designer.cs">
       <DependentUpon>FormVF.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\InicioAlumno.cs">
+    <Compile Include="Forms\InicioSesion\InicioAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\InicioAlumno.Designer.cs">
+    <Compile Include="Forms\InicioSesion\InicioAlumno.Designer.cs">
       <DependentUpon>InicioAlumno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\InicioInstructor.cs">
+    <Compile Include="Forms\Quizzes\QuizesActivos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\InicioInstructor.Designer.cs">
-      <DependentUpon>InicioInstructor.cs</DependentUpon>
+    <Compile Include="Forms\Quizzes\QuizesActivos.Designer.cs">
+      <DependentUpon>QuizesActivos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\InicioSesion.cs">
+    <Compile Include="Forms\InicioSesion\InicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\InicioSesion.Designer.cs">
+    <Compile Include="Forms\InicioSesion\InicioSesion.Designer.cs">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PantallaPrincipalInstructor.cs">
@@ -147,10 +147,10 @@
     <Compile Include="Forms\PantallaPrincipalInstructor.Designer.cs">
       <DependentUpon>PantallaPrincipalInstructor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Registrar.cs">
+    <Compile Include="Forms\InicioSesion\Registrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Registrar.Designer.cs">
+    <Compile Include="Forms\InicioSesion\Registrar.Designer.cs">
       <DependentUpon>Registrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -158,34 +158,34 @@
     <EmbeddedResource Include="Forms\AlumnoQuizes.resx">
       <DependentUpon>AlumnoQuizes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CreacionDeQuizes.resx">
+    <EmbeddedResource Include="Forms\CreacionQuizes\CreacionDeQuizes.resx">
       <DependentUpon>CreacionDeQuizes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CrearQuiz.resx">
+    <EmbeddedResource Include="Forms\CreacionQuizes\CrearQuiz.resx">
       <DependentUpon>CrearQuiz.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormAbierto.resx">
+    <EmbeddedResource Include="Forms\Quizzes\FormAbierto.resx">
       <DependentUpon>FormAbierto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormMO.resx">
+    <EmbeddedResource Include="Forms\Quizzes\FormMO.resx">
       <DependentUpon>FormMO.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormVF.resx">
+    <EmbeddedResource Include="Forms\Quizzes\FormVF.resx">
       <DependentUpon>FormVF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InicioAlumno.resx">
+    <EmbeddedResource Include="Forms\InicioSesion\InicioAlumno.resx">
       <DependentUpon>InicioAlumno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InicioInstructor.resx">
-      <DependentUpon>InicioInstructor.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Quizzes\QuizesActivos.resx">
+      <DependentUpon>QuizesActivos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InicioSesion.resx">
+    <EmbeddedResource Include="Forms\InicioSesion\InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PantallaPrincipalInstructor.resx">
       <DependentUpon>PantallaPrincipalInstructor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Registrar.resx">
+    <EmbeddedResource Include="Forms\InicioSesion\Registrar.resx">
       <DependentUpon>Registrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

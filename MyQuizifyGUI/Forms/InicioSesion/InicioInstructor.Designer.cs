@@ -1,5 +1,5 @@
 ﻿
-namespace MyQuizifyGUI
+namespace MyQuizifyGUI.Forms.InicioSesion
 {
     partial class InicioInstructor
     {
@@ -29,208 +29,145 @@ namespace MyQuizifyGUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridQuizes = new System.Windows.Forms.DataGridView();
-            this.Selecciona = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.botonPreparado = new System.Windows.Forms.Button();
-            this.botonCompleto = new System.Windows.Forms.Button();
-            this.botonLanzado = new System.Windows.Forms.Button();
-            this.botonCancelado = new System.Windows.Forms.Button();
-            this.botonTerminado = new System.Windows.Forms.Button();
-            this.botonRPublicados = new System.Windows.Forms.Button();
-            this.comboBoxEstados = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridQuizes)).BeginInit();
+            this.panelContenedor = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridQuizes
+            // panel1
             // 
-            this.dataGridQuizes.AccessibleName = "DataGridQuizesActivos";
-            this.dataGridQuizes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridQuizes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Selecciona});
-            this.dataGridQuizes.Location = new System.Drawing.Point(36, 138);
-            this.dataGridQuizes.Name = "dataGridQuizes";
-            this.dataGridQuizes.Size = new System.Drawing.Size(841, 316);
-            this.dataGridQuizes.TabIndex = 0;
-            // 
-            // Selecciona
-            // 
-            this.Selecciona.HeaderText = "Selecciona";
-            this.Selecciona.Name = "Selecciona";
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(107)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(906, 113);
+            this.panel1.TabIndex = 1;
             // 
             // label1
             // 
-            this.label1.AccessibleName = "labelQuizesActivos";
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 18);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(17, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Quizes activos";
+            this.label1.Size = new System.Drawing.Size(164, 52);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Quizify";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(156)))));
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 113);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 451);
+            this.panel2.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.AccessibleName = "botonCrearQuiz";
-            this.button1.Location = new System.Drawing.Point(36, 479);
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 48);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Crear Quiz";
+            this.button1.Size = new System.Drawing.Size(200, 103);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Gestión de quizes";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // botonPreparado
+            // button3
             // 
-            this.botonPreparado.Location = new System.Drawing.Point(916, 176);
-            this.botonPreparado.Name = "botonPreparado";
-            this.botonPreparado.Size = new System.Drawing.Size(133, 23);
-            this.botonPreparado.TabIndex = 3;
-            this.botonPreparado.Text = "En preparacion";
-            this.botonPreparado.UseVisualStyleBackColor = true;
-            this.botonPreparado.Click += new System.EventHandler(this.botonPreparado_Click);
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(0, 103);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(200, 102);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Cursos";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // botonCompleto
+            // button4
             // 
-            this.botonCompleto.Location = new System.Drawing.Point(916, 215);
-            this.botonCompleto.Name = "botonCompleto";
-            this.botonCompleto.Size = new System.Drawing.Size(133, 23);
-            this.botonCompleto.TabIndex = 4;
-            this.botonCompleto.Text = "Completo";
-            this.botonCompleto.UseVisualStyleBackColor = true;
-            this.botonCompleto.Click += new System.EventHandler(this.botonCompleto_Click);
-            // 
-            // botonLanzado
-            // 
-            this.botonLanzado.Location = new System.Drawing.Point(916, 255);
-            this.botonLanzado.Name = "botonLanzado";
-            this.botonLanzado.Size = new System.Drawing.Size(133, 23);
-            this.botonLanzado.TabIndex = 5;
-            this.botonLanzado.Text = "Lanzado";
-            this.botonLanzado.UseVisualStyleBackColor = true;
-            this.botonLanzado.Click += new System.EventHandler(this.botonLanzado_Click);
-            // 
-            // botonCancelado
-            // 
-            this.botonCancelado.Location = new System.Drawing.Point(916, 299);
-            this.botonCancelado.Name = "botonCancelado";
-            this.botonCancelado.Size = new System.Drawing.Size(133, 23);
-            this.botonCancelado.TabIndex = 6;
-            this.botonCancelado.Text = "Cancelado";
-            this.botonCancelado.UseVisualStyleBackColor = true;
-            this.botonCancelado.Click += new System.EventHandler(this.botonCancelado_Click);
-            // 
-            // botonTerminado
-            // 
-            this.botonTerminado.Location = new System.Drawing.Point(916, 345);
-            this.botonTerminado.Name = "botonTerminado";
-            this.botonTerminado.Size = new System.Drawing.Size(133, 23);
-            this.botonTerminado.TabIndex = 7;
-            this.botonTerminado.Text = "Terminado";
-            this.botonTerminado.UseVisualStyleBackColor = true;
-            this.botonTerminado.Click += new System.EventHandler(this.botonTerminado_Click);
-            // 
-            // botonRPublicados
-            // 
-            this.botonRPublicados.Location = new System.Drawing.Point(916, 385);
-            this.botonRPublicados.Name = "botonRPublicados";
-            this.botonRPublicados.Size = new System.Drawing.Size(133, 23);
-            this.botonRPublicados.TabIndex = 8;
-            this.botonRPublicados.Text = "Resultados publicados";
-            this.botonRPublicados.UseVisualStyleBackColor = true;
-            this.botonRPublicados.Click += new System.EventHandler(this.botonRPublicados_Click);
-            // 
-            // comboBoxEstados
-            // 
-            this.comboBoxEstados.FormattingEnabled = true;
-            this.comboBoxEstados.Items.AddRange(new object[] {
-            "En preparacion",
-            "Lanzado",
-            "Cancelado",
-            "Terminado",
-            "Completo",
-            "Resultados publicados"});
-            this.comboBoxEstados.Location = new System.Drawing.Point(756, 82);
-            this.comboBoxEstados.Name = "comboBoxEstados";
-            this.comboBoxEstados.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxEstados.TabIndex = 9;
-            this.comboBoxEstados.SelectedIndexChanged += new System.EventHandler(this.comboBoxEstados_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(692, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Filtrar por:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(916, 138);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 17);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Cambiar estado a:";
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(0, 205);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(200, 102);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Realizar quizes";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(722, 479);
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(0, 307);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 36);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Ver resultados";
+            this.button2.Size = new System.Drawing.Size(200, 116);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Estadisticas";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // panelContenedor
+            // 
+            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenedor.Location = new System.Drawing.Point(200, 113);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.Size = new System.Drawing.Size(706, 451);
+            this.panelContenedor.TabIndex = 3;
             // 
             // InicioInstructor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1090, 539);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBoxEstados);
-            this.Controls.Add(this.botonRPublicados);
-            this.Controls.Add(this.botonTerminado);
-            this.Controls.Add(this.botonCancelado);
-            this.Controls.Add(this.botonLanzado);
-            this.Controls.Add(this.botonCompleto);
-            this.Controls.Add(this.botonPreparado);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridQuizes);
+            this.ClientSize = new System.Drawing.Size(906, 564);
+            this.Controls.Add(this.panelContenedor);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "InicioInstructor";
             this.Text = "InicioInstructor";
-            this.Load += new System.EventHandler(this.InicioInstructor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridQuizes)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridQuizes;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Selecciona;
-        private System.Windows.Forms.Button botonPreparado;
-        private System.Windows.Forms.Button botonCompleto;
-        private System.Windows.Forms.Button botonLanzado;
-        private System.Windows.Forms.Button botonCancelado;
-        private System.Windows.Forms.Button botonTerminado;
-        private System.Windows.Forms.Button botonRPublicados;
-        private System.Windows.Forms.ComboBox comboBoxEstados;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panelContenedor;
     }
 }

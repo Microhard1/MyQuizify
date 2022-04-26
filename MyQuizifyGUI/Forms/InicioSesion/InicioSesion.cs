@@ -24,7 +24,6 @@ namespace MyQuizifyGUI
         ConexionBD cf = ConexionBD.getInstancia();
         private InicioAlumno inicioAlumno;
         private InicioInstructor inicioInstructor;
-        private PantallaPrincipalInstructor pantallaPrincipalInstructor;
         private string tipoUsuario;
 
         public InicioSesion()
@@ -32,7 +31,6 @@ namespace MyQuizifyGUI
             InitializeComponent();
             inicioAlumno = new InicioAlumno();
             inicioInstructor = new InicioInstructor();
-            pantallaPrincipalInstructor = new PantallaPrincipalInstructor();
         }
 
 
