@@ -23,8 +23,12 @@ namespace MyQuizifyGUI.Forms.InicioSesion
                 this.panelContenedor.Controls.RemoveAt(0);
             }
             Form formularioHijo = formHijo as Form;
+            formularioHijo.TopMost = true;
             formularioHijo.TopLevel = false;
             formularioHijo.Dock = DockStyle.Fill;
+            formularioHijo.FormBorderStyle = FormBorderStyle.None;
+            formularioHijo.Width = panelContenedor.Width;
+            formularioHijo.Height = panelContenedor.Height;
             this.panelContenedor.Controls.Add(formularioHijo);
             this.panelContenedor.Tag = formularioHijo;
             formularioHijo.Show();
@@ -32,6 +36,21 @@ namespace MyQuizifyGUI.Forms.InicioSesion
         private void button1_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new QuizesActivos()) ;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            abrirFormHijo(new CursosInstructor());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            abrirFormHijo(new CreacionDeQuizes());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            abrirFormHijo(new Estadisticas());
         }
     }
 }

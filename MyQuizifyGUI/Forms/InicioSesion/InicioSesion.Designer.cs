@@ -207,18 +207,6 @@ namespace MyQuizifyGUI
             this.buttonInstructor.UseVisualStyleBackColor = true;
             this.buttonInstructor.CheckedChanged += new System.EventHandler(this.buttonInstructor_CheckedChanged);
             // 
-<<<<<<< HEAD:MyQuizifyGUI/Forms/InicioSesion.Designer.cs
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(45, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-=======
->>>>>>> 308770ceeb6e633b0997d5b997c669033674434b:MyQuizifyGUI/Forms/InicioSesion/InicioSesion.Designer.cs
             // InicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -239,7 +227,9 @@ namespace MyQuizifyGUI
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "InicioSesion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InicioSesion";
+            this.Load += new System.EventHandler(this.InicioSesion_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

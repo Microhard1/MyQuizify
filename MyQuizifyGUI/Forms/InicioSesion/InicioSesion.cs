@@ -14,6 +14,7 @@ using FireSharp.Response;
 using FireSharp.Interfaces;
 using FireSharp.Config;
 using MyQuizifyGUI.Forms;
+using MyQuizifyGUI.Forms.InicioSesion;
 
 namespace MyQuizifyGUI
 {
@@ -30,7 +31,9 @@ namespace MyQuizifyGUI
         {
             InitializeComponent();
             inicioAlumno = new InicioAlumno();
+            inicioAlumno.WindowState = FormWindowState.Maximized;
             inicioInstructor = new InicioInstructor();
+            inicioInstructor.WindowState = FormWindowState.Maximized;
         }
 
 
@@ -172,13 +175,14 @@ namespace MyQuizifyGUI
             tipoUsuario = "Instructores";
         }
 
-<<<<<<< HEAD:MyQuizifyGUI/Forms/InicioSesion.cs
-        
-=======
         private void textBoxCheckPassword_TextChanged(object sender, EventArgs e)
         {
 
         }
->>>>>>> 308770ceeb6e633b0997d5b997c669033674434b:MyQuizifyGUI/Forms/InicioSesion/InicioSesion.cs
+
+        private void InicioSesion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
