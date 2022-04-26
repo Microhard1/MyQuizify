@@ -174,19 +174,9 @@ namespace MyQuizifyGUI
             tipoUsuario = "Instructores";
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void textBoxCheckPassword_TextChanged(object sender, EventArgs e)
         {
-            Curso asignatura1 = new Curso("PSW", "Proceso de Software");
-            Curso asignatura2 = new Curso("CSO", "Calidad de Software");
-            Curso asignatura3 = new Curso("DDS", "Diseño de Software");
-            Curso asignatura4 = new Curso("GPR", "Gestion de Proyectos");
-            Curso asignatura5 = new Curso("MFI", "Metodos Formales Industriales");
-            Curso asignatura6 = new Curso("DSM", "Diseño de Software basado en Modelos");
-        }
 
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-           Pregunta p1 = new PreguntaMO
         }
     }
 }
