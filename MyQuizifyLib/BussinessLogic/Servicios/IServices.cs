@@ -18,9 +18,5 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
         List<Curso> listarCursos();
         Curso getCursoById(string id);
 
-
-
-
-
     }
 }

@@ -82,7 +82,5 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
             }
             return listaCursos;
         }
-
-
     }
 }

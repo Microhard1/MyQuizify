@@ -18,12 +18,12 @@ using MyQuizifyGUI.Forms;
 
 namespace MyQuizifyGUI
 {
-    public partial class InicioInstructor : Form
+    public partial class QuizesActivos : Form
     {
         private CreacionDeQuizes q;
         ConexionBD cf = ConexionBD.getInstancia();
         MyQuizifyServices services = new MyQuizifyServices();
-        public InicioInstructor()
+        public QuizesActivos()
         {
             InitializeComponent();
             q = new CreacionDeQuizes();
@@ -274,6 +274,11 @@ namespace MyQuizifyGUI
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridQuizes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

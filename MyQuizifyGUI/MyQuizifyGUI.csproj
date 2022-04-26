@@ -105,6 +105,12 @@
     <Compile Include="Forms\CreacionQuizes\CrearQuiz.Designer.cs">
       <DependentUpon>CrearQuiz.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InicioSesion\InicioInstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InicioSesion\InicioInstructor.Designer.cs">
+      <DependentUpon>InicioInstructor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Quizzes\FormAbierto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,11 +147,11 @@
     <Compile Include="Forms\InicioSesion\InicioSesion.Designer.cs">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PantallaPrincipalInstructor.cs">
+    <Compile Include="Forms\CursosInstructor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PantallaPrincipalInstructor.Designer.cs">
-      <DependentUpon>PantallaPrincipalInstructor.cs</DependentUpon>
+    <Compile Include="Forms\CursosInstructor.Designer.cs">
+      <DependentUpon>CursosInstructor.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\InicioSesion\Registrar.cs">
       <SubType>Form</SubType>
@@ -163,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreacionQuizes\CrearQuiz.resx">
       <DependentUpon>CrearQuiz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InicioSesion\InicioInstructor.resx">
+      <DependentUpon>InicioInstructor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Quizzes\FormAbierto.resx">
       <DependentUpon>FormAbierto.cs</DependentUpon>
@@ -182,8 +191,8 @@
     <EmbeddedResource Include="Forms\InicioSesion\InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PantallaPrincipalInstructor.resx">
-      <DependentUpon>PantallaPrincipalInstructor.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CursosInstructor.resx">
+      <DependentUpon>CursosInstructor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InicioSesion\Registrar.resx">
       <DependentUpon>Registrar.cs</DependentUpon>

@@ -115,3 +115,6 @@ C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyGUI\bin
 C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyGUI\bin\Debug\System.Net.Http.Primitives.xml
 C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.csproj.CopyComplete
 >>>>>>> 308770ceeb6e633b0997d5b997c669033674434b
+C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.InicioSesion.InicioInstructor.resources
+C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.CursosInstructor.resources
+C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.QuizesActivos.resources

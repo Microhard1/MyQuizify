@@ -32,7 +32,7 @@ namespace MyQuizifyGUI.Forms.InicioSesion
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.botonGestionQuiz = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -70,27 +70,27 @@ namespace MyQuizifyGUI.Forms.InicioSesion
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.botonGestionQuiz);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 113);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 451);
             this.panel2.TabIndex = 2;
             // 
-            // button1
+            // botonGestionQuiz
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 103);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Gestión de quizes";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.botonGestionQuiz.Dock = System.Windows.Forms.DockStyle.Top;
+            this.botonGestionQuiz.FlatAppearance.BorderSize = 0;
+            this.botonGestionQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonGestionQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonGestionQuiz.Location = new System.Drawing.Point(0, 0);
+            this.botonGestionQuiz.Margin = new System.Windows.Forms.Padding(4);
+            this.botonGestionQuiz.Name = "botonGestionQuiz";
+            this.botonGestionQuiz.Size = new System.Drawing.Size(200, 103);
+            this.botonGestionQuiz.TabIndex = 1;
+            this.botonGestionQuiz.Text = "Gestión de quizes";
+            this.botonGestionQuiz.UseVisualStyleBackColor = true;
+            this.botonGestionQuiz.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -117,7 +117,7 @@ namespace MyQuizifyGUI.Forms.InicioSesion
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(200, 102);
             this.button4.TabIndex = 4;
-            this.button4.Text = "Realizar quizes";
+            this.button4.Text = "Crear quizes";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -164,7 +164,7 @@ namespace MyQuizifyGUI.Forms.InicioSesion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button botonGestionQuiz;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;

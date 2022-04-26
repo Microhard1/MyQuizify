@@ -16,10 +16,22 @@ namespace MyQuizifyGUI.Forms.InicioSesion
         {
             InitializeComponent();
         }
-
+        private void abrirFormHijo(object formHijo)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+            {
+                this.panelContenedor.Controls.RemoveAt(0);
+            }
+            Form formularioHijo = formHijo as Form;
+            formularioHijo.TopLevel = false;
+            formularioHijo.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(formularioHijo);
+            this.panelContenedor.Tag = formularioHijo;
+            formularioHijo.Show();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-
+            abrirFormHijo(new QuizesActivos()) ;
         }
     }
 }
