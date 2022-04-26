@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyQuizifyLib.BussinessLogic.Entidades
+{
+    public class RespuestaVF : Respuesta
+    {
+        public RespuestaVF(string enunciado) : base(enunciado)
+        {
+
+        }
+    }
+}
