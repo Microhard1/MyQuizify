@@ -32,6 +32,8 @@ namespace MyQuizifyGUI.Forms
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxPeso = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.comboBoxTipos = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,8 +50,6 @@ namespace MyQuizifyGUI.Forms
             this.textBoxHoras = new System.Windows.Forms.TextBox();
             this.textBoxNombreQuiz = new System.Windows.Forms.TextBox();
             this.panelQuizes = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +77,7 @@ namespace MyQuizifyGUI.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textBoxPeso);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.comboBoxTipos);
             this.panel1.Controls.Add(this.label8);
@@ -98,6 +98,22 @@ namespace MyQuizifyGUI.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(171, 443);
             this.panel1.TabIndex = 2;
+            // 
+            // textBoxPeso
+            // 
+            this.textBoxPeso.Location = new System.Drawing.Point(84, 165);
+            this.textBoxPeso.Name = "textBoxPeso";
+            this.textBoxPeso.Size = new System.Drawing.Size(73, 20);
+            this.textBoxPeso.TabIndex = 17;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(28, 168);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 13);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Peso:";
             // 
             // comboBoxTipos
             // 
@@ -233,22 +249,6 @@ namespace MyQuizifyGUI.Forms
             this.panelQuizes.Size = new System.Drawing.Size(634, 443);
             this.panelQuizes.TabIndex = 3;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(28, 168);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(34, 13);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Peso:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(84, 165);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(73, 20);
-            this.textBox1.TabIndex = 17;
-            // 
             // CreacionDeQuizes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,7 +288,7 @@ namespace MyQuizifyGUI.Forms
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBoxTipos;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxPeso;
         private System.Windows.Forms.Label label9;
     }
 }

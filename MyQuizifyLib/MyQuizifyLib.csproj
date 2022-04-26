@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BussinessLogic\Entidades\Alumno.cs" />
+    <Compile Include="BussinessLogic\Entidades\Bateria.cs" />
     <Compile Include="BussinessLogic\Entidades\Calificacion.cs" />
     <Compile Include="BussinessLogic\Entidades\Curso.cs" />
     <Compile Include="BussinessLogic\Entidades\Encriptador.cs" />
