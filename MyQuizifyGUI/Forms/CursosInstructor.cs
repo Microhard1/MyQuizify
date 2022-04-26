@@ -14,11 +14,11 @@ using MyQuizifyLib.Persistencia;
 
 namespace MyQuizifyGUI.Forms
 {
-    public partial class PantallaPrincipalInstructor : Form
+    public partial class CursosInstructor : Form
     {
         ConexionBD cf = ConexionBD.getInstancia();
         MyQuizifyServices services = new MyQuizifyServices();
-        public PantallaPrincipalInstructor()
+        public CursosInstructor()
         {
             InitializeComponent();
         }

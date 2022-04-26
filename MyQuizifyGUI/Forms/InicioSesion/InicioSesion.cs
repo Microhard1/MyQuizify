@@ -24,7 +24,6 @@ namespace MyQuizifyGUI
         ConexionBD cf = ConexionBD.getInstancia();
         private InicioAlumno inicioAlumno;
         private InicioInstructor inicioInstructor;
-        private PantallaPrincipalInstructor pantallaPrincipalInstructor;
         private string tipoUsuario;
 
         public InicioSesion()
@@ -32,7 +31,6 @@ namespace MyQuizifyGUI
             InitializeComponent();
             inicioAlumno = new InicioAlumno();
             inicioInstructor = new InicioInstructor();
-            pantallaPrincipalInstructor = new PantallaPrincipalInstructor();
         }
 
 
@@ -174,6 +172,13 @@ namespace MyQuizifyGUI
             tipoUsuario = "Instructores";
         }
 
+<<<<<<< HEAD:MyQuizifyGUI/Forms/InicioSesion.cs
         
+=======
+        private void textBoxCheckPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+>>>>>>> 308770ceeb6e633b0997d5b997c669033674434b:MyQuizifyGUI/Forms/InicioSesion/InicioSesion.cs
     }
 }
