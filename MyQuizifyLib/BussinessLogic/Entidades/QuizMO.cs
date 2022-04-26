@@ -13,9 +13,9 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
         ConexionBD cf = ConexionBD.getInstancia();
         public ICollection<Pregunta> preguntasMO;
 
-        public QuizMO(string nombreQuiz, Instructor creadoPor, int duracion, string dificultad,
+        public QuizMO(string nombreQuiz, Instructor creadoPor, int duracion, string dificultad, int peso,
                 DateTime inicio, DateTime fin, string estado, Curso asignatura) : 
-            base(nombreQuiz, creadoPor, duracion, dificultad, inicio, fin, estado, asignatura)
+            base(nombreQuiz, creadoPor, duracion, peso, dificultad, inicio, fin, estado, asignatura)
         {
             this.preguntasMO = preguntas;
             FirebaseResponse res = cf.client.Set("/Quizes/QuizesMO/" + nombreQuiz , this);

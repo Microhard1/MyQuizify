@@ -12,9 +12,9 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
     {
         ConexionBD cf = ConexionBD.getInstancia();
 
-        public QuizVF(string nombreQuiz, Instructor creadoPor, int duracion, string dificultad,
+        public QuizVF(string nombreQuiz, Instructor creadoPor, int duracion, int peso, string dificultad,
                 DateTime inicio, DateTime fin, string estado, Curso asignatura) :
-            base(nombreQuiz, creadoPor, duracion, dificultad, inicio, fin, estado, asignatura)
+            base(nombreQuiz, creadoPor, duracion, peso, dificultad, inicio, fin, estado, asignatura)
         {
             
             FirebaseResponse res = cf.client.Set("/Quizes/QuizesVF/" + nombreQuiz, this);

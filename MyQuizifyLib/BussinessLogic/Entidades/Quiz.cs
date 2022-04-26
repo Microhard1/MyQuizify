@@ -23,16 +23,17 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
         public DateTime fechaDeInicio;
         public DateTime fechaFin;
 
-
+        public int peso;
         public int duracion;
         public string dificultad;
         public string nombreQuiz;
 
         public string estado;
 
-        public Quiz(string nombreQuiz, Instructor creadoPor, int duracion, string dificultad,
+        public Quiz(string nombreQuiz, Instructor creadoPor, int duracion, int peso, string dificultad,
                 DateTime inicio, DateTime fin, string estado, Curso asignatura)
         {
+            this.peso = peso;
             this.nombreQuiz = nombreQuiz;
             this.creadoPor = creadoPor;
             this.duracion = duracion;
@@ -43,8 +44,6 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
             this.asignatura = asignatura;
 
             preguntas = new List<Pregunta>();
-
-
 
         }
 
