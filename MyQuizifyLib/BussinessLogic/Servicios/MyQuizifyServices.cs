@@ -157,13 +157,13 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
 
         public Pregunta getPreguntaById(string id)
         {
-            FirebaseResponse preguntaMO = cf.client.Get("Preguntas/PreguntasMO/" + id);
+            FirebaseResponse preguntaMO = cf.client.Get("Preguntas/MultiOpcion/" + id);
             Pregunta p1 = preguntaMO.ResultAs<PreguntaMO>();
             if (preguntaMO != null) return p1;
-            FirebaseResponse preguntaVF = cf.client.Get("Preguntas/PreguntasVF/" + id);
+            FirebaseResponse preguntaVF = cf.client.Get("Preguntas/VerdaderoFalso/" + id);
             Pregunta p2 = preguntaVF.ResultAs<PreguntaVF>();
             if (preguntaVF != null) return p2;
-            FirebaseResponse preguntaPA = cf.client.Get("Preguntas/PreguntasPA/" + id);
+            FirebaseResponse preguntaPA = cf.client.Get("Preguntas/Abierta/" + id);
             Pregunta p3 = preguntaPA.ResultAs<PreguntaA>();
             if (preguntaPA != null) return p3;
 
