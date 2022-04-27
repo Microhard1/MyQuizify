@@ -86,5 +86,10 @@ namespace MyQuizifyGUI.Forms
                 formAb.Show();
             }
         }
+
+        private void panelQuizes_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

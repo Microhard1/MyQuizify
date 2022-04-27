@@ -133,8 +133,6 @@ namespace MyQuizifyGUI
 
         public bool verificarUsuario(string username)
         {
-
-
             FirebaseResponse listado = cf.client.Get("/Usuarios/" + tipoUsuario + "/" + username + "/username");
             string nombreUsuario = listado.ResultAs<string>();
             if (nombreUsuario != null) return true;
@@ -185,23 +183,6 @@ namespace MyQuizifyGUI
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            List<PreguntaMO> lista = new List<PreguntaMO>();
-            PreguntaMO p = new PreguntaMO("PreguntaMO", "no enunciado", "no imagen", 2, "no explicacion");
-            PreguntaMO p1= new PreguntaMO("PreguntaMO", "no enunciado", "no imagen", 2, "no explicacion");
-            PreguntaMO p2= new PreguntaMO("PreguntaMO", "no enunciado", "no imagen", 2, "no explicacion");
-            PreguntaMO p3= new PreguntaMO("PreguntaMO", "no enunciado", "no imagen", 2, "no explicacion");
-            PreguntaMO p4= new PreguntaMO("PreguntaMO", "no enunciado", "no imagen", 2, "no explicacion");
-            PreguntaMO p5= new PreguntaMO("PreguntaMO", "no enunciado", "no imagen", 2, "no explicacion");
-            PreguntaMO p6= new PreguntaMO("PreguntaMO", "no enunciado", "no imagen", 2, "no explicacion");
-            PreguntaMO p7= new PreguntaMO("PreguntaMO", "no enunciado", "no imagen", 2, "no explicacion");
-            
-            lista.Add(p2); lista.Add(p3); lista.Add(p4);
-            lista.Add(p5); lista.Add(p6); lista.Add(p7);
-            lista.Add(p); lista.Add(p1);
-
-            Bateria bat = new Bateria("BateriPrueba", lista);
-        }
+        
     }
 }

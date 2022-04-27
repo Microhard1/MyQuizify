@@ -31,5 +31,10 @@ namespace MyQuizifyGUI.Forms
         {
 
         }
+
+        private void FormVF_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

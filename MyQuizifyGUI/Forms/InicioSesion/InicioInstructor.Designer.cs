@@ -47,9 +47,8 @@ namespace MyQuizifyGUI.Forms.InicioSesion
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(901, 113);
+            this.panel1.Size = new System.Drawing.Size(676, 92);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -57,10 +56,9 @@ namespace MyQuizifyGUI.Forms.InicioSesion
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(17, 28);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(13, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 52);
+            this.label1.Size = new System.Drawing.Size(132, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quizify";
             // 
@@ -72,9 +70,10 @@ namespace MyQuizifyGUI.Forms.InicioSesion
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.botonGestionQuiz);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 113);
+            this.panel2.Location = new System.Drawing.Point(0, 92);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 435);
+            this.panel2.Size = new System.Drawing.Size(150, 353);
             this.panel2.TabIndex = 2;
             // 
             // button2
@@ -83,10 +82,9 @@ namespace MyQuizifyGUI.Forms.InicioSesion
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(0, 307);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(0, 250);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 116);
+            this.button2.Size = new System.Drawing.Size(150, 94);
             this.button2.TabIndex = 5;
             this.button2.Text = "Estadisticas";
             this.button2.UseVisualStyleBackColor = true;
@@ -98,10 +96,9 @@ namespace MyQuizifyGUI.Forms.InicioSesion
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(0, 205);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(0, 167);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(200, 102);
+            this.button4.Size = new System.Drawing.Size(150, 83);
             this.button4.TabIndex = 4;
             this.button4.Text = "Crear quizes";
             this.button4.UseVisualStyleBackColor = true;
@@ -113,10 +110,9 @@ namespace MyQuizifyGUI.Forms.InicioSesion
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(0, 103);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(0, 84);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 102);
+            this.button3.Size = new System.Drawing.Size(150, 83);
             this.button3.TabIndex = 3;
             this.button3.Text = "Cursos";
             this.button3.UseVisualStyleBackColor = true;
@@ -129,9 +125,8 @@ namespace MyQuizifyGUI.Forms.InicioSesion
             this.botonGestionQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonGestionQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonGestionQuiz.Location = new System.Drawing.Point(0, 0);
-            this.botonGestionQuiz.Margin = new System.Windows.Forms.Padding(4);
             this.botonGestionQuiz.Name = "botonGestionQuiz";
-            this.botonGestionQuiz.Size = new System.Drawing.Size(200, 103);
+            this.botonGestionQuiz.Size = new System.Drawing.Size(150, 84);
             this.botonGestionQuiz.TabIndex = 1;
             this.botonGestionQuiz.Text = "Gestión de quizes";
             this.botonGestionQuiz.UseVisualStyleBackColor = true;
@@ -140,19 +135,22 @@ namespace MyQuizifyGUI.Forms.InicioSesion
             // panelContenedor
             // 
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(200, 113);
+            this.panelContenedor.Location = new System.Drawing.Point(150, 92);
+            this.panelContenedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(701, 435);
+            this.panelContenedor.Size = new System.Drawing.Size(526, 353);
             this.panelContenedor.TabIndex = 3;
+            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
             // InicioInstructor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 548);
+            this.ClientSize = new System.Drawing.Size(676, 445);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "InicioInstructor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InicioInstructor";

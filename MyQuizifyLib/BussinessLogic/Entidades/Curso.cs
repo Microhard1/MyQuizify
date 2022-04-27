@@ -30,6 +30,7 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
         public void addInstructor(Instructor p) 
         {
             impartidoPor.Add(p);
+            FirebaseResponse añadirInstructorACurso = cf.client.Set("ProfesoresCurso/" + this.id +"/"+ p.username, p);
         }
 
         
