@@ -72,11 +72,10 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
            
         }
 
-        public Type getTipoQuiz(string id)
+        public string getTipoQuiz(Quiz q)
         {
-            if(getQuizById(id) != null)
-            return getQuizById(id).GetType();
-            return null;
+            return q.GetType().Name;
+            
         }
 
         public Curso getCursoById(string id)
@@ -130,7 +129,27 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
 
             return quizes;
         }
+        
+        public List<Pregunta> preguntasDeUnQuiz(string nombreQuiz)
+        {
+            List<Pregunta> preguntas = new List<Pregunta>();
+            Quiz q = getQuizById(nombreQuiz);
+            if (getTipoQuiz(q) == "QuizMO")
+            {
+                FirebaseResponse preguntasDelQuiz = cf.client.Get(@"Preguntas");
+                Dictionary<string, PreguntaMO> p =
+                    JsonConvert.DeserializeObject<Dictionary<string, PreguntaMO>>(preguntasDelQuiz.Body.ToString());
+                foreach (var preg in p)
+                {
+                    preguntas.Add(preg.Value);
+                }
+                
+            }
+            return preguntas;
+        }
 
         
+
+
     }
 }

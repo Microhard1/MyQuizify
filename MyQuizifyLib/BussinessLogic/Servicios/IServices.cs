@@ -14,12 +14,13 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
         Alumno getAlumnoById(string id);
         Instructor getInstructorById(string id);
         Quiz getQuizById(string id);
-        Type getTipoQuiz(string id);
+        string getTipoQuiz(Quiz q);
         List<Curso> listarCursos();
         Curso getCursoById(string id);
         Dictionary<string, PreguntaMO> obtenerPreguntas();
         Dictionary<string, Bateria> obtenerBaterias();
         List<Quiz> listaQuizes();
+        List<Pregunta> preguntasDeUnQuiz(string nombreQuiz);
 
     }
 }

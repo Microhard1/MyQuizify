@@ -19,9 +19,11 @@ namespace MyQuizifyGUI.Forms
 
         ConexionBD cf = ConexionBD.getInstancia();
         MyQuizifyServices services = new MyQuizifyServices();
+        private ContestacionDeQuizesMultiOpcion contestacionDeQuizesMultiOpcion;
         public AlumnoQuizes()
         {
             InitializeComponent();
+            
         }
 
         private void AlumnoQuizes_Load(object sender, EventArgs e)
@@ -55,7 +57,7 @@ namespace MyQuizifyGUI.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             int counter = 0;
-            Quiz q;
+            Quiz q = null;
             for (int i = 0; i < dataGridQuizes.Rows.Count - 1; i++)
             {
                 bool isCellChecked = (bool)dataGridQuizes.Rows[i].Cells[0].Value;
@@ -68,7 +70,8 @@ namespace MyQuizifyGUI.Forms
 
             if (counter == 1)
             {
-                MessageBox.Show("FUNCIONA");
+                contestacionDeQuizesMultiOpcion = new ContestacionDeQuizesMultiOpcion(q);
+                contestacionDeQuizesMultiOpcion.ShowDialog();
             }
             else MessageBox.Show("Solo puedes realizar un quiz al mismo tiempo." +
                 "Escoge tan solo un quiz para realizar");

@@ -14,12 +14,14 @@ using FireSharp.Interfaces;
 using FireSharp.Config;
 using System.Text.RegularExpressions;
 using System.Globalization;
+using MyQuizifyLib.BussinessLogic.Servicios;
 
 namespace MyQuizifyGUI.Forms
 {
     public partial class Registrar : Form
     {
         ConexionBD cf = ConexionBD.getInstancia();
+        MyQuizifyServices services = new MyQuizifyServices();
         Dictionary<string, Alumno> alumnosDictionary = new Dictionary<string, Alumno>();
         string tipoUsuario;
         
@@ -102,10 +104,16 @@ namespace MyQuizifyGUI.Forms
 
         public bool existeUsuario(string nombreUser)
         {
-            FirebaseResponse listado = cf.client.Get("/Usuarios/" + tipoUsuario + "/" + nombreUser + "/username");
-            string usuario = listado.ResultAs<string>();
-            if (usuario != null) return true;
-            return false;
+            if (botonAlumno.Checked)
+            {
+                if (services.getAlumnoById(nombreUser) != null) return false;
+                else return true;
+            }
+            else
+            {
+                if (services.getInstructorById(nombreUser) != null) return false;
+                else return true;
+            }
         }
         public bool contraseñaFormatoCorrecto(string password)
         {

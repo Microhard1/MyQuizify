@@ -43,12 +43,14 @@ namespace MyQuizifyGUI
             this.botonRegistrar = new System.Windows.Forms.Button();
             this.buttonAlumno = new System.Windows.Forms.RadioButton();
             this.buttonInstructor = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(107)))));
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -192,6 +194,16 @@ namespace MyQuizifyGUI
             this.buttonInstructor.UseVisualStyleBackColor = true;
             this.buttonInstructor.CheckedChanged += new System.EventHandler(this.buttonInstructor_CheckedChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(47, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // InicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,5 +249,6 @@ namespace MyQuizifyGUI
         private System.Windows.Forms.Button botonRegistrar;
         private System.Windows.Forms.RadioButton buttonAlumno;
         private System.Windows.Forms.RadioButton buttonInstructor;
+        private System.Windows.Forms.Button button1;
     }
 }
