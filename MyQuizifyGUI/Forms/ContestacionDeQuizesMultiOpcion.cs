@@ -15,6 +15,7 @@ namespace MyQuizifyGUI.Forms
     public partial class ContestacionDeQuizesMultiOpcion : Form
     {
         Quiz aContestar;
+        int contadorPregunta;
         MyQuizifyServices servicios = new MyQuizifyServices();
         public ContestacionDeQuizesMultiOpcion(Quiz q)
         {
@@ -24,8 +25,12 @@ namespace MyQuizifyGUI.Forms
 
         private void ContestacionDeQuizesMultiOpcion_Load(object sender, EventArgs e)
         {
+            contadorPregunta = 0;
             aContestar.preguntas = servicios.preguntasDeUnQuiz(aContestar.nombreQuiz);
-            labelEnunciado.Text = aContestar.preguntas.ToArray<Pregunta>()[0].enunciado;
+            Pregunta p = aContestar.preguntas.ToArray<Pregunta>()[contadorPregunta];
+            p.respuestas = servicios.respuestasDeUnaPregunta(p.id);
+            labelEnunciado.Text = p.enunciado;
+            
         }
     }
 }

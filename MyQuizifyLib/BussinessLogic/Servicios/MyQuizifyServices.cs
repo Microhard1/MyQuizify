@@ -49,11 +49,11 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
 
         public Quiz getQuizById(string id)
         {
-            FirebaseResponse getQuizMO = cf.client.Get(@"Quizes/QuizesMO/" + id);
+            FirebaseResponse getQuizMO = cf.client.Get("Quizes/QuizesMO/" + id);
             QuizMO qmo = getQuizMO.ResultAs<QuizMO>();
-            FirebaseResponse getQuizPA = cf.client.Get(@"Quizes/QuizesPA/" + id);
+            FirebaseResponse getQuizPA = cf.client.Get("Quizes/QuizesPA/" + id);
             QuizPA qpa = getQuizPA.ResultAs<QuizPA>();
-            FirebaseResponse getQuizVF = cf.client.Get(@"Quizes/QuizesVF/" + id);
+            FirebaseResponse getQuizVF = cf.client.Get("Quizes/QuizesVF/" + id);
             QuizVF qvf = getQuizVF.ResultAs<QuizVF>();
 
             if (qmo == null)
@@ -146,6 +146,29 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
                 
             }
             return preguntas;
+        }
+
+        public List<Respuesta> respuestasDeUnaPregunta(string idPregunta)
+        {
+            List<Respuesta> respuestas = new List<Respuesta>();
+
+            return respuestas;
+        }
+
+        public Pregunta getPreguntaById(string id)
+        {
+            FirebaseResponse preguntaMO = cf.client.Get("Preguntas/PreguntasMO/" + id);
+            Pregunta p1 = preguntaMO.ResultAs<PreguntaMO>();
+            if (preguntaMO != null) return p1;
+            FirebaseResponse preguntaVF = cf.client.Get("Preguntas/PreguntasVF/" + id);
+            Pregunta p2 = preguntaVF.ResultAs<PreguntaVF>();
+            if (preguntaVF != null) return p2;
+            FirebaseResponse preguntaPA = cf.client.Get("Preguntas/PreguntasPA/" + id);
+            Pregunta p3 = preguntaPA.ResultAs<PreguntaA>();
+            if (preguntaPA != null) return p3;
+
+            return null;
+            
         }
 
         
