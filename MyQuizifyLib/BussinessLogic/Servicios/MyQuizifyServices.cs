@@ -19,6 +19,21 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
 
         ConexionBD cf = ConexionBD.getInstancia();
 
+        public Dictionary<string, PreguntaMO> obtenerPreguntas()
+        {
+            FirebaseResponse preguntasDB = cf.client.Get(@"Preguntas");
+            Dictionary<string, PreguntaMO> datos =
+                JsonConvert.DeserializeObject<Dictionary<string, PreguntaMO>>(preguntasDB.Body.ToString());
+            return datos;
+        }
+        public Dictionary<string, Bateria> obtenerBaterias()
+        {
+            FirebaseResponse bateriasDB = cf.client.Get(@"Baterias");
+            Dictionary<string, Bateria> datos =
+                JsonConvert.DeserializeObject<Dictionary<string, Bateria>>(bateriasDB.Body.ToString());
+            return datos;
+        }
+
         public Alumno getAlumnoById(string id) 
         {
             FirebaseResponse get = cf.client.Get("Usuarios/Alumnos/"+ id);
@@ -82,5 +97,7 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
             }
             return listaCursos;
         }
+
+        
     }
 }

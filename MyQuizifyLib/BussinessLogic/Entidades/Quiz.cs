@@ -47,13 +47,13 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
 
         }
 
-        public void añadirPregunta(string enunciado, string imagen, double puntuacion, string explicacion)
+        public void añadirPregunta(string id, string enunciado, string imagen, double puntuacion, string explicacion)
         {
-            Pregunta p = crearPregunta(enunciado, imagen, puntuacion, explicacion);
+            Pregunta p = crearPregunta(id, enunciado, imagen, puntuacion, explicacion);
             preguntas.Add(p);
         }
 
-        public abstract Pregunta crearPregunta(string enunciado, string imagen, double puntuacion, string explicacion);
+        public abstract Pregunta crearPregunta(string id, string enunciado, string imagen, double puntuacion, string explicacion);
         
         public bool PreguntasRepetidas()
         {

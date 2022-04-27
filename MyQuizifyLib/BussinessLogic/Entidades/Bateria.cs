@@ -14,17 +14,27 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
     {
         ConexionBD cf = ConexionBD.getInstancia();
 
-        public ICollection<Pregunta> preguntasBateria;
+        public ICollection<PreguntaMO> preguntasBateria;
         public string id;
 
-        public Bateria(string id ,List<Pregunta> preguntasBateria)
+        public Bateria(string id ,List<PreguntaMO> preguntasBateria)
         {
             this.id = id;
             this.preguntasBateria = preguntasBateria;
             FirebaseResponse subirBateria = cf.client.Set("Baterias/" + id, this);
         }
 
-
+        public bool contienePregunta(string nombrePregunta)
+        {
+            foreach(var pregunta in preguntasBateria)
+            {
+                if(pregunta.id == nombrePregunta)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
 
 

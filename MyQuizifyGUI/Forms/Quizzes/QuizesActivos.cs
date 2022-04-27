@@ -20,13 +20,13 @@ namespace MyQuizifyGUI
 {
     public partial class QuizesActivos : Form
     {
-        private CreacionDeQuizes q;
+        private CrearQuiz q;
         ConexionBD cf = ConexionBD.getInstancia();
         MyQuizifyServices services = new MyQuizifyServices();
         public QuizesActivos()
         {
             InitializeComponent();
-            q = new CreacionDeQuizes();
+            q = new CrearQuiz();
         }
 
         private void button1_Click(object sender, EventArgs e)

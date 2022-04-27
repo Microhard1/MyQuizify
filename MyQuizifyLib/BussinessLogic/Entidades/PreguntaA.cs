@@ -8,8 +8,8 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
 {
     public class PreguntaA : Pregunta
     {
-        public PreguntaA(string enunciado, string imagen, double puntuacion, string explicacion) :
-                base(enunciado, imagen, puntuacion, explicacion)
+        public PreguntaA(string id, string enunciado, string imagen, double puntuacion, string explicacion) :
+                base(id, enunciado, imagen, puntuacion, explicacion)
         {
         }
 
