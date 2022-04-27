@@ -98,6 +98,39 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
             return listaCursos;
         }
 
+        public List<Quiz> listaQuizes()
+        {
+            List<Quiz> quizes = new List<Quiz>();
+            FirebaseResponse quizesMO = cf.client.Get(@"Quizes/QuizesMO");
+            Dictionary<string, QuizMO> quizesMultiOpcion =
+                JsonConvert.DeserializeObject<Dictionary<string, QuizMO>>(quizesMO.Body.ToString());
+
+            foreach(var item in quizesMultiOpcion)
+            {
+                quizes.Add(getQuizById(item.Value.nombreQuiz));
+            }
+
+            FirebaseResponse quizesVF = cf.client.Get(@"Quizes/QuizesVF");
+            Dictionary<string, QuizVF> quizesVerdaderoFalso =
+                JsonConvert.DeserializeObject<Dictionary<string, QuizVF>>(quizesVF.Body.ToString());
+
+            foreach (var item in quizesVerdaderoFalso)
+            {
+                quizes.Add(getQuizById(item.Value.nombreQuiz));
+            }
+
+            FirebaseResponse quizesPA = cf.client.Get(@"Quizes/QuizesPA");
+            Dictionary<string, QuizPA> quizesPreguntaAbierta =
+                JsonConvert.DeserializeObject<Dictionary<string, QuizPA>>(quizesPA.Body.ToString());
+
+            foreach (var item in quizesPreguntaAbierta)
+            {
+                quizes.Add(getQuizById(item.Value.nombreQuiz));
+            }
+
+            return quizes;
+        }
+
         
     }
 }

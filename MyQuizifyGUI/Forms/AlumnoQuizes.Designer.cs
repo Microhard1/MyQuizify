@@ -42,6 +42,7 @@ namespace MyQuizifyGUI.Forms
             this.dataGridQuizes.Name = "dataGridQuizes";
             this.dataGridQuizes.Size = new System.Drawing.Size(549, 291);
             this.dataGridQuizes.TabIndex = 0;
+            this.dataGridQuizes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridQuizes_CellContentClick);
             // 
             // label1
             // 
@@ -63,6 +64,7 @@ namespace MyQuizifyGUI.Forms
             this.button1.TabIndex = 2;
             this.button1.Text = "Realizar quiz";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AlumnoQuizes
             // 

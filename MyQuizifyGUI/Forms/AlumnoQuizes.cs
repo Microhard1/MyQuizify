@@ -28,6 +28,10 @@ namespace MyQuizifyGUI.Forms
         {
             dataGridQuizes.Rows.Clear();
 
+            DataGridViewCheckBoxColumn col1 = new DataGridViewCheckBoxColumn();
+            col1.HeaderText = "Selecciona";
+            dataGridQuizes.Columns.Add(col1);
+
             dataGridQuizes.Columns.Add("nombre", "Nombre");
             dataGridQuizes.Columns.Add("tipo", "Tipo");
             dataGridQuizes.Columns.Add("dificultad", "Dificultad");
@@ -40,8 +44,41 @@ namespace MyQuizifyGUI.Forms
 
         public void mostrarQuizes()
         {
-           /*Alumno conectado = services.getAlumnoById(cf.usuarioConectado.username);
-           conectado.*/
+            List<Quiz> quizes = services.listaQuizes();
+            foreach(var quiz in quizes)
+            {
+                dataGridQuizes.Rows.Add(false, quiz.nombreQuiz, quiz.GetType(), quiz.dificultad, quiz.duracion,
+                    quiz.fechaDeInicio, quiz.fechaFin);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int counter = 0;
+            Quiz q;
+            for (int i = 0; i < dataGridQuizes.Rows.Count - 1; i++)
+            {
+                bool isCellChecked = (bool)dataGridQuizes.Rows[i].Cells[0].Value;
+                if(isCellChecked == true)
+                {
+                    q = services.getQuizById(dataGridQuizes.Rows[i].Cells[1].Value.ToString());
+                    counter++;
+                }
+            }
+
+            if (counter == 1)
+            {
+                MessageBox.Show("FUNCIONA");
+            }
+            else MessageBox.Show("Solo puedes realizar un quiz al mismo tiempo." +
+                "Escoge tan solo un quiz para realizar");
+
+            
+
+        }
+
+        private void dataGridQuizes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

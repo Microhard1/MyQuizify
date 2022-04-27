@@ -65,6 +65,7 @@ namespace MyQuizifyGUI
                             cf.usuarioConectado = services.getInstructorById(_usuario);
                             if (buttonAlumno.Checked)
                             {
+                                inicioAlumno.WindowState = FormWindowState.Maximized;
                                 inicioAlumno.Show();
                                 this.Hide();
                             }
