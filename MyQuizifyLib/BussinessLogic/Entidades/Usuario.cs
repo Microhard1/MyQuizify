@@ -31,5 +31,16 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
         
         }
 
+        public void cambiarContraseña(string contraseñaNueva)
+        {
+
+        }
+
+        public void cambiarCorreo(string correoNuevo)
+        {
+
+        }
+
+
     }
 }

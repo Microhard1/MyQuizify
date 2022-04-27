@@ -133,8 +133,6 @@ namespace MyQuizifyGUI
 
         public bool verificarUsuario(string username)
         {
-
-
             FirebaseResponse listado = cf.client.Get("/Usuarios/" + tipoUsuario + "/" + username + "/username");
             string nombreUsuario = listado.ResultAs<string>();
             if (nombreUsuario != null) return true;
@@ -184,5 +182,7 @@ namespace MyQuizifyGUI
         {
 
         }
+
+        
     }
 }

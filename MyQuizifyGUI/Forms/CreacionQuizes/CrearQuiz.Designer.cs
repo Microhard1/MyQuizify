@@ -35,7 +35,6 @@ namespace MyQuizifyGUI
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridPreguntas = new System.Windows.Forms.DataGridView();
-            this.ColumnaSelecciona = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -104,17 +103,10 @@ namespace MyQuizifyGUI
             // 
             this.dataGridPreguntas.AccessibleName = "dataGridPreguntas";
             this.dataGridPreguntas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridPreguntas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnaSelecciona});
             this.dataGridPreguntas.Location = new System.Drawing.Point(33, 67);
             this.dataGridPreguntas.Name = "dataGridPreguntas";
             this.dataGridPreguntas.Size = new System.Drawing.Size(498, 354);
             this.dataGridPreguntas.TabIndex = 5;
-            // 
-            // ColumnaSelecciona
-            // 
-            this.ColumnaSelecciona.HeaderText = "Selecciona";
-            this.ColumnaSelecciona.Name = "ColumnaSelecciona";
             // 
             // textBox1
             // 
@@ -214,6 +206,7 @@ namespace MyQuizifyGUI
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 18;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -291,7 +284,6 @@ namespace MyQuizifyGUI
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnaSelecciona;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ComboBox comboBox1;

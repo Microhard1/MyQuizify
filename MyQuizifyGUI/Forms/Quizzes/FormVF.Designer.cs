@@ -161,6 +161,7 @@ namespace MyQuizifyGUI.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormVF";
             this.Text = "FormVF";
+            this.Load += new System.EventHandler(this.FormVF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

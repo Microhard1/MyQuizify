@@ -31,17 +31,17 @@ namespace MyQuizifyGUI.Forms
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -76,6 +76,14 @@ namespace MyQuizifyGUI.Forms
             this.panel1.Size = new System.Drawing.Size(231, 63);
             this.panel1.TabIndex = 1;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(48, 3);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(180, 57);
+            this.textBox2.TabIndex = 0;
+            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
@@ -88,14 +96,6 @@ namespace MyQuizifyGUI.Forms
             this.radioButton1.Text = "A";
             this.radioButton1.UseVisualStyleBackColor = false;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(48, 3);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 57);
-            this.textBox2.TabIndex = 0;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -104,6 +104,14 @@ namespace MyQuizifyGUI.Forms
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(236, 63);
             this.panel2.TabIndex = 2;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(53, 3);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(180, 57);
+            this.textBox3.TabIndex = 1;
             // 
             // radioButton2
             // 
@@ -117,14 +125,6 @@ namespace MyQuizifyGUI.Forms
             this.radioButton2.Text = "B";
             this.radioButton2.UseVisualStyleBackColor = false;
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(53, 3);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(180, 57);
-            this.textBox3.TabIndex = 1;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -133,6 +133,14 @@ namespace MyQuizifyGUI.Forms
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(231, 63);
             this.panel3.TabIndex = 3;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(48, 3);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(180, 57);
+            this.textBox4.TabIndex = 5;
             // 
             // radioButton3
             // 
@@ -146,14 +154,6 @@ namespace MyQuizifyGUI.Forms
             this.radioButton3.Text = "C";
             this.radioButton3.UseVisualStyleBackColor = false;
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(48, 3);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(180, 57);
-            this.textBox4.TabIndex = 5;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -162,6 +162,14 @@ namespace MyQuizifyGUI.Forms
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(236, 63);
             this.panel4.TabIndex = 3;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(48, 3);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(185, 57);
+            this.textBox5.TabIndex = 6;
             // 
             // radioButton4
             // 
@@ -174,14 +182,6 @@ namespace MyQuizifyGUI.Forms
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "D";
             this.radioButton4.UseVisualStyleBackColor = false;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(48, 3);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(185, 57);
-            this.textBox5.TabIndex = 6;
             // 
             // pictureBox1
             // 
@@ -259,6 +259,7 @@ namespace MyQuizifyGUI.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMO";
             this.Text = "FormMO";
+            this.Load += new System.EventHandler(this.FormMO_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

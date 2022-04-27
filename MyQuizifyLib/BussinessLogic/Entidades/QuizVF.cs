@@ -19,9 +19,9 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
             
             FirebaseResponse res = cf.client.Set("/Quizes/QuizesVF/" + nombreQuiz, this);
         }
-        public override Pregunta crearPregunta(string enunciado, string imagen, double puntuacion, string explicacion)
+        public override Pregunta crearPregunta(string id, string enunciado, string imagen, double puntuacion, string explicacion)
         {
-            Pregunta p = new PreguntaMO(enunciado, imagen, puntuacion, explicacion);
+            Pregunta p = new PreguntaVF(id, enunciado, imagen, puntuacion, explicacion);
             return p;
         }
     }

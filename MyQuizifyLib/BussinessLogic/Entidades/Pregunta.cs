@@ -10,13 +10,15 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
     {
 
         public ICollection<Respuesta> respuestas;
+        public string id;
         public string enunciado;
         public string imagen;
         public double puntuacion;
         public string explicacion;
 
-        public Pregunta(string enunciado, string imagen, double puntuacion, string explicacion)
+        public Pregunta(string id, string enunciado, string imagen, double puntuacion, string explicacion)
         {
+            this.id = id;
             this.enunciado = enunciado;
             this.explicacion = explicacion;
             this.puntuacion = puntuacion;

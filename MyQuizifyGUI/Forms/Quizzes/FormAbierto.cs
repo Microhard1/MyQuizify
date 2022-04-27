@@ -16,5 +16,10 @@ namespace MyQuizifyGUI.Forms
         {
             InitializeComponent();
         }
+
+        private void FormAbierto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

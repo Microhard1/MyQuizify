@@ -96,6 +96,7 @@ namespace MyQuizifyGUI.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAbierto";
             this.Text = "FormAbierto";
+            this.Load += new System.EventHandler(this.FormAbierto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
