@@ -119,3 +119,4 @@ C:\Users\Hugo\Source\Repos\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.csproj.
 C:\Users\Hugo\Source\Repos\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.exe
 C:\Users\Hugo\Source\Repos\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.pdb
 C:\Users\Hugo\Source\Repos\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.CaracteristicasPrincipales.resources
+C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.CaracteristicasPrincipales.resources

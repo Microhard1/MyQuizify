@@ -48,7 +48,7 @@ namespace MyQuizifyGUI.Forms
             List<Quiz> quizes = services.listaQuizes();
             foreach(var quiz in quizes)
             {
-                dataGridQuizes.Rows.Add(false, quiz.nombreQuiz, quiz.GetType(), quiz.dificultad, quiz.duracion,
+                dataGridQuizes.Rows.Add(false, quiz.nombreQuiz, quiz.GetType().Name, quiz.dificultad, quiz.duracion,
                     quiz.fechaDeInicio, quiz.fechaFin);
             }
         }
