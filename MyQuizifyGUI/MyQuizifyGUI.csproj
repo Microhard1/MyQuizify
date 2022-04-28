@@ -93,6 +93,12 @@
     <Compile Include="Forms\AlumnoQuizes.Designer.cs">
       <DependentUpon>AlumnoQuizes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CaracterisiticasPrincipales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CaracterisiticasPrincipales.Designer.cs">
+      <DependentUpon>CaracterisiticasPrincipales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ContestacionDeQuizesMultiOpcion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AlumnoQuizes.resx">
       <DependentUpon>AlumnoQuizes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CaracterisiticasPrincipales.resx">
+      <DependentUpon>CaracterisiticasPrincipales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ContestacionDeQuizesMultiOpcion.resx">
       <DependentUpon>ContestacionDeQuizesMultiOpcion.cs</DependentUpon>

@@ -19,7 +19,6 @@ namespace MyQuizifyGUI.Forms
 
         ConexionBD cf = ConexionBD.getInstancia();
         MyQuizifyServices services = new MyQuizifyServices();
-        private ContestacionDeQuizesMultiOpcion contestacionDeQuizesMultiOpcion;
         public AlumnoQuizes()
         {
             InitializeComponent();
@@ -70,8 +69,8 @@ namespace MyQuizifyGUI.Forms
 
             if (counter == 1)
             {
-                contestacionDeQuizesMultiOpcion = new ContestacionDeQuizesMultiOpcion(q);
-                contestacionDeQuizesMultiOpcion.ShowDialog();
+                CaracteristicasPrincipales caracteristicasPrincipales = new CaracteristicasPrincipales(q);
+                caracteristicasPrincipales.ShowDialog();
             }
             else MessageBox.Show("Solo puedes realizar un quiz al mismo tiempo." +
                 "Escoge tan solo un quiz para realizar");
