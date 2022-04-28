@@ -86,5 +86,10 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
             }
             return false;
         }
+        public void ordenAleatorioPreguntas(Quiz q) 
+        { 
+            Random rnd = new Random();
+            q.preguntas.OrderBy(item => rnd.Next());
+        }
     }
 }
