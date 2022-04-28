@@ -57,5 +57,10 @@ namespace MyQuizifyGUI.Forms.InicioSesion
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            abrirFormHijo(new CrearPreguntasBaterias());
+        }
     }
 }

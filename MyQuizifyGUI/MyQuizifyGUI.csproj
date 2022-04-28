@@ -117,6 +117,18 @@
     <Compile Include="Forms\CreacionQuizes\CrearQuiz.Designer.cs">
       <DependentUpon>CrearQuiz.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CrearBateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CrearBateria.Designer.cs">
+      <DependentUpon>CrearBateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CrearPreguntasBaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CrearPreguntasBaterias.Designer.cs">
+      <DependentUpon>CrearPreguntasBaterias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Estadisticas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +205,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreacionQuizes\CrearQuiz.resx">
       <DependentUpon>CrearQuiz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CrearBateria.resx">
+      <DependentUpon>CrearBateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CrearPreguntasBaterias.resx">
+      <DependentUpon>CrearPreguntasBaterias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InicioSesion\InicioInstructor.resx">
       <DependentUpon>InicioInstructor.cs</DependentUpon>
