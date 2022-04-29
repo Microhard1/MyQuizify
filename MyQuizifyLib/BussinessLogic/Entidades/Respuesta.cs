@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyQuizifyLib.BussinessLogic.Entidades
 {
-    public class Respuesta
+    public abstract class Respuesta
     {
         public string enunciado;
         public Respuesta(string enunciado)
@@ -14,6 +14,6 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
             this.enunciado = enunciado;
 
         }
-
+        public abstract void inicialize(bool correcta);
     }
 }

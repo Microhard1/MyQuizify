@@ -76,3 +76,4 @@ C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyGUI\bin\Debug\Newtonsoft.Json.
 C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyGUI\bin\Debug\System.Net.Http.Extensions.xml
 C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyGUI\bin\Debug\System.Net.Http.Primitives.xml
 C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.csproj.CopyComplete
+C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.CreacionQuizes.PantallaSeleccionTipoQuiz.resources

@@ -34,12 +34,15 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
             this.puntuacion = puntuacion;
         }
 
-        public void añadirRespuesta(string enunciado)
+        public void añadirRespuesta(Respuesta r)
         {
-            Respuesta r = crearRespuesta(enunciado);
             respuestas.Add(r);
         }
 
         public abstract Respuesta crearRespuesta(string enunciado);
+        public void añadirImagen()
+        {
+
+        }
     }   
 }

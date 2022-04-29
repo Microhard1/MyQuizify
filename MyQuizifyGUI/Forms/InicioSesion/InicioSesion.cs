@@ -65,6 +65,7 @@ namespace MyQuizifyGUI
                             cf.usuarioConectado = services.getInstructorById(_usuario);
                             if (buttonAlumno.Checked)
                             {
+                                inicioAlumno.WindowState = FormWindowState.Maximized;
                                 inicioAlumno.Show();
                                 this.Hide();
                             }
@@ -116,15 +117,9 @@ namespace MyQuizifyGUI
         {
 
             if (textBoxUsername.Text == "" || textBoxPassword.Text == ""
-                || textBoxCheckPassword.Text == "" ||
-                !buttonAlumno.Checked && !buttonInstructor.Checked)
+                || !buttonAlumno.Checked && !buttonInstructor.Checked)
             {
                 return -1;
-            }
-
-            if (!textBoxCheckPassword.Text.Equals(textBoxPassword.Text))
-            {
-                return 0;
             }
 
 

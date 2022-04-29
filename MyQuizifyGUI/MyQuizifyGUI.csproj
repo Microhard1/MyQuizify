@@ -105,6 +105,12 @@
     <Compile Include="Forms\CreacionQuizes\CrearQuiz.Designer.cs">
       <DependentUpon>CrearQuiz.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CreacionQuizes\PantallaSeleccionTipoQuiz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreacionQuizes\PantallaSeleccionTipoQuiz.Designer.cs">
+      <DependentUpon>PantallaSeleccionTipoQuiz.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Estadisticas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreacionQuizes\CrearQuiz.resx">
       <DependentUpon>CrearQuiz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreacionQuizes\PantallaSeleccionTipoQuiz.resx">
+      <DependentUpon>PantallaSeleccionTipoQuiz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InicioSesion\InicioInstructor.resx">
       <DependentUpon>InicioInstructor.cs</DependentUpon>

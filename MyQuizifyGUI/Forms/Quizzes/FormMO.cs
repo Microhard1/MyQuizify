@@ -21,5 +21,15 @@ namespace MyQuizifyGUI.Forms
         {
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBoxOpciones_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
