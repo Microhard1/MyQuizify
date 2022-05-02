@@ -218,6 +218,9 @@
     <EmbeddedResource Include="Forms\CrearPreguntasBaterias.resx">
       <DependentUpon>CrearPreguntasBaterias.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Estadisticas.resx">
+      <DependentUpon>Estadisticas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InicioSesion\InicioInstructor.resx">
       <DependentUpon>InicioInstructor.cs</DependentUpon>
     </EmbeddedResource>
