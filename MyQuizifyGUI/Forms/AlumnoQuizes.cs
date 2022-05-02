@@ -22,6 +22,7 @@ namespace MyQuizifyGUI.Forms
         public AlumnoQuizes()
         {
             InitializeComponent();
+            
         }
 
         private void AlumnoQuizes_Load(object sender, EventArgs e)
@@ -47,7 +48,7 @@ namespace MyQuizifyGUI.Forms
             List<Quiz> quizes = services.listaQuizes();
             foreach(var quiz in quizes)
             {
-                dataGridQuizes.Rows.Add(false, quiz.nombreQuiz, quiz.GetType(), quiz.dificultad, quiz.duracion,
+                dataGridQuizes.Rows.Add(false, quiz.nombreQuiz, quiz.GetType().Name, quiz.dificultad, quiz.duracion,
                     quiz.fechaDeInicio, quiz.fechaFin);
             }
         }
@@ -55,7 +56,7 @@ namespace MyQuizifyGUI.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             int counter = 0;
-            Quiz q;
+            Quiz q = null;
             for (int i = 0; i < dataGridQuizes.Rows.Count - 1; i++)
             {
                 bool isCellChecked = (bool)dataGridQuizes.Rows[i].Cells[0].Value;
@@ -68,7 +69,8 @@ namespace MyQuizifyGUI.Forms
 
             if (counter == 1)
             {
-                MessageBox.Show("FUNCIONA");
+                CaracteristicasPrincipales caracteristicasPrincipales = new CaracteristicasPrincipales(q);
+                caracteristicasPrincipales.ShowDialog();
             }
             else MessageBox.Show("Solo puedes realizar un quiz al mismo tiempo." +
                 "Escoge tan solo un quiz para realizar");

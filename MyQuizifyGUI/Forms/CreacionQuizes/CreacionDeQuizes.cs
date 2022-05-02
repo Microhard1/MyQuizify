@@ -61,24 +61,24 @@ namespace MyQuizifyGUI.Forms
             int pesoQuiz = Int32.Parse(textBoxPeso.Text);
             string nombreQuiz = textBoxNombreQuiz.Text;
             int duracion;
-            int horas = textBoxHoras.Text;
+            int horas = Int32.Parse(textBoxHoras.Text);
             if (pesoQuiz < 5 || pesoQuiz > 65)
             {
                 MessageBox.Show("El peso del quiz debe estar entre 5% y 65%");
             }
 
-            if (tipoDeQuiz == "MultiOpcion")
-            {
-                quizActual = new QuizMO();
-            }
-            else if (tipoDeQuiz == "Verdadero/Falso")
-            {
-                quizActual = new QuizVF();
-            }
-            else if (tipoDeQuiz == "Respuesta Abierta")
-            {
-                quizActual = new QuizPA();
-            }
+            //if (tipoDeQuiz == "MultiOpcion")
+            //{
+            //    quizActual = new QuizMO();
+            //}
+            //else if (tipoDeQuiz == "Verdadero/Falso")
+            //{
+            //    quizActual = new QuizVF();
+            //}
+            //else if (tipoDeQuiz == "Respuesta Abierta")
+            //{
+            //    quizActual = new QuizPA();
+            //}
             
 
         }

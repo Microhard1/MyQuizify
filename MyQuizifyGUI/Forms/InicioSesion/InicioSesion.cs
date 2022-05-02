@@ -178,6 +178,9 @@ namespace MyQuizifyGUI
 
         }
 
-        
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show(services.getTipoQuiz(services.getQuizById("QuizPruebaPreguntas")).ToString());
+        }
     }
 }

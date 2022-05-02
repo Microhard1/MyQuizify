@@ -49,13 +49,19 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
 
         public void añadirPregunta(string id, string enunciado, string imagen, double puntuacion, string explicacion)
         {
+            string tipo = "";
+            if (this.GetType().Name == "QuizMO") tipo = "MultiOpcion";
+            if (this.GetType().Name == "QuizVF") tipo = "VerdaderoFalso";
+            if (this.GetType().Name == "QuizPA") tipo = "Abierta";
+
             Pregunta p = crearPregunta(id, enunciado, imagen, puntuacion, explicacion);
             preguntas.Add(p);
+            FirebaseResponse addPregunta = cf.client.Set("Preguntas/"+ tipo + "/" + this.nombreQuiz, p);
         }
 
         public abstract Pregunta crearPregunta(string id, string enunciado, string imagen, double puntuacion, string explicacion);
         
-        public bool PreguntasRepetidas()
+        public bool preguntasRepetidas()
         {
             /* REFACTORING?
             var myArray = preguntasQuiz.ToArray<Pregunta>();
@@ -79,6 +85,11 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
                 }
             }
             return false;
+        }
+        public void ordenAleatorioPreguntas(Quiz q) 
+        { 
+            Random rnd = new Random();
+            q.preguntas.OrderBy(item => rnd.Next());
         }
     }
 }
