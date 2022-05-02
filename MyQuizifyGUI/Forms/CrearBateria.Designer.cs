@@ -80,7 +80,6 @@ namespace MyQuizifyGUI.Forms
             this.button1.TabIndex = 4;
             this.button1.Text = "Crear Bateria";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox1
             // 
@@ -104,7 +103,7 @@ namespace MyQuizifyGUI.Forms
             this.label3.TabIndex = 6;
             this.label3.Text = "Tipo de Bateria: ";
             // 
-            // CrearBateria
+            // CrearPregunta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -117,7 +116,7 @@ namespace MyQuizifyGUI.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridPreguntas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "CrearBateria";
+            this.Name = "CrearPregunta";
             this.Text = "CrearPregunta";
             this.Load += new System.EventHandler(this.CrearPregunta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPreguntas)).EndInit();
