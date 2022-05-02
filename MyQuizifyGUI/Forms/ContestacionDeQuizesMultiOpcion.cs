@@ -20,17 +20,51 @@ namespace MyQuizifyGUI.Forms
         public ContestacionDeQuizesMultiOpcion(Quiz q)
         {
             InitializeComponent();
+            contadorPregunta = 0;
             this.aContestar = q;
+            aContestar.preguntas = servicios.preguntasDeUnQuiz(aContestar.nombreQuiz);
+            labelP1.AutoSize = false;
+            
         }
 
         private void ContestacionDeQuizesMultiOpcion_Load(object sender, EventArgs e)
         {
-            contadorPregunta = 0;
-            aContestar.preguntas = servicios.preguntasDeUnQuiz(aContestar.nombreQuiz);
+            button2.Enabled = false;
             Pregunta p = aContestar.preguntas.ToArray<Pregunta>()[contadorPregunta];
             p.respuestas = servicios.respuestasDeUnaPregunta(p.id);
             labelEnunciado.Text = p.enunciado;
-            
+            labelP1.Text = p.respuestas.ToArray<Respuesta>()[0].enunciado;
+            labelP2.Text = p.respuestas.ToArray<Respuesta>()[1].enunciado;
+            labelP3.Text = p.respuestas.ToArray<Respuesta>()[2].enunciado;
+            labelP4.Text = p.respuestas.ToArray<Respuesta>()[3].enunciado;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            contadorPregunta--;
+            button1.Enabled = true;
+            if (contadorPregunta == 0) button2.Enabled = false;
+            Pregunta p = aContestar.preguntas.ToArray<Pregunta>()[contadorPregunta];
+            p.respuestas = servicios.respuestasDeUnaPregunta(p.id);
+            labelEnunciado.Text = p.enunciado;
+            labelP1.Text = p.respuestas.ToArray<Respuesta>()[0].enunciado;
+            labelP2.Text = p.respuestas.ToArray<Respuesta>()[1].enunciado;
+            labelP3.Text = p.respuestas.ToArray<Respuesta>()[2].enunciado;
+            labelP4.Text = p.respuestas.ToArray<Respuesta>()[3].enunciado;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button2.Enabled = true;
+            contadorPregunta++;
+            if (contadorPregunta + 1 == aContestar.preguntas.Count) button1.Enabled = false;
+            Pregunta p = aContestar.preguntas.ToArray<Pregunta>()[contadorPregunta];
+            p.respuestas = servicios.respuestasDeUnaPregunta(p.id);
+            labelEnunciado.Text = p.enunciado;
+            labelP1.Text = p.respuestas.ToArray<Respuesta>()[0].enunciado;
+            labelP2.Text = p.respuestas.ToArray<Respuesta>()[1].enunciado;
+            labelP3.Text = p.respuestas.ToArray<Respuesta>()[2].enunciado;
+            labelP4.Text = p.respuestas.ToArray<Respuesta>()[3].enunciado;
         }
     }
 }

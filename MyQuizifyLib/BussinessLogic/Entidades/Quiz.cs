@@ -7,6 +7,7 @@ using MyQuizifyLib.Persistencia;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using MyQuizifyLib.BussinessLogic.Servicios;
 
 namespace MyQuizifyLib.BussinessLogic.Entidades
 {
@@ -90,6 +91,33 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
         { 
             Random rnd = new Random();
             q.preguntas.OrderBy(item => rnd.Next());
+        }
+        public Quiz clonarQuiz(Quiz q) 
+        {
+            //eliminar despues de entrega sprint 2
+            String nombreUsuario = cf.usuarioConectado.username;
+            MyQuizifyServices services = new MyQuizifyServices();
+            Instructor a = services.getInstructorById(nombreUsuario);
+            //eliminar despues de entrega de sprint 2
+
+            if (this.GetType().Name == "QuizMO")
+            {
+                QuizMO quiz = new QuizMO(q.nombreQuiz, a/*q.creadoPor*/, q.duracion, q.peso, q.dificultad, q.fechaDeInicio, q.fechaFin, q.estado, q.asignatura);
+                quiz.preguntas = q.preguntas;
+                return quiz;
+            }
+            else if (this.GetType().Name == "QuizVF")
+            {
+                QuizVF quiz = new QuizVF(q.nombreQuiz, a/*q.creadoPor*/, q.duracion, q.peso, q.dificultad, q.fechaDeInicio, q.fechaFin, q.estado, q.asignatura);
+                quiz.preguntas = q.preguntas;
+                return quiz;
+            }
+            else 
+            {
+                QuizPA quiz = new QuizPA(q.nombreQuiz, a/*q.creadoPor*/, q.duracion, q.peso, q.dificultad, q.fechaDeInicio, q.fechaFin, q.estado, q.asignatura);
+                quiz.preguntas = q.preguntas;
+                return quiz;
+            }
         }
     }
 }

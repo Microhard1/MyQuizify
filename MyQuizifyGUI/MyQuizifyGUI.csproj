@@ -135,6 +135,12 @@
     <Compile Include="Forms\InicioSesion\InicioInstructor.Designer.cs">
       <DependentUpon>InicioInstructor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Quizzes\Clonacion de Quizes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Quizzes\Clonacion de Quizes.Designer.cs">
+      <DependentUpon>Clonacion de Quizes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Quizzes\FormAbierto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InicioSesion\InicioInstructor.resx">
       <DependentUpon>InicioInstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Quizzes\Clonacion de Quizes.resx">
+      <DependentUpon>Clonacion de Quizes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Quizzes\FormAbierto.resx">
       <DependentUpon>FormAbierto.cs</DependentUpon>

@@ -14,19 +14,21 @@ using FireSharp.Config;
 using MyQuizifyLib.BussinessLogic.Entidades;
 using Newtonsoft.Json;
 using MyQuizifyLib.BussinessLogic.Servicios;
-using MyQuizifyGUI.Forms;
+using MyQuizifyGUI.Forms.Quizzes;
 
 namespace MyQuizifyGUI
 {
     public partial class QuizesActivos : Form
     {
         private CrearQuiz q;
+        private Clonacion_de_Quizes clonacionForm;
         ConexionBD cf = ConexionBD.getInstancia();
         MyQuizifyServices services = new MyQuizifyServices();
         public QuizesActivos()
         {
             InitializeComponent();
             q = new CrearQuiz();
+            clonacionForm = new Clonacion_de_Quizes();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -281,6 +283,11 @@ namespace MyQuizifyGUI
         private void dataGridQuizes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            clonacionForm.ShowDialog();
         }
     }
 }

@@ -31,15 +31,15 @@ namespace MyQuizifyGUI.Forms
         {
             this.labelEnunciado = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.labelP1 = new System.Windows.Forms.Label();
-            this.labelP2 = new System.Windows.Forms.Label();
-            this.labelP3 = new System.Windows.Forms.Label();
             this.labelP4 = new System.Windows.Forms.Label();
+            this.labelP3 = new System.Windows.Forms.Label();
+            this.labelP2 = new System.Windows.Forms.Label();
+            this.labelP1 = new System.Windows.Forms.Label();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +48,7 @@ namespace MyQuizifyGUI.Forms
             // 
             this.labelEnunciado.AutoSize = true;
             this.labelEnunciado.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEnunciado.Location = new System.Drawing.Point(285, 37);
+            this.labelEnunciado.Location = new System.Drawing.Point(73, 76);
             this.labelEnunciado.Name = "labelEnunciado";
             this.labelEnunciado.Size = new System.Drawing.Size(193, 36);
             this.labelEnunciado.TabIndex = 0;
@@ -70,47 +70,41 @@ namespace MyQuizifyGUI.Forms
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // button1
+            // labelP4
             // 
-            this.button1.Location = new System.Drawing.Point(665, 405);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Siguiente";
-            this.button1.UseVisualStyleBackColor = true;
+            this.labelP4.AutoSize = true;
+            this.labelP4.Location = new System.Drawing.Point(393, 151);
+            this.labelP4.Name = "labelP4";
+            this.labelP4.Size = new System.Drawing.Size(43, 13);
+            this.labelP4.TabIndex = 7;
+            this.labelP4.Text = "textoP4";
             // 
-            // radioButton1
+            // labelP3
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(69, 53);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(32, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "A";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.labelP3.AutoSize = true;
+            this.labelP3.Location = new System.Drawing.Point(121, 151);
+            this.labelP3.Name = "labelP3";
+            this.labelP3.Size = new System.Drawing.Size(43, 13);
+            this.labelP3.TabIndex = 6;
+            this.labelP3.Text = "textoP3";
             // 
-            // radioButton2
+            // labelP2
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(340, 53);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(32, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "B";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.labelP2.AutoSize = true;
+            this.labelP2.Location = new System.Drawing.Point(393, 55);
+            this.labelP2.Name = "labelP2";
+            this.labelP2.Size = new System.Drawing.Size(43, 13);
+            this.labelP2.TabIndex = 5;
+            this.labelP2.Text = "textoP2";
             // 
-            // radioButton3
+            // labelP1
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(69, 149);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(32, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "C";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.labelP1.AutoSize = true;
+            this.labelP1.Location = new System.Drawing.Point(121, 53);
+            this.labelP1.Name = "labelP1";
+            this.labelP1.Size = new System.Drawing.Size(43, 13);
+            this.labelP1.TabIndex = 4;
+            this.labelP1.Text = "textoP1";
             // 
             // radioButton4
             // 
@@ -123,41 +117,48 @@ namespace MyQuizifyGUI.Forms
             this.radioButton4.Text = "D";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
-            // labelP1
+            // radioButton3
             // 
-            this.labelP1.AutoSize = true;
-            this.labelP1.Location = new System.Drawing.Point(121, 53);
-            this.labelP1.Name = "labelP1";
-            this.labelP1.Size = new System.Drawing.Size(43, 13);
-            this.labelP1.TabIndex = 4;
-            this.labelP1.Text = "textoP1";
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(69, 149);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(32, 17);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "C";
+            this.radioButton3.UseVisualStyleBackColor = true;
             // 
-            // labelP2
+            // radioButton2
             // 
-            this.labelP2.AutoSize = true;
-            this.labelP2.Location = new System.Drawing.Point(393, 55);
-            this.labelP2.Name = "labelP2";
-            this.labelP2.Size = new System.Drawing.Size(43, 13);
-            this.labelP2.TabIndex = 5;
-            this.labelP2.Text = "textoP2";
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(340, 53);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(32, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "B";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // labelP3
+            // radioButton1
             // 
-            this.labelP3.AutoSize = true;
-            this.labelP3.Location = new System.Drawing.Point(121, 151);
-            this.labelP3.Name = "labelP3";
-            this.labelP3.Size = new System.Drawing.Size(43, 13);
-            this.labelP3.TabIndex = 6;
-            this.labelP3.Text = "textoP3";
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(69, 53);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(32, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "A";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // labelP4
+            // button1
             // 
-            this.labelP4.AutoSize = true;
-            this.labelP4.Location = new System.Drawing.Point(393, 151);
-            this.labelP4.Name = "labelP4";
-            this.labelP4.Size = new System.Drawing.Size(43, 13);
-            this.labelP4.TabIndex = 7;
-            this.labelP4.Text = "textoP4";
+            this.button1.Location = new System.Drawing.Point(665, 405);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Siguiente";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -167,6 +168,7 @@ namespace MyQuizifyGUI.Forms
             this.button2.TabIndex = 3;
             this.button2.Text = "Anterior";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ContestacionDeQuizesMultiOpcion
             // 
