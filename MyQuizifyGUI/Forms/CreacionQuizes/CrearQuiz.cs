@@ -48,38 +48,6 @@ namespace MyQuizifyGUI
                     }
                     MessageBox.Show("Quiz creado con exito");
                 break;
-
-                case "Baterias Verdadero/Falso":
-                    int duracion2 = Int32.Parse(textBoxHoras.Text) * 60 + Int32.Parse(textBoxMinutos.Text);
-                    BateriaVerdaderoFalso bvf = getBateriaVF();
-                    Quiz q2 = new QuizMO(textBoxNombreQuiz.Text,
-                        services.getInstructorById(cf.usuarioConectado.username),
-                        duracion2, Int32.Parse(textBoxPeso.Text), textBoxDificultad.Text,
-                        dateTimePicker1.Value, dateTimePicker2.Value, "En preparacion",
-                        services.getCursoById(comboBoxCurso.Text));
-                    foreach (var pregunta in bvf.preguntasBateria)
-                    {
-                        q2.añadirPregunta(pregunta.id, pregunta.enunciado,
-                            pregunta.imagen, pregunta.puntuacion, pregunta.explicacion);
-                    }
-                    MessageBox.Show("Quiz creado con exito");
-                    break;
-
-                case "Baterias Abiertas":
-                    int duracion3 = Int32.Parse(textBoxHoras.Text) * 60 + Int32.Parse(textBoxMinutos.Text);
-                    BateriaAbierta ba = getBateriaA();
-                    Quiz q3 = new QuizMO(textBoxNombreQuiz.Text,
-                        services.getInstructorById(cf.usuarioConectado.username),
-                        duracion3, Int32.Parse(textBoxPeso.Text), textBoxDificultad.Text,
-                        dateTimePicker1.Value, dateTimePicker2.Value, "En preparacion",
-                        services.getCursoById(comboBoxCurso.Text));
-                    foreach (var pregunta in ba.preguntasBateria)
-                    {
-                        q3.añadirPregunta(pregunta.id, pregunta.enunciado,
-                            pregunta.imagen, pregunta.puntuacion, pregunta.explicacion);
-                    }
-                    MessageBox.Show("Quiz creado con exito");
-                    break;
             }
         }
 
@@ -233,34 +201,6 @@ namespace MyQuizifyGUI
                 if (isChecked)
                 {
                     b = services.getBateriaMOById(dataGridPreguntas.Rows[i].Cells[1].Value.ToString());
-                }
-            }
-            return b;
-        }
-        public BateriaAbierta getBateriaA()
-        {
-            BateriaAbierta b = null;
-            bool isChecked = false;
-            for (int i = 0; i < dataGridPreguntas.Rows.Count - 1; i++)
-            {
-                isChecked = (bool)dataGridPreguntas.Rows[i].Cells[0].Value;
-                if (isChecked)
-                {
-                    b = services.getBateriaAById(dataGridPreguntas.Rows[i].Cells[1].Value.ToString());
-                }
-            }
-            return b;
-        }
-        public BateriaVerdaderoFalso getBateriaVF()
-        {
-            BateriaVerdaderoFalso b = null;
-            bool isChecked = false;
-            for (int i = 0; i < dataGridPreguntas.Rows.Count - 1; i++)
-            {
-                isChecked = (bool)dataGridPreguntas.Rows[i].Cells[0].Value;
-                if (isChecked)
-                {
-                    b = services.getBateriaVFById(dataGridPreguntas.Rows[i].Cells[1].Value.ToString());
                 }
             }
             return b;
