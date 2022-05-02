@@ -64,5 +64,10 @@ namespace MyQuizifyGUI.Forms
         {
 
         }
+
+        private void inputImagen_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

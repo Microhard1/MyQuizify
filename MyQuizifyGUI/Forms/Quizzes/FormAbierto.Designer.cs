@@ -31,14 +31,14 @@ namespace MyQuizifyGUI.Forms
         {
             this.textboxEnunciado = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.inputImagen = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxPuntuacion = new System.Windows.Forms.TextBox();
             this.textboxExplicacion = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputImagen)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,15 +64,15 @@ namespace MyQuizifyGUI.Forms
             this.label2.TabIndex = 12;
             this.label2.Text = "Escriba el enunciado :";
             // 
-            // pictureBox1
+            // inputImagen
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(435, 59);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(383, 460);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.inputImagen.Location = new System.Drawing.Point(435, 59);
+            this.inputImagen.Margin = new System.Windows.Forms.Padding(4);
+            this.inputImagen.Name = "inputImagen";
+            this.inputImagen.Size = new System.Drawing.Size(383, 460);
+            this.inputImagen.TabIndex = 13;
+            this.inputImagen.TabStop = false;
+            this.inputImagen.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button1
             // 
@@ -147,7 +147,7 @@ namespace MyQuizifyGUI.Forms
             this.ClientSize = new System.Drawing.Size(1143, 590);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.inputImagen);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textboxEnunciado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -155,7 +155,7 @@ namespace MyQuizifyGUI.Forms
             this.Name = "FormAbierto";
             this.Text = "FormAbierto";
             this.Load += new System.EventHandler(this.FormAbierto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputImagen)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -167,7 +167,7 @@ namespace MyQuizifyGUI.Forms
 
         private System.Windows.Forms.TextBox textboxEnunciado;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox inputImagen;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;

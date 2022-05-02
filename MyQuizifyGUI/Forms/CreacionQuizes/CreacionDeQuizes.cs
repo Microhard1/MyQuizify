@@ -27,6 +27,7 @@ namespace MyQuizifyGUI.Forms
         Form formularioActual = null;
         List<Pregunta> preguntas = new List<Pregunta>();
         string tipoDeQuiz = "";
+        MyQuizifyServices servicio = new MyQuizifyServices();
 
         Quiz quizActual;
         public CreacionDeQuizes()
@@ -35,7 +36,6 @@ namespace MyQuizifyGUI.Forms
             formMO = new FormMO();
             formAb = new FormAbierto();
             InitializeComponent();
-            respuestaAbierta.Width = panelQuizes.Width;
         }
 
         private void CreacionDeQuizes_Load(object sender, EventArgs e)
@@ -60,26 +60,36 @@ namespace MyQuizifyGUI.Forms
         {
             int pesoQuiz = Int32.Parse(textBoxPeso.Text);
             string nombreQuiz = textBoxNombreQuiz.Text;
-            int duracion;
-            int horas = Int32.Parse(textBoxHoras.Text);
+            
+            string dificultad = comboBoxDificultad.Text;
+            int horas = Int32.Parse(textBoxHoras.Text) * 60;
+            int duracion = horas + Int32.Parse(textBoxMin.Text);
             if (pesoQuiz < 5 || pesoQuiz > 65)
             {
                 MessageBox.Show("El peso del quiz debe estar entre 5% y 65%");
             }
 
-            //if (tipoDeQuiz == "MultiOpcion")
-            //{
-            //    quizActual = new QuizMO();
-            //}
-            //else if (tipoDeQuiz == "Verdadero/Falso")
-            //{
-            //    quizActual = new QuizVF();
-            //}
-            //else if (tipoDeQuiz == "Respuesta Abierta")
-            //{
-            //    quizActual = new QuizPA();
-            //}
-            
+            if (tipoDeQuiz == "MultiOpcion")
+            {
+                quizActual = new QuizMO(nombreQuiz,servicio.getInstructorById(cf.usuarioConectado.username),
+                    duracion,pesoQuiz,dificultad,dateTimePickerInicio.Value, dateTimePickerFin.Value,"En preparacion",servicio.getCursoById(comboBoxCursos.Text));
+            }
+            else if (tipoDeQuiz == "Verdadero/Falso")
+            {
+                quizActual = new QuizVF(nombreQuiz, servicio.getInstructorById(cf.usuarioConectado.username),
+                   duracion, pesoQuiz, dificultad, dateTimePickerInicio.Value, dateTimePickerFin.Value, "En preparacion", servicio.getCursoById(comboBoxCursos.Text));
+                AñadirPreguntas(quizActual);
+            }
+            else if (tipoDeQuiz == "Respuesta Abierta")
+            {
+                quizActual = new QuizMO(nombreQuiz, servicio.getInstructorById(cf.usuarioConectado.username),
+                   duracion, pesoQuiz, dificultad, dateTimePickerInicio.Value, dateTimePickerFin.Value, "En preparacion", servicio.getCursoById(comboBoxCursos.Text));
+
+            }
+
+        }
+        private void AñadirPreguntas(Quiz q)
+        {
 
         }
 
@@ -95,23 +105,30 @@ namespace MyQuizifyGUI.Forms
 
         private void botonAñadirPregunta_Click(object sender, EventArgs e)
         {
-            
+            Cursor.Current = Cursors.WaitCursor;
             if (tipoDeQuiz == "MultiOpcion")
             {
                 CrearPreguntaTipoTest();
+                panelQuizes.Controls.Clear();
+                abrirMultiopcion();
             }
             else if (tipoDeQuiz == "Verdadero/Falso")
             {
                 CrearPreguntaVerdaderoFalso();
+                panelQuizes.Controls.Clear();
+                abrirVerdaderoFalso();
             }
             else if (tipoDeQuiz == "Respuesta Abierta")
             {
-                CrearPreguntaVerdaderoFalso();
+                CrearPreguntaRespuestaAbierta();
+                panelQuizes.Controls.Clear();
+                abrirRespuestaAbierta();
             }
             numeroDePregunta++;
-            panelQuizes.Controls.Clear();
-        }
+            Cursor.Current = Cursors.Default;
 
+        }
+       
         public void CrearPreguntaVerdaderoFalso()
         {
             ControlCollection objetosDelFormulario = (ControlCollection)formularioActual.Controls;
@@ -139,38 +156,48 @@ namespace MyQuizifyGUI.Forms
                         }
                     }
                 }
-                if (c.GetType() == typeof(TextBox))
+                else if (c.GetType() == typeof(TextBox))
                 {
                     if (c.Name == "textBoxEnunciado")
                     {
                         enunciado = ((TextBox)c).Text;
                     }
-                    else if (c.Name == "textBoxPuntuacion")
-                    {
-                        puntuacion = Double.Parse(((TextBox)c).Text);
-                    }
-                    else if (c.Name == "textboxExplicacion")
-                    {
-                        explicacion = ((TextBox)c).Text;
-                    }
 
                 }
-                if (c.GetType() == typeof(PictureBox))
+                else if(c is Panel)
                 {
+                    foreach (Control p in c.Controls)
+                    {
+                        if (p.GetType() == typeof(TextBox))
+                        {
+                             if (p.Name == "textBoxPuntuacion")
+                            {
+                                puntuacion = Double.Parse(((TextBox)p).Text);
+                            }
+                            else if (p.Name == "textboxExplicacion")
+                            {
+                                explicacion = ((TextBox)p).Text;
+                            }
+                        }
+                        }
+                }
+                else if (c.GetType() == typeof(PictureBox))
+                {
+                    
                     imagen = convertirImagen((PictureBox)c);
                 }
             }
 
             string id = textBoxNombreQuiz.Text + "_" + numeroDePregunta; 
 
-            Pregunta pregunta = new PreguntaVF(enunciado, id,imagen,puntuacion,explicacion);
+            Pregunta pregunta = new PreguntaVF(id,enunciado,imagen,puntuacion,explicacion);
             Respuesta r = pregunta.crearRespuesta(verdaderoOFalso.ToString());
             r.inicialize(verdaderoOFalso);
             pregunta.añadirRespuesta(r);
 
             preguntas.Add(pregunta);
 
-            MessageBox.Show("Se ha insertado una pregunta: ");
+            MessageBox.Show("Se ha insertado una pregunta: " + pregunta.ToString()) ;
         }
 
         public void CrearPreguntaTipoTest()
@@ -252,15 +279,24 @@ namespace MyQuizifyGUI.Forms
                     {
                         enunciado = ((TextBox)c).Text;
                     }
-                    else if (c.Name == "textBoxPuntuacion")
-                    {
-                        puntuacion = Double.Parse(((TextBox)c).Text);
-                    }
-                    else if (c.Name == "textboxExplicacion")
-                    {
-                        explicacion = ((TextBox)c).Text;
-                    }
 
+                }
+                else if (c is Panel)
+                {
+                    foreach (Control p in c.Controls)
+                    {
+                        if (p.GetType() == typeof(TextBox))
+                        {
+                            if (p.Name == "textBoxPuntuacion")
+                            {
+                                puntuacion = Double.Parse(((TextBox)p).Text);
+                            }
+                            else if (p.Name == "textboxExplicacion")
+                            {
+                                explicacion = ((TextBox)p).Text;
+                            }
+                        }
+                    }
                 }
                 else if (c.GetType() == typeof(PictureBox))
                 {
@@ -272,6 +308,8 @@ namespace MyQuizifyGUI.Forms
 
             pregunta = new PreguntaVF(enunciado, id, imagen, puntuacion, explicacion);
             preguntas.Add(pregunta);
+
+            MessageBox.Show("Se ha insertado una pregunta: " + pregunta.ToString());
         }
 
         public void CrearPreguntaRespuestaAbierta()
@@ -291,17 +329,26 @@ namespace MyQuizifyGUI.Forms
                     {
                         enunciado = ((TextBox)c).Text;
                     }
-                    else if (c.Name == "textBoxPuntuacion")
-                    {
-                        puntuacion = Double.Parse(((TextBox)c).Text);
-                    }
-                    else if (c.Name == "textboxExplicacion")
-                    {
-                        explicacion = ((TextBox)c).Text;
-                    }
 
                 }
-                if (c.GetType() == typeof(PictureBox))
+                else if (c is Panel)
+                {
+                    foreach (Control p in c.Controls)
+                    {
+                        if (p.GetType() == typeof(TextBox))
+                        {
+                            if (p.Name == "textBoxPuntuacion")
+                            {
+                                puntuacion = Double.Parse(((TextBox)p).Text);
+                            }
+                            else if (p.Name == "textboxExplicacion")
+                            {
+                                explicacion = ((TextBox)p).Text;
+                            }
+                        }
+                    }
+                }
+                else if (c.GetType() == typeof(PictureBox))
                 {
                     imagen = convertirImagen((PictureBox)c);
                 }
@@ -315,7 +362,7 @@ namespace MyQuizifyGUI.Forms
 
             preguntas.Add(pregunta);
 
-            MessageBox.Show("Se ha insertado una pregunta: ");
+            MessageBox.Show("Se ha insertado una pregunta: " + pregunta.ToString()) ;
         }
         private List<TextBox> getListaRespuestas()
         {
@@ -335,6 +382,7 @@ namespace MyQuizifyGUI.Forms
 
         public string convertirImagen(PictureBox picture)
         {
+            if (picture.Image == null) return "";
             string imagen = "";
             MemoryStream ms = new MemoryStream();
             picture.Image.Save(ms,ImageFormat.Jpeg);
@@ -350,7 +398,7 @@ namespace MyQuizifyGUI.Forms
 
         }
 
-        private void respuestaAbierta_Click(object sender, EventArgs e)
+        public void abrirRespuestaAbierta()
         {
             Cursor.Current = Cursors.WaitCursor;
             tipoDeQuiz = "Respuesta Abierta";
@@ -370,8 +418,7 @@ namespace MyQuizifyGUI.Forms
 
             Cursor.Current = Cursors.Default;
         }
-
-        private void verdaderoFalso_Click(object sender, EventArgs e)
+        public void abrirVerdaderoFalso()
         {
             Cursor.Current = Cursors.WaitCursor;
             tipoDeQuiz = "Verdadero/Falso";
@@ -389,8 +436,7 @@ namespace MyQuizifyGUI.Forms
             formVF.Show();
             Cursor.Current = Cursors.Default;
         }
-
-        private void multiopcion_Click(object sender, EventArgs e)
+        public void abrirMultiopcion()
         {
             Cursor.Current = Cursors.WaitCursor;
             tipoDeQuiz = "MultiOpcion";
@@ -409,8 +455,32 @@ namespace MyQuizifyGUI.Forms
             formMO.Show();
             Cursor.Current = Cursors.Default;
         }
+        private void respuestaAbierta_Click(object sender, EventArgs e)
+        {
+            abrirRespuestaAbierta();
+        }
+
+        private void verdaderoFalso_Click(object sender, EventArgs e)
+        {
+            abrirVerdaderoFalso();
+        }
+
+        private void multiopcion_Click(object sender, EventArgs e)
+        {
+            abrirMultiopcion();
+        }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }

@@ -52,6 +52,8 @@ namespace MyQuizifyGUI.Forms
             this.multiopcion = new System.Windows.Forms.Button();
             this.verdaderoFalso = new System.Windows.Forms.Button();
             this.respuestaAbierta = new System.Windows.Forms.Button();
+            this.comboBoxDificultad = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +86,8 @@ namespace MyQuizifyGUI.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Controls.Add(this.comboBoxDificultad);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.botonAñadirPregunta);
             this.panel1.Controls.Add(this.textBoxPeso);
             this.panel1.Controls.Add(this.label9);
@@ -216,7 +220,7 @@ namespace MyQuizifyGUI.Forms
             // comboBoxCursos
             // 
             this.comboBoxCursos.FormattingEnabled = true;
-            this.comboBoxCursos.Location = new System.Drawing.Point(112, 143);
+            this.comboBoxCursos.Location = new System.Drawing.Point(111, 111);
             this.comboBoxCursos.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxCursos.Name = "comboBoxCursos";
             this.comboBoxCursos.Size = new System.Drawing.Size(96, 24);
@@ -225,7 +229,7 @@ namespace MyQuizifyGUI.Forms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 146);
+            this.label3.Location = new System.Drawing.Point(34, 114);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 17);
@@ -304,6 +308,31 @@ namespace MyQuizifyGUI.Forms
             this.respuestaAbierta.UseVisualStyleBackColor = false;
             this.respuestaAbierta.Click += new System.EventHandler(this.respuestaAbierta_Click);
             // 
+            // comboBoxDificultad
+            // 
+            this.comboBoxDificultad.FormattingEnabled = true;
+            this.comboBoxDificultad.Items.AddRange(new object[] {
+            "Baja",
+            "Media",
+            "Alta"});
+            this.comboBoxDificultad.Location = new System.Drawing.Point(112, 143);
+            this.comboBoxDificultad.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxDificultad.Name = "comboBoxDificultad";
+            this.comboBoxDificultad.Size = new System.Drawing.Size(96, 24);
+            this.comboBoxDificultad.TabIndex = 20;
+            this.comboBoxDificultad.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(36, 146);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 17);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Dificultad:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
             // CreacionDeQuizes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -351,5 +380,7 @@ namespace MyQuizifyGUI.Forms
         private System.Windows.Forms.Button multiopcion;
         private System.Windows.Forms.Button verdaderoFalso;
         private System.Windows.Forms.Button respuestaAbierta;
+        private System.Windows.Forms.ComboBox comboBoxDificultad;
+        private System.Windows.Forms.Label label8;
     }
 }

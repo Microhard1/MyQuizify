@@ -39,5 +39,13 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
 
         public abstract Respuesta crearRespuesta(string enunciado);
 
+        public override string ToString()
+        {
+            return "id: " + id + "\n" + 
+                "Enunciado: " + enunciado + "\n" + 
+                "Explicacion: " + explicacion + "\n" 
+                + "puntuacion: " + puntuacion + "\n" 
+                + "imagen: " + imagen + "\n";
+        }
     }   
 }

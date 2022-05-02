@@ -68,6 +68,7 @@ namespace MyQuizifyGUI.Forms
             this.inputImagen.Size = new System.Drawing.Size(271, 172);
             this.inputImagen.TabIndex = 5;
             this.inputImagen.TabStop = false;
+            this.inputImagen.Click += new System.EventHandler(this.inputImagen_Click);
             // 
             // panelVerdadero
             // 

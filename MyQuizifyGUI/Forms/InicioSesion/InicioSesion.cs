@@ -184,20 +184,20 @@ namespace MyQuizifyGUI
             Pregunta p2 = services.getPreguntaById("Pregunta2_" + q.nombreQuiz, q.nombreQuiz);
             Pregunta p3 = services.getPreguntaById("Pregunta3_" + q.nombreQuiz, q.nombreQuiz);
             Pregunta p4 = services.getPreguntaById("Pregunta4_"+ q.nombreQuiz, q.nombreQuiz);
-            p2.añadirRespuesta("Un lenguaje que trabaja con Objetos");
-            p2.añadirRespuesta("C#");
-            p2.añadirRespuesta("HTML Y CSS");
-            p2.añadirRespuesta("Ninguna de las respuestas es correcta");
+            //p2.añadirRespuesta("Un lenguaje que trabaja con Objetos");
+            //p2.añadirRespuesta("C#");
+            //p2.añadirRespuesta("HTML Y CSS");
+            //p2.añadirRespuesta("Ninguna de las respuestas es correcta");
 
-            p3.añadirRespuesta("Una clase como las demás");
-            p3.añadirRespuesta("Una clase padre");
-            p3.añadirRespuesta("Una interfaz");
-            p3.añadirRespuesta("Una clase de la cual aquellos que hereden de esta deben hacer @override de sus emtodos abstractos");
+            //p3.añadirRespuesta("Una clase como las demás");
+            //p3.añadirRespuesta("Una clase padre");
+            //p3.añadirRespuesta("Una interfaz");
+            //p3.añadirRespuesta("Una clase de la cual aquellos que hereden de esta deben hacer @override de sus emtodos abstractos");
 
-            p4.añadirRespuesta("1");
-            p4.añadirRespuesta("3");
-            p4.añadirRespuesta("5");
-            p4.añadirRespuesta("Ninguno");
+            //p4.añadirRespuesta("1");
+            //p4.añadirRespuesta("3");
+            //p4.añadirRespuesta("5");
+            //p4.añadirRespuesta("Ninguno");
         }
     }
 }
