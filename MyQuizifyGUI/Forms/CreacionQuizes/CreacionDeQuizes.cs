@@ -12,6 +12,8 @@ using MyQuizifyLib.Persistencia;
 using MyQuizifyLib.BussinessLogic.Servicios;
 using FireSharp.Response;
 using MyQuizifyLib.BussinessLogic.Entidades;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace MyQuizifyGUI.Forms
 {
@@ -21,6 +23,13 @@ namespace MyQuizifyGUI.Forms
         private FormVF formVF;
         private FormAbierto formAb; 
         ConexionBD cf = ConexionBD.getInstancia();
+        int numeroDePregunta = 0;
+        Form formularioActual = null;
+        List<Pregunta> preguntas = new List<Pregunta>();
+        string tipoDeQuiz = "";
+        MyQuizifyServices servicio = new MyQuizifyServices();
+
+        Quiz quizActual;
         public CreacionDeQuizes()
         {
             formVF = new FormVF();
@@ -31,8 +40,7 @@ namespace MyQuizifyGUI.Forms
 
         private void CreacionDeQuizes_Load(object sender, EventArgs e)
         {
-            panelQuizes.Controls.Clear();
-            comboBoxTipos.Items.Clear();
+            panelQuizes.Controls.Clear();         
             comboBoxCursos.Items.Clear();
             FirebaseResponse r = cf.client.Get(@"Cursos/");
             Dictionary<string, Curso> cursos = new Dictionary<string, Curso>();
@@ -42,52 +50,437 @@ namespace MyQuizifyGUI.Forms
                 comboBoxCursos.Items.Add(item.Key);
             }
 
-            comboBoxTipos.Items.Add("MultiOpcion");
-            comboBoxTipos.Items.Add("Respuesta Abierta");
-            comboBoxTipos.Items.Add("Verdadero/Falso");
 
             formVF.TopLevel = false;
             formMO.TopLevel = false;
             formAb.TopLevel = false;
-            panelQuizes.Controls.Add(formMO);
-            formMO.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             int pesoQuiz = Int32.Parse(textBoxPeso.Text);
+            string nombreQuiz = textBoxNombreQuiz.Text;
+            
+            string dificultad = comboBoxDificultad.Text;
+            int horas = Int32.Parse(textBoxHoras.Text) * 60;
+            int duracion = horas + Int32.Parse(textBoxMin.Text);
             if (pesoQuiz < 5 || pesoQuiz > 65)
             {
                 MessageBox.Show("El peso del quiz debe estar entre 5% y 65%");
             }
-        }
 
-        private void comboBoxTipos_SelectedIndexChanged(object sender, EventArgs e)
+            if (tipoDeQuiz == "MultiOpcion")
+            {
+                quizActual = new QuizMO(nombreQuiz,servicio.getInstructorById(cf.usuarioConectado.username),
+                    duracion,pesoQuiz,dificultad,dateTimePickerInicio.Value, dateTimePickerFin.Value,"En preparacion",servicio.getCursoById(comboBoxCursos.Text));
+            }
+            else if (tipoDeQuiz == "Verdadero/Falso")
+            {
+                quizActual = new QuizVF(nombreQuiz, servicio.getInstructorById(cf.usuarioConectado.username),
+                   duracion, pesoQuiz, dificultad, dateTimePickerInicio.Value, dateTimePickerFin.Value, "En preparacion", servicio.getCursoById(comboBoxCursos.Text));
+                AñadirPreguntas(quizActual);
+            }
+            else if (tipoDeQuiz == "Respuesta Abierta")
+            {
+                quizActual = new QuizMO(nombreQuiz, servicio.getInstructorById(cf.usuarioConectado.username),
+                   duracion, pesoQuiz, dificultad, dateTimePickerInicio.Value, dateTimePickerFin.Value, "En preparacion", servicio.getCursoById(comboBoxCursos.Text));
+
+            }
+
+        }
+        private void AñadirPreguntas(Quiz q)
         {
-            string tipo = comboBoxTipos.SelectedItem.ToString();
-            if(tipo == "MultiOpcion") 
-            {
-                
-                
-                panelQuizes.Controls.Clear();
-                panelQuizes.Controls.Add(formMO);
-                formMO.Show();
-            }
-            if (tipo == "Verdadero/Falso")
-            {
-                panelQuizes.Controls.Clear();
-                panelQuizes.Controls.Add(formVF);
-                formVF.Show();
-            }
-            if (tipo == "Respuesta Abierta")
-            {
-                panelQuizes.Controls.Clear();
-                panelQuizes.Controls.Add(formAb);
-                formAb.Show();
-            }
+
         }
 
         private void panelQuizes_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void botonAñadirPregunta_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            if (tipoDeQuiz == "MultiOpcion")
+            {
+                CrearPreguntaTipoTest();
+                panelQuizes.Controls.Clear();
+                abrirMultiopcion();
+            }
+            else if (tipoDeQuiz == "Verdadero/Falso")
+            {
+                CrearPreguntaVerdaderoFalso();
+                panelQuizes.Controls.Clear();
+                abrirVerdaderoFalso();
+            }
+            else if (tipoDeQuiz == "Respuesta Abierta")
+            {
+                CrearPreguntaRespuestaAbierta();
+                panelQuizes.Controls.Clear();
+                abrirRespuestaAbierta();
+            }
+            numeroDePregunta++;
+            Cursor.Current = Cursors.Default;
+
+        }
+       
+        public void CrearPreguntaVerdaderoFalso()
+        {
+            ControlCollection objetosDelFormulario = (ControlCollection)formularioActual.Controls;
+            string enunciado = "";
+            bool verdaderoOFalso = false;
+
+            string imagen="";
+            double puntuacion=0;
+            string explicacion="";
+
+            foreach (Control c in objetosDelFormulario)
+            {
+                if (c.GetType() == typeof(RadioButton))
+                {
+                    RadioButton aux = (RadioButton)c;
+                    if (aux.Name == "botonFalso")
+                    {
+                        if (aux.Checked)
+                        {
+                            verdaderoOFalso = false;
+                        }
+                        else
+                        {
+                            verdaderoOFalso = true;
+                        }
+                    }
+                }
+                else if (c.GetType() == typeof(TextBox))
+                {
+                    if (c.Name == "textBoxEnunciado")
+                    {
+                        enunciado = ((TextBox)c).Text;
+                    }
+
+                }
+                else if(c is Panel)
+                {
+                    foreach (Control p in c.Controls)
+                    {
+                        if (p.GetType() == typeof(TextBox))
+                        {
+                             if (p.Name == "textBoxPuntuacion")
+                            {
+                                puntuacion = Double.Parse(((TextBox)p).Text);
+                            }
+                            else if (p.Name == "textboxExplicacion")
+                            {
+                                explicacion = ((TextBox)p).Text;
+                            }
+                        }
+                        }
+                }
+                else if (c.GetType() == typeof(PictureBox))
+                {
+                    
+                    imagen = convertirImagen((PictureBox)c);
+                }
+            }
+
+            string id = textBoxNombreQuiz.Text + "_" + numeroDePregunta; 
+
+            Pregunta pregunta = new PreguntaVF(id,enunciado,imagen,puntuacion,explicacion);
+            Respuesta r = pregunta.crearRespuesta(verdaderoOFalso.ToString());
+            r.inicialize(verdaderoOFalso);
+            pregunta.añadirRespuesta(r);
+
+            preguntas.Add(pregunta);
+
+            MessageBox.Show("Se ha insertado una pregunta: " + pregunta.ToString()) ;
+        }
+
+        public void CrearPreguntaTipoTest()
+        {
+            List<TextBox> listaRespuestas = getListaRespuestas();
+            ControlCollection objetosDelFormulario = (ControlCollection)panelQuizes.Controls;
+            List<Respuesta> respuestas = new List<Respuesta>();
+            string enunciado = "";
+
+            Respuesta resp;
+            
+            string imagen = "";
+            double puntuacion = 0;
+            string explicacion = "";
+            Pregunta pregunta;
+            foreach (Control c in objetosDelFormulario)
+            {
+                if (c.GetType() == typeof(CheckBox))
+                {
+
+                    CheckBox aux = (CheckBox)c;
+
+
+                    if (aux.Name == "ckeckPregunta1")
+                    {
+                        foreach (TextBox t in listaRespuestas)
+                        {
+                            if (t.Name == "textPregunta1")
+                            {
+                                resp = new RespuestaMO(t.Text);
+                                if (aux.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
+                                respuestas.Add(resp);
+                            }
+                        }
+                    }
+                    else if (aux.Name == "ckeckPregunta2")
+                    {
+                        foreach (TextBox t in listaRespuestas)
+                        {
+                            if (t.Name == "textPregunta2")
+                            {
+                                resp = new RespuestaMO(t.Text);
+                                if (aux.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
+                                respuestas.Add(resp);
+
+                            }
+
+                        }
+                    }
+                    else if (aux.Name == "ckeckPregunta3")
+                    {
+                        foreach (TextBox t in listaRespuestas)
+                        {
+                            if (t.Name == "textPregunta3")
+                            {
+                                resp = new RespuestaMO(t.Text);
+                                if (aux.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
+                                respuestas.Add(resp);
+
+                            }
+                        }
+                    }
+                    else if (aux.Name == "ckeckPregunta4")
+                    {
+                        foreach (TextBox t in listaRespuestas)
+                        {
+                            if (t.Name == "textPregunta4")
+                            {
+                                resp = new RespuestaMO(t.Text);
+                                if (aux.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
+                                respuestas.Add(resp);
+                            }
+                        }
+                    }
+                }
+                else if (c.GetType() == typeof(TextBox))
+                {
+                    if (c.Name == "enunciadoTipoTest")
+                    {
+                        enunciado = ((TextBox)c).Text;
+                    }
+
+                }
+                else if (c is Panel)
+                {
+                    foreach (Control p in c.Controls)
+                    {
+                        if (p.GetType() == typeof(TextBox))
+                        {
+                            if (p.Name == "textBoxPuntuacion")
+                            {
+                                puntuacion = Double.Parse(((TextBox)p).Text);
+                            }
+                            else if (p.Name == "textboxExplicacion")
+                            {
+                                explicacion = ((TextBox)p).Text;
+                            }
+                        }
+                    }
+                }
+                else if (c.GetType() == typeof(PictureBox))
+                {
+                    imagen = convertirImagen((PictureBox)c);
+                }
+
+            }
+            string id = textBoxNombreQuiz.Text + "_" + numeroDePregunta;
+
+            pregunta = new PreguntaVF(enunciado, id, imagen, puntuacion, explicacion);
+            preguntas.Add(pregunta);
+
+            MessageBox.Show("Se ha insertado una pregunta: " + pregunta.ToString());
+        }
+
+        public void CrearPreguntaRespuestaAbierta()
+        {
+            ControlCollection objetosDelFormulario = (ControlCollection)formularioActual.Controls;
+            string enunciado = "";
+
+            string imagen = "";
+            double puntuacion = 0;
+            string explicacion = "";
+
+            foreach (Control c in objetosDelFormulario)
+            {
+                if (c.GetType() == typeof(TextBox))
+                {
+                    if (c.Name == "textboxEnunciado")
+                    {
+                        enunciado = ((TextBox)c).Text;
+                    }
+
+                }
+                else if (c is Panel)
+                {
+                    foreach (Control p in c.Controls)
+                    {
+                        if (p.GetType() == typeof(TextBox))
+                        {
+                            if (p.Name == "textBoxPuntuacion")
+                            {
+                                puntuacion = Double.Parse(((TextBox)p).Text);
+                            }
+                            else if (p.Name == "textboxExplicacion")
+                            {
+                                explicacion = ((TextBox)p).Text;
+                            }
+                        }
+                    }
+                }
+                else if (c.GetType() == typeof(PictureBox))
+                {
+                    imagen = convertirImagen((PictureBox)c);
+                }
+            }
+
+            string id = textBoxNombreQuiz.Text + "_" + numeroDePregunta;
+
+            Pregunta pregunta = new PreguntaVF(enunciado, id, imagen, puntuacion, explicacion);
+            Respuesta r = pregunta.crearRespuesta(enunciado);
+            pregunta.añadirRespuesta(r);
+
+            preguntas.Add(pregunta);
+
+            MessageBox.Show("Se ha insertado una pregunta: " + pregunta.ToString()) ;
+        }
+        private List<TextBox> getListaRespuestas()
+        {
+            List<TextBox> respuestas = new List<TextBox>();
+            ControlCollection objetosDelFormulario = (ControlCollection)panelQuizes.Controls;
+            foreach (Control c in objetosDelFormulario)
+            {
+                if (c.GetType() == typeof(TextBox))
+                {
+                    TextBox aux = (TextBox)c;
+                    respuestas.Add(aux);
+                }
+            }
+
+            return respuestas;
+        }
+
+        public string convertirImagen(PictureBox picture)
+        {
+            if (picture.Image == null) return "";
+            string imagen = "";
+            MemoryStream ms = new MemoryStream();
+            picture.Image.Save(ms,ImageFormat.Jpeg);
+            byte[] aux = ms.GetBuffer();
+
+            imagen = Convert.ToBase64String(aux);
+            
+            return imagen;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        public void abrirRespuestaAbierta()
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            tipoDeQuiz = "Respuesta Abierta";
+            multiopcion.Visible = false;
+            multiopcion.Dock = DockStyle.None;
+            verdaderoFalso.Visible = false;
+            verdaderoFalso.Dock = DockStyle.None;
+            respuestaAbierta.Visible = false;
+            respuestaAbierta.Dock = DockStyle.None;
+
+
+            panelQuizes.Controls.Clear();
+            panelQuizes.Dock = DockStyle.Fill;
+            panelQuizes.Controls.Add(formAb);
+            formularioActual = formAb;
+            formAb.Show();
+
+            Cursor.Current = Cursors.Default;
+        }
+        public void abrirVerdaderoFalso()
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            tipoDeQuiz = "Verdadero/Falso";
+            multiopcion.Visible = false;
+            multiopcion.Dock = DockStyle.None;
+            verdaderoFalso.Visible = false;
+            verdaderoFalso.Dock = DockStyle.None;
+            respuestaAbierta.Visible = false;
+            respuestaAbierta.Dock = DockStyle.None;
+
+            panelQuizes.Controls.Clear();
+            panelQuizes.Dock = DockStyle.Fill;
+            panelQuizes.Controls.Add(formVF);
+            formularioActual = formVF;
+            formVF.Show();
+            Cursor.Current = Cursors.Default;
+        }
+        public void abrirMultiopcion()
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            tipoDeQuiz = "MultiOpcion";
+            multiopcion.Visible = false;
+            multiopcion.Dock = DockStyle.None;
+            verdaderoFalso.Visible = false;
+            verdaderoFalso.Dock = DockStyle.None;
+            respuestaAbierta.Visible = false;
+            respuestaAbierta.Dock = DockStyle.None;
+
+
+            panelQuizes.Controls.Clear();
+            panelQuizes.Dock = DockStyle.Fill;
+            panelQuizes.Controls.Add(formMO);
+            formularioActual = formMO;
+            formMO.Show();
+            Cursor.Current = Cursors.Default;
+        }
+        private void respuestaAbierta_Click(object sender, EventArgs e)
+        {
+            abrirRespuestaAbierta();
+        }
+
+        private void verdaderoFalso_Click(object sender, EventArgs e)
+        {
+            abrirVerdaderoFalso();
+        }
+
+        private void multiopcion_Click(object sender, EventArgs e)
+        {
+            abrirMultiopcion();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }

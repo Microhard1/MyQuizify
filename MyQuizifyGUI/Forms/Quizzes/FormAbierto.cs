@@ -15,9 +15,28 @@ namespace MyQuizifyGUI.Forms
         public FormAbierto()
         {
             InitializeComponent();
+            inputImagen.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void FormAbierto_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            // image filters  
+            open.Filter = "Image Files(*.jpeg;)|*.jpeg;";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                // display image in picture box  
+                inputImagen.Image = new Bitmap(open.FileName);
+
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

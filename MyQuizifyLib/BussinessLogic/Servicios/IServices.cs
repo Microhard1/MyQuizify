@@ -21,6 +21,5 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
         Dictionary<string, Bateria> obtenerBaterias();
         List<Quiz> listaQuizes();
         List<Pregunta> preguntasDeUnQuiz(string nombreQuiz);
-
     }
 }

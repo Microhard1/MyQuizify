@@ -31,13 +31,21 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
 
         
 
-        public void añadirRespuesta(string enunciado)
+        public void añadirRespuesta(Respuesta r)
         {
-            Respuesta r = crearRespuesta(enunciado);
             respuestas.Add(r);
             FirebaseResponse addRespuesta = cf.client.Set("Respuestas/" + this.id, respuestas);
         }
 
         public abstract Respuesta crearRespuesta(string enunciado);
+
+        public override string ToString()
+        {
+            return "id: " + id + "\n" + 
+                "Enunciado: " + enunciado + "\n" + 
+                "Explicacion: " + explicacion + "\n" 
+                + "puntuacion: " + puntuacion + "\n" 
+                + "imagen: " + imagen + "\n";
+        }
     }   
 }
