@@ -257,6 +257,20 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
             b = bateria.ResultAs<BateriaMultiOpcion>();
             return b;
         }
+        public BateriaAbierta getBateriaAById(string idBateria)
+        {
+            BateriaAbierta b;
+            FirebaseResponse bateria = cf.client.Get("Baterias/Abiertas/" + idBateria);
+            b = bateria.ResultAs<BateriaAbierta>();
+            return b;
+        }
+        public BateriaVerdaderoFalso getBateriaVFById(string idBateria)
+        {
+            BateriaVerdaderoFalso b;
+            FirebaseResponse bateria = cf.client.Get("Baterias/VerdaderoFalso/" + idBateria);
+            b = bateria.ResultAs<BateriaVerdaderoFalso>();
+            return b;
+        }
 
 
 
