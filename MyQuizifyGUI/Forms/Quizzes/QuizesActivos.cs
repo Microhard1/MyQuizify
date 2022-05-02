@@ -282,5 +282,33 @@ namespace MyQuizifyGUI
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int count = 0;
+            Quiz q = null;
+            for (int i = 0; i < dataGridQuizes.Rows.Count - 1; i++)
+            {
+                bool isCellChecked = (bool)dataGridQuizes.Rows[i].Cells[0].Value;
+                if (isCellChecked == true)
+                {
+                    count++;
+                    q = services.getQuizById(dataGridQuizes.Rows[i].Cells[1].Value.ToString());
+                    q.clonarQuiz(q);
+                }
+            }
+            if (count == 0)
+            {
+                MessageBox.Show("Para clonar un quiz primero seleccione uno o varios");
+            }
+            else if (count == 1)
+            {
+                MessageBox.Show("Se ha clonado " + count + " Quiz correctamente");
+            }
+            else
+            {
+                MessageBox.Show("Se han clonado " + count + " Quizes correctamente");
+            }
+        }
     }
 }

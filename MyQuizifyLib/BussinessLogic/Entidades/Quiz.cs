@@ -91,5 +91,26 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
             Random rnd = new Random();
             q.preguntas.OrderBy(item => rnd.Next());
         }
+        public Quiz clonarQuiz(Quiz q) 
+        {
+            if (this.GetType().Name == "QuizMO")
+            {
+                QuizMO quiz = new QuizMO(q.nombreQuiz, q.creadoPor, q.duracion, q.peso, q.dificultad, q.fechaDeInicio, q.fechaFin, q.estado, q.asignatura);
+                quiz.preguntas = q.preguntas;
+                return quiz;
+            }
+            else if (this.GetType().Name == "QuizVF")
+            {
+                QuizVF quiz = new QuizVF(q.nombreQuiz, q.creadoPor, q.duracion, q.peso, q.dificultad, q.fechaDeInicio, q.fechaFin, q.estado, q.asignatura);
+                quiz.preguntas = q.preguntas;
+                return quiz;
+            }
+            else 
+            {
+                QuizPA quiz = new QuizPA(q.nombreQuiz, q.creadoPor, q.duracion, q.peso, q.dificultad, q.fechaDeInicio, q.fechaFin, q.estado, q.asignatura);
+                quiz.preguntas = q.preguntas;
+                return quiz;
+            }
+        }
     }
 }
