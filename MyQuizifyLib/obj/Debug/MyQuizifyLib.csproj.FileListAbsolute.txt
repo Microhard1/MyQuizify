@@ -66,8 +66,11 @@ C:\Users\Hugo\Source\Repos\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.csproj.
 C:\Users\Hugo\Source\Repos\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.dll
 C:\Users\Hugo\Source\Repos\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.csproj.AssemblyReference.cache
 =======
 >>>>>>> dfb136d49427070422d659d70a11d20629f6bdff
+=======
+>>>>>>> parent of c8995d0 (baterias arregladas)
 =======
 >>>>>>> parent of c8995d0 (baterias arregladas)

@@ -23,7 +23,10 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
         List<Pregunta> preguntasDeUnQuiz(string nombreQuiz);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         BateriaMultiOpcion getBateriaMOById(string nombreBat);
+=======
+>>>>>>> parent of c8995d0 (baterias arregladas)
 =======
 >>>>>>> parent of c8995d0 (baterias arregladas)
 

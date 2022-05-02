@@ -33,11 +33,14 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
 
         public void añadirRespuesta(string enunciado)
         {
+<<<<<<< HEAD
 
             string tipo = "";
             if (this.GetType().Name == "PreguntaA") tipo = "RespuestasMultiOpcion";
             if (this.GetType().Name == "PreguntaMO") tipo = "RespuestasAbiertas";
             if (this.GetType().Name == "PreguntaVF") tipo = "RespuestasVerdaderoFalso";
+=======
+>>>>>>> parent of c8995d0 (baterias arregladas)
             Respuesta r = crearRespuesta(enunciado);
 
             respuestas.Add(r);

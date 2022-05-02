@@ -178,36 +178,12 @@ namespace MyQuizifyGUI
 
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        
-=======
-=======
->>>>>>> parent of c8995d0 (baterias arregladas)
         private void button1_Click_1(object sender, EventArgs e)
         {
             Quiz q = services.getQuizById("Quiz_MO_1");
             Pregunta p2 = services.getPreguntaById("Pregunta2_" + q.nombreQuiz, q.nombreQuiz);
             Pregunta p3 = services.getPreguntaById("Pregunta3_" + q.nombreQuiz, q.nombreQuiz);
             Pregunta p4 = services.getPreguntaById("Pregunta4_"+ q.nombreQuiz, q.nombreQuiz);
-<<<<<<< HEAD
-            //p2.añadirRespuesta("Un lenguaje que trabaja con Objetos");
-            //p2.añadirRespuesta("C#");
-            //p2.añadirRespuesta("HTML Y CSS");
-            //p2.añadirRespuesta("Ninguna de las respuestas es correcta");
-
-            //p3.añadirRespuesta("Una clase como las demás");
-            //p3.añadirRespuesta("Una clase padre");
-            //p3.añadirRespuesta("Una interfaz");
-            //p3.añadirRespuesta("Una clase de la cual aquellos que hereden de esta deben hacer @override de sus emtodos abstractos");
-
-            //p4.añadirRespuesta("1");
-            //p4.añadirRespuesta("3");
-            //p4.añadirRespuesta("5");
-            //p4.añadirRespuesta("Ninguno");
-        }
->>>>>>> dfb136d49427070422d659d70a11d20629f6bdff
-=======
             p2.añadirRespuesta("Un lenguaje que trabaja con Objetos");
             p2.añadirRespuesta("C#");
             p2.añadirRespuesta("HTML Y CSS");
@@ -223,6 +199,5 @@ namespace MyQuizifyGUI
             p4.añadirRespuesta("5");
             p4.añadirRespuesta("Ninguno");
         }
->>>>>>> parent of c8995d0 (baterias arregladas)
     }
 }
