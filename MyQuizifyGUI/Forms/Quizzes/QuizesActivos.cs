@@ -14,19 +14,21 @@ using FireSharp.Config;
 using MyQuizifyLib.BussinessLogic.Entidades;
 using Newtonsoft.Json;
 using MyQuizifyLib.BussinessLogic.Servicios;
-using MyQuizifyGUI.Forms;
+using MyQuizifyGUI.Forms.Quizzes;
 
 namespace MyQuizifyGUI
 {
     public partial class QuizesActivos : Form
     {
         private CrearQuiz q;
+        private Clonacion_de_Quizes clonacionForm;
         ConexionBD cf = ConexionBD.getInstancia();
         MyQuizifyServices services = new MyQuizifyServices();
         public QuizesActivos()
         {
             InitializeComponent();
             q = new CrearQuiz();
+            clonacionForm = new Clonacion_de_Quizes();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -285,30 +287,7 @@ namespace MyQuizifyGUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int count = 0;
-            Quiz q = null;
-            for (int i = 0; i < dataGridQuizes.Rows.Count - 1; i++)
-            {
-                bool isCellChecked = (bool)dataGridQuizes.Rows[i].Cells[0].Value;
-                if (isCellChecked == true)
-                {
-                    count++;
-                    q = services.getQuizById(dataGridQuizes.Rows[i].Cells[1].Value.ToString());
-                    q.clonarQuiz(q);
-                }
-            }
-            if (count == 0)
-            {
-                MessageBox.Show("Para clonar un quiz primero seleccione uno o varios");
-            }
-            else if (count == 1)
-            {
-                MessageBox.Show("Se ha clonado " + count + " Quiz correctamente");
-            }
-            else
-            {
-                MessageBox.Show("Se han clonado " + count + " Quizes correctamente");
-            }
+            clonacionForm.ShowDialog();
         }
     }
 }
