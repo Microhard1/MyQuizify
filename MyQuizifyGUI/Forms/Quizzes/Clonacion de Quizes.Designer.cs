@@ -41,9 +41,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(700, 123);
+            this.label2.Location = new System.Drawing.Point(1050, 189);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(80, 20);
             this.label2.TabIndex = 14;
             this.label2.Text = "Filtrar por:";
             // 
@@ -57,9 +58,10 @@
             "Terminado",
             "Completo",
             "Resultados publicados"});
-            this.comboBoxEstados.Location = new System.Drawing.Point(764, 120);
+            this.comboBoxEstados.Location = new System.Drawing.Point(1146, 185);
+            this.comboBoxEstados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxEstados.Name = "comboBoxEstados";
-            this.comboBoxEstados.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEstados.Size = new System.Drawing.Size(180, 28);
             this.comboBoxEstados.TabIndex = 13;
             // 
             // label1
@@ -67,11 +69,12 @@
             this.label1.AccessibleName = "labelQuizesActivos";
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 56);
+            this.label1.Location = new System.Drawing.Point(60, 86);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 20);
+            this.label1.Size = new System.Drawing.Size(443, 29);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Quizes de otros instructores";
+            this.label1.Text = "Quizes disponibles de otros instructores";
             // 
             // dataGridQuizes
             // 
@@ -79,10 +82,11 @@
             this.dataGridQuizes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridQuizes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Selecciona});
-            this.dataGridQuizes.Location = new System.Drawing.Point(44, 176);
+            this.dataGridQuizes.Location = new System.Drawing.Point(66, 271);
+            this.dataGridQuizes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridQuizes.Name = "dataGridQuizes";
             this.dataGridQuizes.RowHeadersWidth = 51;
-            this.dataGridQuizes.Size = new System.Drawing.Size(841, 316);
+            this.dataGridQuizes.Size = new System.Drawing.Size(1262, 486);
             this.dataGridQuizes.TabIndex = 11;
             // 
             // Selecciona
@@ -95,9 +99,10 @@
             // button3
             // 
             this.button3.AccessibleName = "botonCrearQuiz";
-            this.button3.Location = new System.Drawing.Point(791, 504);
+            this.button3.Location = new System.Drawing.Point(1186, 775);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 48);
+            this.button3.Size = new System.Drawing.Size(141, 74);
             this.button3.TabIndex = 15;
             this.button3.Text = "Clonar Quizes";
             this.button3.UseVisualStyleBackColor = true;
@@ -106,9 +111,10 @@
             // btbVolver
             // 
             this.btbVolver.AccessibleName = "botonCrearQuiz";
-            this.btbVolver.Location = new System.Drawing.Point(12, 504);
+            this.btbVolver.Location = new System.Drawing.Point(18, 775);
+            this.btbVolver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btbVolver.Name = "btbVolver";
-            this.btbVolver.Size = new System.Drawing.Size(94, 48);
+            this.btbVolver.Size = new System.Drawing.Size(141, 74);
             this.btbVolver.TabIndex = 16;
             this.btbVolver.Text = "Volver";
             this.btbVolver.UseVisualStyleBackColor = true;
@@ -116,15 +122,16 @@
             // 
             // Clonacion_de_Quizes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 564);
+            this.ClientSize = new System.Drawing.Size(1388, 868);
             this.Controls.Add(this.btbVolver);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxEstados);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridQuizes);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Clonacion_de_Quizes";
             this.Text = "Clonacion_de_Quizes";
             this.Load += new System.EventHandler(this.Clonacion_de_Quizes_Load);

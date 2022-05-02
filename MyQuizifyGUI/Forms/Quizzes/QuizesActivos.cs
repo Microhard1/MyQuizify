@@ -250,8 +250,6 @@ namespace MyQuizifyGUI
                     }
                 }
             }
-
-            
         }
 
         public void eliminarDatosGrid()
@@ -285,7 +283,12 @@ namespace MyQuizifyGUI
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btbEstadisticasQuiz_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btbClonarQuiz_Click(object sender, EventArgs e)
         {
             clonacionForm.ShowDialog();
         }

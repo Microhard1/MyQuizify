@@ -14,5 +14,9 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
 
 
         }
+        public override void inicialize(bool correcta)
+        {
+            //No requiere mas argumentos
+        }
     }
 }

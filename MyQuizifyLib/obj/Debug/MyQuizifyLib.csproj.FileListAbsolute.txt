@@ -20,6 +20,7 @@ C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyLib\obj
 C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.csproj.CopyComplete
 C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.dll
 C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.pdb
+<<<<<<< HEAD
 C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.csproj.App.config
 C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.csproj.CoreCompileInputs.cache
 C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.dll
@@ -64,3 +65,5 @@ C:\Users\Hugo\Source\Repos\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.csproj.
 C:\Users\Hugo\Source\Repos\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.dll
 C:\Users\Hugo\Source\Repos\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.pdb
 C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.csproj.AssemblyReference.cache
+=======
+>>>>>>> dfb136d49427070422d659d70a11d20629f6bdff
