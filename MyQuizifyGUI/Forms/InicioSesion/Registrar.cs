@@ -106,12 +106,13 @@ namespace MyQuizifyGUI.Forms
         {
             if (botonAlumno.Checked)
             {
-                if (services.getAlumnoById(nombreUser) != null) return false;
+                Alumno aux = services.getAlumnoById(nombreUser);
+                if ( aux == null) return false;
                 else return true;
             }
             else
             {
-                if (services.getInstructorById(nombreUser) != null) return false;
+                if (services.getInstructorById(nombreUser) == null) return false;
                 else return true;
             }
         }

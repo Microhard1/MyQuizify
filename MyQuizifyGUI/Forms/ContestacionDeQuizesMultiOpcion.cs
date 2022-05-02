@@ -66,5 +66,10 @@ namespace MyQuizifyGUI.Forms
             labelP3.Text = p.respuestas.ToArray<Respuesta>()[2].enunciado;
             labelP4.Text = p.respuestas.ToArray<Respuesta>()[3].enunciado;
         }
+
+        private void labelP4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

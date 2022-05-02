@@ -47,10 +47,10 @@ namespace MyQuizifyGUI.Forms
             // labelEnunciado
             // 
             this.labelEnunciado.AutoSize = true;
-            this.labelEnunciado.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEnunciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEnunciado.Location = new System.Drawing.Point(73, 76);
             this.labelEnunciado.Name = "labelEnunciado";
-            this.labelEnunciado.Size = new System.Drawing.Size(193, 36);
+            this.labelEnunciado.Size = new System.Drawing.Size(189, 33);
             this.labelEnunciado.TabIndex = 0;
             this.labelEnunciado.Text = "ENUNCIADO";
             // 
@@ -78,6 +78,7 @@ namespace MyQuizifyGUI.Forms
             this.labelP4.Size = new System.Drawing.Size(43, 13);
             this.labelP4.TabIndex = 7;
             this.labelP4.Text = "textoP4";
+            this.labelP4.Click += new System.EventHandler(this.labelP4_Click);
             // 
             // labelP3
             // 

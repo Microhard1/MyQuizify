@@ -82,7 +82,7 @@ namespace MyQuizifyGUI.Forms
             }
             else if (tipoDeQuiz == "Respuesta Abierta")
             {
-                quizActual = new QuizMO(nombreQuiz, servicio.getInstructorById(cf.usuarioConectado.username),
+                quizActual = new QuizPA(nombreQuiz, servicio.getInstructorById(cf.usuarioConectado.username),
                    duracion, pesoQuiz, dificultad, dateTimePickerInicio.Value, dateTimePickerFin.Value, "En preparacion", servicio.getCursoById(comboBoxCursos.Text));
 
             }
@@ -90,7 +90,10 @@ namespace MyQuizifyGUI.Forms
         }
         private void AñadirPreguntas(Quiz q)
         {
-
+            foreach(Pregunta p in preguntas)
+            {
+                q.añadirPregunta(p.id,p.enunciado,p.imagen, p.puntuacion, p.explicacion);
+            }
         }
 
         private void panelQuizes_Paint(object sender, PaintEventArgs e)
@@ -141,22 +144,8 @@ namespace MyQuizifyGUI.Forms
 
             foreach (Control c in objetosDelFormulario)
             {
-                if (c.GetType() == typeof(RadioButton))
-                {
-                    RadioButton aux = (RadioButton)c;
-                    if (aux.Name == "botonFalso")
-                    {
-                        if (aux.Checked)
-                        {
-                            verdaderoOFalso = false;
-                        }
-                        else
-                        {
-                            verdaderoOFalso = true;
-                        }
-                    }
-                }
-                else if (c.GetType() == typeof(TextBox))
+                
+                if (c.GetType() == typeof(TextBox))
                 {
                     if (c.Name == "textBoxEnunciado")
                     {
@@ -179,7 +168,22 @@ namespace MyQuizifyGUI.Forms
                                 explicacion = ((TextBox)p).Text;
                             }
                         }
+                        else if (c.GetType() == typeof(RadioButton))
+                        {
+                            RadioButton aux = (RadioButton)c;
+                            if (aux.Name == "botonFalso")
+                            {
+                                if (aux.Checked)
+                                {
+                                    verdaderoOFalso = false;
+                                }
+                                else
+                                {
+                                    verdaderoOFalso = true;
+                                }
+                            }
                         }
+                    }
                 }
                 else if (c.GetType() == typeof(PictureBox))
                 {
@@ -191,9 +195,12 @@ namespace MyQuizifyGUI.Forms
             string id = textBoxNombreQuiz.Text + "_" + numeroDePregunta; 
 
             Pregunta pregunta = new PreguntaVF(id,enunciado,imagen,puntuacion,explicacion);
+           
+            //Mirar esto no funciona por el añadir respuesta pide un string y no una respuesta
             Respuesta r = pregunta.crearRespuesta(verdaderoOFalso.ToString());
             r.inicialize(verdaderoOFalso);
-            pregunta.añadirRespuesta(r);
+
+            pregunta.añadirRespuesta(verdaderoOFalso.ToString());
 
             preguntas.Add(pregunta);
 
@@ -356,9 +363,9 @@ namespace MyQuizifyGUI.Forms
 
             string id = textBoxNombreQuiz.Text + "_" + numeroDePregunta;
 
-            Pregunta pregunta = new PreguntaVF(enunciado, id, imagen, puntuacion, explicacion);
+            Pregunta pregunta = new PreguntaA(enunciado, id, imagen, puntuacion, explicacion);
             Respuesta r = pregunta.crearRespuesta(enunciado);
-            pregunta.añadirRespuesta(r);
+            pregunta.añadirRespuesta(enunciado);
 
             preguntas.Add(pregunta);
 

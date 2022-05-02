@@ -21,16 +21,8 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
         Dictionary<string, Bateria> obtenerBaterias();
         List<Quiz> listaQuizes();
         List<Pregunta> preguntasDeUnQuiz(string nombreQuiz);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        BateriaMultiOpcion getBateriaMOById(string nombreBat);
-=======
->>>>>>> parent of c8995d0 (baterias arregladas)
-=======
->>>>>>> parent of c8995d0 (baterias arregladas)
 
-=======
->>>>>>> dfb136d49427070422d659d70a11d20629f6bdff
+        //BateriaMultiOpcion getBateriaMOById(string nombreBat);
+
     }
 }
