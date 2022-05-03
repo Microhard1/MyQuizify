@@ -29,13 +29,11 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
             respuestas = new List<Respuesta>();
         }
 
-        
-
         public void añadirRespuesta(string enunciado)
         {
             string tipo = "";
-            if (this.GetType().Name == "PreguntaA") tipo = "RespuestasMultiOpcion";
-            if (this.GetType().Name == "PreguntaMO") tipo = "RespuestasAbiertas";
+            if (this.GetType().Name == "PreguntaMO") tipo = "RespuestasMultiOpcion";
+            if (this.GetType().Name == "PreguntaA") tipo = "RespuestasAbiertas";
             if (this.GetType().Name == "PreguntaVF") tipo = "RespuestasVerdaderoFalso";
             Respuesta r = crearRespuesta(enunciado);
             respuestas.Add(r);

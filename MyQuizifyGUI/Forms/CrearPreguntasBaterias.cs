@@ -22,6 +22,7 @@ namespace MyQuizifyGUI.Forms
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            panelForms.Controls.Clear();
             CrearBateria cb = new CrearBateria();
             cb.TopLevel = false;
             cb.Width = panelForms.Width;
@@ -33,6 +34,53 @@ namespace MyQuizifyGUI.Forms
         private void panelForms_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panelForms.Controls.Clear();
+            button3.Visible = true;
+            button5.Visible = true;
+            button4.Visible = true;
+            CrearPreguntaMO p = new CrearPreguntaMO();
+            p.TopLevel = false;
+            p.Width = panelForms.Width;
+            p.Height = panelForms.Height;
+            panelForms.Controls.Add(p);
+            p.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panelForms.Controls.Clear();
+            CrearPreguntaMO p = new CrearPreguntaMO();
+            p.TopLevel = false;
+            p.Width = panelForms.Width;
+            p.Height = panelForms.Height;
+            panelForms.Controls.Add(p);
+            p.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panelForms.Controls.Clear();
+            CrearPreguntaVF p = new CrearPreguntaVF();
+            p.TopLevel = false;
+            p.Width = panelForms.Width;
+            p.Height = panelForms.Height;
+            panelForms.Controls.Add(p);
+            p.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            panelForms.Controls.Clear();
+            CrearPreguntaA p = new CrearPreguntaA();
+            p.TopLevel = false;
+            p.Width = panelForms.Width;
+            p.Height = panelForms.Height;
+            panelForms.Controls.Add(p);
+            p.Show();
         }
     }
 }

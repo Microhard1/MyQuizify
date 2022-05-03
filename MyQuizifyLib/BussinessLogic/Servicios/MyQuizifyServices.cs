@@ -201,18 +201,52 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
         public List<Respuesta> respuestasDeUnaPregunta(string idPregunta)
         {
             List<Respuesta> respuestas = new List<Respuesta>();
-            FirebaseResponse resp1 = cf.client.Get("Respuestas/" + idPregunta + "/0");
-            Respuesta a = resp1.ResultAs<Respuesta>();
-            FirebaseResponse resp2 = cf.client.Get("Respuestas/" + idPregunta + "/1");
-            Respuesta b = resp2.ResultAs<Respuesta>();
-            FirebaseResponse resp3 = cf.client.Get("Respuestas/" + idPregunta + "/2");
-            Respuesta c = resp3.ResultAs<Respuesta>();
-            FirebaseResponse resp4 = cf.client.Get("Respuestas/" + idPregunta + "/3");
-            Respuesta d = resp4.ResultAs<Respuesta>();
-            respuestas.Add(a);
-            respuestas.Add(b);
-            respuestas.Add(c);
-            respuestas.Add(d);
+            if (getPreguntaMOById(idPregunta) != null)
+            {
+               
+                FirebaseResponse resp1 = cf.client.Get("Respuestas/RespuestasMultiOpcion/" + idPregunta + "/0");
+                Respuesta a = resp1.ResultAs<Respuesta>();
+                FirebaseResponse resp2 = cf.client.Get("Respuestas/RespuestasMultiOpcion/" + idPregunta + "/1");
+                Respuesta b = resp2.ResultAs<Respuesta>();
+                FirebaseResponse resp3 = cf.client.Get("Respuestas/RespuestasMultiOpcion/" + idPregunta + "/2");
+                Respuesta c = resp3.ResultAs<Respuesta>();
+                FirebaseResponse resp4 = cf.client.Get("Respuestas/RespuestasMultiOpcion/" + idPregunta + "/3");
+                Respuesta d = resp4.ResultAs<Respuesta>();
+                respuestas.Add(a);
+                respuestas.Add(b);
+                respuestas.Add(c);
+                respuestas.Add(d);
+            }
+            else if (getPreguntaAById(idPregunta) != null)
+            {
+                FirebaseResponse resp1 = cf.client.Get("Respuestas/RespuestasAbiertas/" + idPregunta + "/0");
+                Respuesta a = resp1.ResultAs<Respuesta>();
+                FirebaseResponse resp2 = cf.client.Get("Respuestas/RespuestasAbiertas/" + idPregunta + "/1");
+                Respuesta b = resp2.ResultAs<Respuesta>();
+                FirebaseResponse resp3 = cf.client.Get("Respuestas/RespuestasAbiertas/" + idPregunta + "/2");
+                Respuesta c = resp3.ResultAs<Respuesta>();
+                FirebaseResponse resp4 = cf.client.Get("Respuestas/RespuestasAbiertas/" + idPregunta + "/3");
+                Respuesta d = resp4.ResultAs<Respuesta>();
+                respuestas.Add(a);
+                respuestas.Add(b);
+                respuestas.Add(c);
+                respuestas.Add(d);
+            }
+            else if (getPreguntaVFById(idPregunta) != null)
+            {
+                FirebaseResponse resp1 = cf.client.Get("Respuestas/RespuestasVerdaderoFalso/" + idPregunta + "/0");
+                Respuesta a = resp1.ResultAs<Respuesta>();
+                FirebaseResponse resp2 = cf.client.Get("Respuestas/RespuestasVerdaderoFalso/" + idPregunta + "/1");
+                Respuesta b = resp2.ResultAs<Respuesta>();
+                FirebaseResponse resp3 = cf.client.Get("Respuestas/RespuestasVerdaderoFalso/" + idPregunta + "/2");
+                Respuesta c = resp3.ResultAs<Respuesta>();
+                FirebaseResponse resp4 = cf.client.Get("Respuestas/RespuestasVerdaderoFalso/" + idPregunta + "/3");
+                Respuesta d = resp4.ResultAs<Respuesta>();
+                respuestas.Add(a);
+                respuestas.Add(b);
+                respuestas.Add(c);
+                respuestas.Add(d);
+            }
 
             return respuestas;
         }
@@ -256,6 +290,13 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
             FirebaseResponse bateria = cf.client.Get("Baterias/MultiOpcion/" + idBateria);
             b = bateria.ResultAs<BateriaMultiOpcion>();
             return b;
+        }
+        public Dictionary<string, Calificacion> getDiccionarioCalificacion()
+        {
+            FirebaseResponse calificaciones = cf.client.Get(@"Calificaciones");
+            Dictionary<string, Calificacion> diccionarioCalificacion =
+                JsonConvert.DeserializeObject<Dictionary<string, Calificacion>>(calificaciones.Body.ToString());
+            return diccionarioCalificacion;
         }
 
 

@@ -126,3 +126,6 @@ C:\Users\Hugo\source\repos\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.C
 C:\Users\Hugo\source\repos\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.CrearPreguntasBaterias.resources
 C:\Users\Hugo\source\repos\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.Quizzes.Clonacion_de_Quizes.resources
 C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.Quizzes.Clonacion_de_Quizes.resources
+C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.CrearPreguntaA.resources
+C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.CrearPreguntaMO.resources
+C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.CrearPreguntaVF.resources

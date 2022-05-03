@@ -15,6 +15,7 @@ using MyQuizifyLib.BussinessLogic.Entidades;
 using Newtonsoft.Json;
 using MyQuizifyLib.BussinessLogic.Servicios;
 using MyQuizifyGUI.Forms.Quizzes;
+using MyQuizifyGUI.Forms;
 
 namespace MyQuizifyGUI
 {
@@ -288,6 +289,21 @@ namespace MyQuizifyGUI
         private void button3_Click(object sender, EventArgs e)
         {
             clonacionForm.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Quiz q = null;
+            for (int i = 0; i < dataGridQuizes.Rows.Count - 1; i++)
+            {
+                bool isCellChecked = (bool)dataGridQuizes.Rows[i].Cells[0].Value;
+                if (isCellChecked == true)
+                {
+                    q = services.getQuizById(dataGridQuizes.Rows[i].Cells[1].Value.ToString());
+                }
+            }
+            Estadisticas estadisticas = new Estadisticas(q);
+            estadisticas.ShowDialog();
         }
     }
 }

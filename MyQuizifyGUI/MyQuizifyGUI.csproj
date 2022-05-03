@@ -123,11 +123,29 @@
     <Compile Include="Forms\CrearBateria.Designer.cs">
       <DependentUpon>CrearBateria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CrearPreguntaA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CrearPreguntaA.Designer.cs">
+      <DependentUpon>CrearPreguntaA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CrearPreguntaMO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CrearPreguntaMO.Designer.cs">
+      <DependentUpon>CrearPreguntaMO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CrearPreguntasBaterias.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\CrearPreguntasBaterias.Designer.cs">
       <DependentUpon>CrearPreguntasBaterias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CrearPreguntaVF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CrearPreguntaVF.Designer.cs">
+      <DependentUpon>CrearPreguntaVF.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Estadisticas.cs">
       <SubType>Form</SubType>
@@ -215,8 +233,17 @@
     <EmbeddedResource Include="Forms\CrearBateria.resx">
       <DependentUpon>CrearBateria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CrearPreguntaA.resx">
+      <DependentUpon>CrearPreguntaA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CrearPreguntaMO.resx">
+      <DependentUpon>CrearPreguntaMO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CrearPreguntasBaterias.resx">
       <DependentUpon>CrearPreguntasBaterias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CrearPreguntaVF.resx">
+      <DependentUpon>CrearPreguntaVF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InicioSesion\InicioInstructor.resx">
       <DependentUpon>InicioInstructor.cs</DependentUpon>
