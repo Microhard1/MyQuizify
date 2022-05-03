@@ -41,7 +41,7 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
             Respuesta r = crearRespuesta(enunciado);
 
             respuestas.Add(r);
-            FirebaseResponse addRespuesta = cf.client.Set("Respuestas/" + this.id, respuestas);
+            FirebaseResponse addRespuesta = cf.client.Set("Respuestas/"+tipo + "/" + this.id, respuestas);
         }
 
         public abstract Respuesta crearRespuesta(string enunciado);

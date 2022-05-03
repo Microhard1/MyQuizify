@@ -178,5 +178,10 @@ namespace MyQuizifyGUI
 
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Alumno nuevoAlumno = new Alumno("a", Encriptador.GetSHA256("111111"),
+                                   "a", "a", "a","a", DateTime.Now);
+        }
     }
 }

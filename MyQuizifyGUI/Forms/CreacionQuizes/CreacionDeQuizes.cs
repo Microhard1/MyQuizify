@@ -229,7 +229,31 @@ namespace MyQuizifyGUI.Forms
             foreach (Control c in objetosDelFormulario)
             {
                 
-                        if (c.GetType() == typeof(CheckBox))
+                        
+                 if (c.GetType() == typeof(TextBox))
+                {
+                    if (c.Name == "enunciadoTipoTest")
+                    {
+                        enunciado = ((TextBox)c).Text;
+                    }
+
+                }
+                else if (c is Panel)
+                {
+                    foreach (Control p in c.Controls)
+                    {
+                        if (p.GetType() == typeof(TextBox))
+                        {
+                            if (p.Name == "textBoxPuntuacion")
+                            {
+                                puntuacion = Double.Parse(((TextBox)p).Text);
+                            }
+                            else if (p.Name == "textboxExplicacion")
+                            {
+                                explicacion = ((TextBox)p).Text;
+                            }
+                        }
+                        else if (c.GetType() == typeof(CheckBox))
                         {
 
                             CheckBox aux = (CheckBox)c;
@@ -286,32 +310,8 @@ namespace MyQuizifyGUI.Forms
                                     }
                                 }
                             }
-                        
-                    
-                }
-                        
-                else if (c.GetType() == typeof(TextBox))
-                {
-                    if (c.Name == "enunciadoTipoTest")
-                    {
-                        enunciado = ((TextBox)c).Text;
-                    }
 
-                }
-                else if (c is Panel)
-                {
-                    foreach (Control p in c.Controls)
-                    {
-                        if (p.GetType() == typeof(TextBox))
-                        {
-                            if (p.Name == "textBoxPuntuacion")
-                            {
-                                puntuacion = Double.Parse(((TextBox)p).Text);
-                            }
-                            else if (p.Name == "textboxExplicacion")
-                            {
-                                explicacion = ((TextBox)p).Text;
-                            }
+
                         }
                     }
                 }
@@ -324,6 +324,7 @@ namespace MyQuizifyGUI.Forms
             string id = textBoxNombreQuiz.Text + "_" + numeroDePregunta;
 
             pregunta = new PreguntaMO(id,enunciado, imagen, puntuacion, explicacion);
+            añadirRespuestas(respuestas,pregunta);
             preguntas.Add(pregunta);
 
             MessageBox.Show("Se ha insertado una pregunta: " + pregunta.ToString());
@@ -381,6 +382,13 @@ namespace MyQuizifyGUI.Forms
 
             MessageBox.Show("Se ha insertado una pregunta: " + pregunta.ToString()) ;
         }
+        private void añadirRespuestas(List<Respuesta> respuestas, Pregunta p)
+        {
+            foreach(Respuesta r in respuestas)
+            {
+                p.añadirRespuesta(r.enunciado);
+            }
+        }
         private List<TextBox> getListaRespuestas()
         {
             List<TextBox> respuestas = new List<TextBox>();
@@ -388,17 +396,24 @@ namespace MyQuizifyGUI.Forms
 
             foreach (Control c in objetosDelFormulario)
             {
-                if (c is Panel)
+                if(c is GroupBox)
                 {
-                    foreach (Control p in c.Controls)
+                    ControlCollection objetosBox = (ControlCollection)c.Controls;
+                    foreach (Control p in objetosBox)
                     {
-                        if (c.GetType() == typeof(TextBox))
+                        if (c is Panel)
                         {
-                            TextBox aux = (TextBox)c;
-                            respuestas.Add(aux);
+                            foreach (Control p in c.Controls)
+                            {
+                                if (c.GetType() == typeof(TextBox))
+                                {
+                                    TextBox aux = (TextBox)c;
+                                    respuestas.Add(aux);
+                                }
+                            }
                         }
-                    }    
-                }
+                    }
+                    }
             }
 
             return respuestas;

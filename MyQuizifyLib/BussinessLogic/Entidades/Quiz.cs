@@ -57,7 +57,7 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
 
             Pregunta p = crearPregunta(id, enunciado, imagen, puntuacion, explicacion);
             preguntas.Add(p);
-            FirebaseResponse addPregunta = cf.client.Set("Preguntas/"+ tipo + "/" + this.nombreQuiz, p);
+            FirebaseResponse addPregunta = cf.client.Set("Preguntas/"+ tipo + "/" + this.nombreQuiz+"/" + p.id, p);
         }
 
         public abstract Pregunta crearPregunta(string id, string enunciado, string imagen, double puntuacion, string explicacion);
