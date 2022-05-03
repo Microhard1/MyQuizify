@@ -29,7 +29,8 @@ namespace MyQuizifyGUI.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelEnunciado = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelP4 = new System.Windows.Forms.Label();
             this.labelP3 = new System.Windows.Forms.Label();
@@ -39,20 +40,27 @@ namespace MyQuizifyGUI.Forms
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.labelEnunciado = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // labelEnunciado
+            // button2
             // 
-            this.labelEnunciado.AutoSize = true;
-            this.labelEnunciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEnunciado.Location = new System.Drawing.Point(73, 76);
-            this.labelEnunciado.Name = "labelEnunciado";
-            this.labelEnunciado.Size = new System.Drawing.Size(189, 33);
-            this.labelEnunciado.TabIndex = 0;
-            this.labelEnunciado.Text = "ENUNCIADO";
+            this.button2.Location = new System.Drawing.Point(167, 496);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Anterior";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(753, 496);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Siguiente";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -64,10 +72,10 @@ namespace MyQuizifyGUI.Forms
             this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(79, 157);
+            this.groupBox1.Location = new System.Drawing.Point(167, 248);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(661, 218);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
             // labelP4
@@ -78,7 +86,6 @@ namespace MyQuizifyGUI.Forms
             this.labelP4.Size = new System.Drawing.Size(43, 13);
             this.labelP4.TabIndex = 7;
             this.labelP4.Text = "textoP4";
-            this.labelP4.Click += new System.EventHandler(this.labelP4_Click);
             // 
             // labelP3
             // 
@@ -151,31 +158,21 @@ namespace MyQuizifyGUI.Forms
             this.radioButton1.Text = "A";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // labelEnunciado
             // 
-            this.button1.Location = new System.Drawing.Point(665, 405);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Siguiente";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(79, 405);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Anterior";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.labelEnunciado.AutoSize = true;
+            this.labelEnunciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEnunciado.Location = new System.Drawing.Point(161, 167);
+            this.labelEnunciado.Name = "labelEnunciado";
+            this.labelEnunciado.Size = new System.Drawing.Size(189, 33);
+            this.labelEnunciado.TabIndex = 8;
+            this.labelEnunciado.Text = "ENUNCIADO";
             // 
             // ContestacionDeQuizesMultiOpcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1014, 715);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
@@ -192,7 +189,8 @@ namespace MyQuizifyGUI.Forms
 
         #endregion
 
-        private System.Windows.Forms.Label labelEnunciado;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label labelP4;
         private System.Windows.Forms.Label labelP3;
@@ -202,7 +200,6 @@ namespace MyQuizifyGUI.Forms
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label labelEnunciado;
     }
 }

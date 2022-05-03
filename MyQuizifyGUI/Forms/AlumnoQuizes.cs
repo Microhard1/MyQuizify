@@ -19,6 +19,7 @@ namespace MyQuizifyGUI.Forms
 
         ConexionBD cf = ConexionBD.getInstancia();
         MyQuizifyServices services = new MyQuizifyServices();
+        int tiempo = 53;
         public AlumnoQuizes()
         {
             InitializeComponent();
@@ -90,5 +91,6 @@ namespace MyQuizifyGUI.Forms
             mostrarQuizes();
             Cursor.Current = Cursors.Default;
         }
+
     }
 }

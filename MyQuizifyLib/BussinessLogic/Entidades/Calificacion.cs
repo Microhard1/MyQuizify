@@ -15,11 +15,11 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
         public double nota;
         public Quiz quizRealizado;
         public Alumno examinado;
+
         public DateTime fecha;
 
-        public Calificacion(double nota, Quiz quizRealizado, Alumno examinado , DateTime fecha)
+        public Calificacion(double nota, Quiz quizRealizado, Alumno examinado)
         {
-            this.fecha = fecha;
             this.nota = nota;
             this.quizRealizado = quizRealizado;
             this.examinado = examinado;

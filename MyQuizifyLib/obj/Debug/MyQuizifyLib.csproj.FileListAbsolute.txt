@@ -20,8 +20,3 @@ C:\Users\Pc\Documents\upv\soft\PSW\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib
 C:\Users\Pc\Documents\upv\soft\PSW\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.csproj.CopyComplete
 C:\Users\Pc\Documents\upv\soft\PSW\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.dll
 C:\Users\Pc\Documents\upv\soft\PSW\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.pdb
-C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.csproj.App.config
-C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.csproj.AssemblyReference.cache
-C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.csproj.CoreCompileInputs.cache
-C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.dll
-C:\Users\sanco\Desktop\Quizify\MyQuizify\MyQuizifyLib\obj\Debug\MyQuizifyLib.pdb

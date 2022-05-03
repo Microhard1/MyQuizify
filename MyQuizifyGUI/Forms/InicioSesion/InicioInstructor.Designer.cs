@@ -32,11 +32,12 @@ namespace MyQuizifyGUI.Forms.InicioSesion
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.botonGestionQuiz = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +67,7 @@ namespace MyQuizifyGUI.Forms.InicioSesion
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(156)))));
             this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.botonGestionQuiz);
@@ -76,19 +78,19 @@ namespace MyQuizifyGUI.Forms.InicioSesion
             this.panel2.Size = new System.Drawing.Size(150, 353);
             this.panel2.TabIndex = 2;
             // 
-            // button1
+            // button2
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 191);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 72);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Crear preguntas y baterías";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(0, 191);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(150, 60);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Estadisticas";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
@@ -142,6 +144,20 @@ namespace MyQuizifyGUI.Forms.InicioSesion
             this.panelContenedor.TabIndex = 3;
             this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(0, 251);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 72);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Crear preguntas y baterías";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // InicioInstructor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,6 +185,7 @@ namespace MyQuizifyGUI.Forms.InicioSesion
         private System.Windows.Forms.Button botonGestionQuiz;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Button button1;
     }

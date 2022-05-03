@@ -50,7 +50,7 @@ namespace MyQuizifyGUI.Forms.InicioSesion
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            abrirFormHijo(new Estadisticas());
         }
 
         private void panelContenedor_Paint(object sender, PaintEventArgs e)
