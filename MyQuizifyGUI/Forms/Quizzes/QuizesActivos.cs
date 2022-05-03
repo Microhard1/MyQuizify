@@ -15,6 +15,7 @@ using MyQuizifyLib.BussinessLogic.Entidades;
 using Newtonsoft.Json;
 using MyQuizifyLib.BussinessLogic.Servicios;
 using MyQuizifyGUI.Forms.Quizzes;
+using MyQuizifyGUI.Forms;
 
 namespace MyQuizifyGUI
 {
@@ -22,6 +23,7 @@ namespace MyQuizifyGUI
     {
         private CrearQuiz q;
         private Clonacion_de_Quizes clonacionForm;
+        private Estadisticas estadisticasForm;
         ConexionBD cf = ConexionBD.getInstancia();
         MyQuizifyServices services = new MyQuizifyServices();
         public QuizesActivos()
@@ -29,6 +31,7 @@ namespace MyQuizifyGUI
             InitializeComponent();
             q = new CrearQuiz();
             clonacionForm = new Clonacion_de_Quizes();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -285,7 +288,17 @@ namespace MyQuizifyGUI
 
         private void btbEstadisticasQuiz_Click(object sender, EventArgs e)
         {
-
+            int count = 0;
+            Quiz q = null;
+            for (int i = 0; i < dataGridQuizes.Rows.Count - 1; i++)
+            {
+                bool isCellChecked = (bool)dataGridQuizes.Rows[i].Cells[0].Value;
+                if (isCellChecked == true) { 
+                    count++; q = services.getQuizById((string)dataGridQuizes.Rows[i].Cells[1].Value); 
+                }
+            }
+            estadisticasForm = new Estadisticas(q);
+            estadisticasForm.ShowDialog();
         }
 
         private void btbClonarQuiz_Click(object sender, EventArgs e)
@@ -298,6 +311,27 @@ namespace MyQuizifyGUI
             Cursor.Current = Cursors.WaitCursor;
             mostrarQuizes();
             Cursor.Current = Cursors.Default;
+        }
+
+        private void botonBorrar_Click(object sender, EventArgs e)
+        {
+            Quiz q = null;
+            for (int i = 0; i < dataGridQuizes.Rows.Count - 1; i++)
+            {
+                bool isCellChecked = (bool)dataGridQuizes.Rows[i].Cells[0].Value;
+                if (isCellChecked == true)
+                {
+                    q = services.getQuizById(dataGridQuizes.Rows[i].Cells[1].Value.ToString());
+                    dataGridQuizes.Rows.Remove(dataGridQuizes.Rows[i]);
+                    string tipo = q.GetType().Name;
+                    if (tipo == "QuizMO")
+                        cf.client.Delete("Quizes/QuizesMO/" + q.nombreQuiz);
+                    if (tipo == "QuizVF")
+                        cf.client.Delete("Quizes/QuizesVF/" + q.nombreQuiz);
+                    if (tipo == "QuizPA")
+                        cf.client.Delete("Quizes/QuizesPA/" + q.nombreQuiz);
+                }
+            }
         }
     }
 }

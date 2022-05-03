@@ -75,6 +75,7 @@ namespace MyQuizifyGUI.Forms
                 {
                     quizActual = new QuizMO(nombreQuiz, servicio.getInstructorById(cf.usuarioConectado.username),
                         duracion, pesoQuiz, dificultad, dateTimePickerInicio.Value, dateTimePickerFin.Value, "En preparacion", servicio.getCursoById(comboBoxCursos.Text));
+                    AñadirPreguntas(quizActual);
                 }
                 else if (tipoDeQuiz == "Verdadero/Falso")
                 {
@@ -86,7 +87,7 @@ namespace MyQuizifyGUI.Forms
                 {
                     quizActual = new QuizPA(nombreQuiz, servicio.getInstructorById(cf.usuarioConectado.username),
                        duracion, pesoQuiz, dificultad, dateTimePickerInicio.Value, dateTimePickerFin.Value, "En preparacion", servicio.getCursoById(comboBoxCursos.Text));
-
+                    AñadirPreguntas(quizActual);
                 }
                 MessageBox.Show("Quiz creado: " + quizActual.ToString());
             }
@@ -215,76 +216,80 @@ namespace MyQuizifyGUI.Forms
         public void CrearPreguntaTipoTest()
         {
             List<TextBox> listaRespuestas = getListaRespuestas();
-            ControlCollection objetosDelFormulario = (ControlCollection)panelQuizes.Controls;
+            ControlCollection objetosDelFormulario = (ControlCollection)formularioActual.Controls;
             List<Respuesta> respuestas = new List<Respuesta>();
             string enunciado = "";
 
             Respuesta resp;
             
             string imagen = "";
-            double puntuacion = 0;
+            double puntuacion = 0.0;
             string explicacion = "";
             Pregunta pregunta;
             foreach (Control c in objetosDelFormulario)
             {
-                if (c.GetType() == typeof(CheckBox))
-                {
-
-                    CheckBox aux = (CheckBox)c;
-
-
-                    if (aux.Name == "ckeckPregunta1")
-                    {
-                        foreach (TextBox t in listaRespuestas)
+                
+                        if (c.GetType() == typeof(CheckBox))
                         {
-                            if (t.Name == "textPregunta1")
-                            {
-                                resp = new RespuestaMO(t.Text);
-                                if (aux.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
-                                respuestas.Add(resp);
-                            }
-                        }
-                    }
-                    else if (aux.Name == "ckeckPregunta2")
-                    {
-                        foreach (TextBox t in listaRespuestas)
-                        {
-                            if (t.Name == "textPregunta2")
-                            {
-                                resp = new RespuestaMO(t.Text);
-                                if (aux.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
-                                respuestas.Add(resp);
 
-                            }
+                            CheckBox aux = (CheckBox)c;
 
-                        }
-                    }
-                    else if (aux.Name == "ckeckPregunta3")
-                    {
-                        foreach (TextBox t in listaRespuestas)
-                        {
-                            if (t.Name == "textPregunta3")
-                            {
-                                resp = new RespuestaMO(t.Text);
-                                if (aux.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
-                                respuestas.Add(resp);
 
-                            }
-                        }
-                    }
-                    else if (aux.Name == "ckeckPregunta4")
-                    {
-                        foreach (TextBox t in listaRespuestas)
-                        {
-                            if (t.Name == "textPregunta4")
+                            if (aux.Name == "ckeckPregunta1")
                             {
-                                resp = new RespuestaMO(t.Text);
-                                if (aux.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
-                                respuestas.Add(resp);
+                                foreach (TextBox t in listaRespuestas)
+                                {
+                                    if (t.Name == "textPregunta1")
+                                    {
+                                        resp = new RespuestaMO(t.Text);
+                                        if (aux.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
+                                        respuestas.Add(resp);
+                                    }
+                                }
                             }
-                        }
-                    }
+                            else if (aux.Name == "ckeckPregunta2")
+                            {
+                                foreach (TextBox t in listaRespuestas)
+                                {
+                                    if (t.Name == "textPregunta2")
+                                    {
+                                        resp = new RespuestaMO(t.Text);
+                                        if (aux.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
+                                        respuestas.Add(resp);
+
+                                    }
+
+                                }
+                            }
+                            else if (aux.Name == "ckeckPregunta3")
+                            {
+                                foreach (TextBox t in listaRespuestas)
+                                {
+                                    if (t.Name == "textPregunta3")
+                                    {
+                                        resp = new RespuestaMO(t.Text);
+                                        if (aux.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
+                                        respuestas.Add(resp);
+
+                                    }
+                                }
+                            }
+                            else if (aux.Name == "ckeckPregunta4")
+                            {
+                                foreach (TextBox t in listaRespuestas)
+                                {
+                                    if (t.Name == "textPregunta4")
+                                    {
+                                        resp = new RespuestaMO(t.Text);
+                                        if (aux.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
+                                        respuestas.Add(resp);
+                                    }
+                                }
+                            }
+                        
+                    
                 }
+                        
                 else if (c.GetType() == typeof(TextBox))
                 {
                     if (c.Name == "enunciadoTipoTest")
@@ -318,7 +323,7 @@ namespace MyQuizifyGUI.Forms
             }
             string id = textBoxNombreQuiz.Text + "_" + numeroDePregunta;
 
-            pregunta = new PreguntaVF(enunciado, id, imagen, puntuacion, explicacion);
+            pregunta = new PreguntaMO(id,enunciado, imagen, puntuacion, explicacion);
             preguntas.Add(pregunta);
 
             MessageBox.Show("Se ha insertado una pregunta: " + pregunta.ToString());
@@ -379,13 +384,20 @@ namespace MyQuizifyGUI.Forms
         private List<TextBox> getListaRespuestas()
         {
             List<TextBox> respuestas = new List<TextBox>();
-            ControlCollection objetosDelFormulario = (ControlCollection)panelQuizes.Controls;
+            ControlCollection objetosDelFormulario = (ControlCollection)formularioActual.Controls;
+
             foreach (Control c in objetosDelFormulario)
             {
-                if (c.GetType() == typeof(TextBox))
+                if (c is Panel)
                 {
-                    TextBox aux = (TextBox)c;
-                    respuestas.Add(aux);
+                    foreach (Control p in c.Controls)
+                    {
+                        if (c.GetType() == typeof(TextBox))
+                        {
+                            TextBox aux = (TextBox)c;
+                            respuestas.Add(aux);
+                        }
+                    }    
                 }
             }
 

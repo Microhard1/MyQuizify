@@ -17,12 +17,17 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
         string getTipoQuiz(Quiz q);
         List<Curso> listarCursos();
         Curso getCursoById(string id);
-        Dictionary<string, PreguntaMO> obtenerPreguntas();
-        Dictionary<string, Bateria> obtenerBaterias();
+        PreguntaMO getPreguntaMOById(string id);
+        PreguntaA getPreguntaAById(string id);
+        PreguntaVF getPreguntaVFById(string id);
+        Dictionary<string, PreguntaVF> obtenerPreguntasVF();
+        Dictionary<string, PreguntaMO> obtenerPreguntasMO();
+        Dictionary<string, PreguntaA> obtenerPreguntasA();
+        Dictionary<string, BateriaMultiOpcion> obtenerBateriasMO();
         List<Quiz> listaQuizes();
         List<Pregunta> preguntasDeUnQuiz(string nombreQuiz);
-
-        //BateriaMultiOpcion getBateriaMOById(string nombreBat);
+        BateriaMultiOpcion getBateriaMOById(string nombreBat);
+        Dictionary<string, Calificacion> getDiccionarioCalificacion();
 
     }
 }

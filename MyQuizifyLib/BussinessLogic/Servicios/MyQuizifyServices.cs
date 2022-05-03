@@ -12,31 +12,59 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
 {
     public class MyQuizifyServices : IServices
     {
-        public MyQuizifyServices() 
-        { 
+        public MyQuizifyServices()
+        {
 
         }
 
         ConexionBD cf = ConexionBD.getInstancia();
 
-        public Dictionary<string, PreguntaMO> obtenerPreguntas()
+        public Dictionary<string, PreguntaMO> obtenerPreguntasMO()
         {
-            FirebaseResponse preguntasDB = cf.client.Get(@"Preguntas");
+            FirebaseResponse preguntasDB = cf.client.Get(@"Preguntas/PreguntasMultiOpcion");
             Dictionary<string, PreguntaMO> datos =
                 JsonConvert.DeserializeObject<Dictionary<string, PreguntaMO>>(preguntasDB.Body.ToString());
             return datos;
         }
-        public Dictionary<string, Bateria> obtenerBaterias()
+        public Dictionary<string, PreguntaVF> obtenerPreguntasVF()
         {
-            FirebaseResponse bateriasDB = cf.client.Get(@"Baterias");
-            Dictionary<string, Bateria> datos =
-                JsonConvert.DeserializeObject<Dictionary<string, Bateria>>(bateriasDB.Body.ToString());
+            FirebaseResponse preguntasDB = cf.client.Get(@"Preguntas/PreguntasVerdaderoFalso");
+            Dictionary<string, PreguntaVF> datos =
+                JsonConvert.DeserializeObject<Dictionary<string, PreguntaVF>>(preguntasDB.Body.ToString());
+            return datos;
+        }
+        public Dictionary<string, PreguntaA> obtenerPreguntasA()
+        {
+            FirebaseResponse preguntasDB = cf.client.Get(@"Preguntas/PreguntasAbiertas");
+            Dictionary<string, PreguntaA> datos =
+                JsonConvert.DeserializeObject<Dictionary<string, PreguntaA>>(preguntasDB.Body.ToString());
+            return datos;
+        }
+        public Dictionary<string, BateriaMultiOpcion> obtenerBateriasMO()
+        {
+            FirebaseResponse bateriasDB = cf.client.Get(@"Baterias/MultiOpcion/");
+            Dictionary<string, BateriaMultiOpcion> datos =
+                JsonConvert.DeserializeObject<Dictionary<string, BateriaMultiOpcion>>(bateriasDB.Body.ToString());
+            return datos;
+        }
+        public Dictionary<string, BateriaAbierta> obtenerBateriasA()
+        {
+            FirebaseResponse bateriasDB = cf.client.Get(@"Baterias/Abiertas/");
+            Dictionary<string, BateriaAbierta> datos =
+                JsonConvert.DeserializeObject<Dictionary<string, BateriaAbierta>>(bateriasDB.Body.ToString());
+            return datos;
+        }
+        public Dictionary<string, BateriaVerdaderoFalso> obtenerBateriasVF()
+        {
+            FirebaseResponse bateriasDB = cf.client.Get(@"Baterias/VerdaderoFalso/");
+            Dictionary<string, BateriaVerdaderoFalso> datos =
+                JsonConvert.DeserializeObject<Dictionary<string, BateriaVerdaderoFalso>>(bateriasDB.Body.ToString());
             return datos;
         }
 
-        public Alumno getAlumnoById(string id) 
+        public Alumno getAlumnoById(string id)
         {
-            FirebaseResponse get = cf.client.Get("Usuarios/Alumnos/"+ id);
+            FirebaseResponse get = cf.client.Get("Usuarios/Alumnos/" + id);
             Alumno a = get.ResultAs<Alumno>();
             return a;
         }
@@ -67,15 +95,15 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
                     else return qvf;
                 }
                 else return qpa;
-            } 
+            }
             else return qmo;
-           
+
         }
 
         public string getTipoQuiz(Quiz q)
         {
             return q.GetType().Name;
-            
+
         }
 
         public Curso getCursoById(string id)
@@ -84,12 +112,12 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
             return c;
         }
 
-        public List<Curso> listarCursos() 
+        public List<Curso> listarCursos()
         {
             FirebaseResponse cursos = cf.client.Get(@"Cursos/");
             List<Curso> listaCursos = new List<Curso>();
             Dictionary<string, Curso> dicCursos = JsonConvert.DeserializeObject<Dictionary<string, Curso>>(cursos.Body.ToString());
-            foreach(var curso in dicCursos)
+            foreach (var curso in dicCursos)
             {
                 Curso aux = getCursoById(curso.Value.id);
                 listaCursos.Add(aux);
@@ -104,7 +132,7 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
             Dictionary<string, QuizMO> quizesMultiOpcion =
                 JsonConvert.DeserializeObject<Dictionary<string, QuizMO>>(quizesMO.Body.ToString());
 
-            foreach(var item in quizesMultiOpcion)
+            foreach (var item in quizesMultiOpcion)
             {
                 quizes.Add(getQuizById(item.Value.nombreQuiz));
             }
@@ -129,7 +157,7 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
 
             return quizes;
         }
-        
+
         public List<Pregunta> preguntasDeUnQuiz(string nombreQuiz)
         {
             List<Pregunta> preguntas = new List<Pregunta>();
@@ -143,7 +171,7 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
                 {
                     preguntas.Add(preg.Value);
                 }
-                
+
             }
             if (getTipoQuiz(q) == "QuizMO")
             {
@@ -173,40 +201,103 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
         public List<Respuesta> respuestasDeUnaPregunta(string idPregunta)
         {
             List<Respuesta> respuestas = new List<Respuesta>();
-            FirebaseResponse resp1 = cf.client.Get("Respuestas/" + idPregunta + "/0");
-            Respuesta a = resp1.ResultAs<Respuesta>();
-            FirebaseResponse resp2 = cf.client.Get("Respuestas/" + idPregunta + "/1");
-            Respuesta b = resp2.ResultAs<Respuesta>();
-            FirebaseResponse resp3 = cf.client.Get("Respuestas/" + idPregunta + "/2");
-            Respuesta c = resp3.ResultAs<Respuesta>();
-            FirebaseResponse resp4 = cf.client.Get("Respuestas/" + idPregunta + "/3");
-            Respuesta d = resp4.ResultAs<Respuesta>();
-            respuestas.Add(a);
-            respuestas.Add(b);
-            respuestas.Add(c);
-            respuestas.Add(d);
+            if (getPreguntaMOById(idPregunta) != null)
+            {
+
+                FirebaseResponse resp1 = cf.client.Get("Respuestas/RespuestasMultiOpcion/" + idPregunta + "/0");
+                Respuesta a = resp1.ResultAs<Respuesta>();
+                FirebaseResponse resp2 = cf.client.Get("Respuestas/RespuestasMultiOpcion/" + idPregunta + "/1");
+                Respuesta b = resp2.ResultAs<Respuesta>();
+                FirebaseResponse resp3 = cf.client.Get("Respuestas/RespuestasMultiOpcion/" + idPregunta + "/2");
+                Respuesta c = resp3.ResultAs<Respuesta>();
+                FirebaseResponse resp4 = cf.client.Get("Respuestas/RespuestasMultiOpcion/" + idPregunta + "/3");
+                Respuesta d = resp4.ResultAs<Respuesta>();
+                respuestas.Add(a);
+                respuestas.Add(b);
+                respuestas.Add(c);
+                respuestas.Add(d);
+            }
+            else if (getPreguntaAById(idPregunta) != null)
+            {
+                FirebaseResponse resp1 = cf.client.Get("Respuestas/RespuestasAbiertas/" + idPregunta + "/0");
+                Respuesta a = resp1.ResultAs<Respuesta>();
+                FirebaseResponse resp2 = cf.client.Get("Respuestas/RespuestasAbiertas/" + idPregunta + "/1");
+                Respuesta b = resp2.ResultAs<Respuesta>();
+                FirebaseResponse resp3 = cf.client.Get("Respuestas/RespuestasAbiertas/" + idPregunta + "/2");
+                Respuesta c = resp3.ResultAs<Respuesta>();
+                FirebaseResponse resp4 = cf.client.Get("Respuestas/RespuestasAbiertas/" + idPregunta + "/3");
+                Respuesta d = resp4.ResultAs<Respuesta>();
+                respuestas.Add(a);
+                respuestas.Add(b);
+                respuestas.Add(c);
+                respuestas.Add(d);
+            }
+            else if (getPreguntaVFById(idPregunta) != null)
+            {
+                FirebaseResponse resp1 = cf.client.Get("Respuestas/RespuestasVerdaderoFalso/" + idPregunta + "/0");
+                Respuesta a = resp1.ResultAs<Respuesta>();
+                FirebaseResponse resp2 = cf.client.Get("Respuestas/RespuestasVerdaderoFalso/" + idPregunta + "/1");
+                Respuesta b = resp2.ResultAs<Respuesta>();
+                FirebaseResponse resp3 = cf.client.Get("Respuestas/RespuestasVerdaderoFalso/" + idPregunta + "/2");
+                Respuesta c = resp3.ResultAs<Respuesta>();
+                FirebaseResponse resp4 = cf.client.Get("Respuestas/RespuestasVerdaderoFalso/" + idPregunta + "/3");
+                Respuesta d = resp4.ResultAs<Respuesta>();
+                respuestas.Add(a);
+                respuestas.Add(b);
+                respuestas.Add(c);
+                respuestas.Add(d);
+            }
 
             return respuestas;
         }
 
-        public Pregunta getPreguntaById(string id, string nombreQuiz)
+        public PreguntaMO getPreguntaMOById(string id)
         {
-            FirebaseResponse preguntaMO = cf.client.Get("Preguntas/PreguntasMultiOpcion/" + nombreQuiz + "/"+ id);
-            Pregunta p1 = preguntaMO.ResultAs<PreguntaMO>();
+            FirebaseResponse preguntaMO = cf.client.Get("Preguntas/PreguntasMultiOpcion/" + id);
+            PreguntaMO p1 = preguntaMO.ResultAs<PreguntaMO>();
             if (preguntaMO != null) return p1;
-            FirebaseResponse preguntaVF = cf.client.Get("Preguntas/PreguntasVerdaderoFalso/" + nombreQuiz + "/" + id);
-            Pregunta p2 = preguntaVF.ResultAs<PreguntaVF>();
-            if (preguntaVF != null) return p2;
-            FirebaseResponse preguntaPA = cf.client.Get("Preguntas/PreguntasAbiertas/" + nombreQuiz + "/" + id);
-            Pregunta p3 = preguntaPA.ResultAs<PreguntaA>();
+
+
+            return null;
+
+        }
+
+        public PreguntaA getPreguntaAById(string id)
+        {
+
+            FirebaseResponse preguntaPA = cf.client.Get("Preguntas/PreguntasAbiertas/" + id);
+            PreguntaA p3 = preguntaPA.ResultAs<PreguntaA>();
             if (preguntaPA != null) return p3;
 
             return null;
-            
+
         }
 
-        
+        public PreguntaVF getPreguntaVFById(string id)
+        {
 
+            FirebaseResponse preguntaVF = cf.client.Get("Preguntas/PreguntasVerdaderoFalso/" + id);
+            PreguntaVF p2 = preguntaVF.ResultAs<PreguntaVF>();
+            if (preguntaVF != null) return p2;
+
+            return null;
+
+        }
+
+        public BateriaMultiOpcion getBateriaMOById(string idBateria)
+        {
+            BateriaMultiOpcion b;
+            FirebaseResponse bateria = cf.client.Get("Baterias/MultiOpcion/" + idBateria);
+            b = bateria.ResultAs<BateriaMultiOpcion>();
+            return b;
+        }
+        public Dictionary<string, Calificacion> getDiccionarioCalificacion()
+        {
+            FirebaseResponse calificaciones = cf.client.Get(@"Calificaciones");
+            Dictionary<string, Calificacion> diccionarioCalificacion =
+                JsonConvert.DeserializeObject<Dictionary<string, Calificacion>>(calificaciones.Body.ToString());
+            return diccionarioCalificacion;
+        }
 
     }
 }

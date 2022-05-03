@@ -40,18 +40,16 @@ namespace MyQuizifyGUI
             this.botonRegistrar = new System.Windows.Forms.Button();
             this.buttonAlumno = new System.Windows.Forms.RadioButton();
             this.buttonInstructor = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(107)))));
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(347, 671);
             this.panel1.TabIndex = 0;
@@ -93,7 +91,7 @@ namespace MyQuizifyGUI
             // textBoxUsername
             // 
             this.textBoxUsername.Location = new System.Drawing.Point(380, 237);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(367, 22);
             this.textBoxUsername.TabIndex = 3;
@@ -101,7 +99,7 @@ namespace MyQuizifyGUI
             // textBoxPassword
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(380, 340);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(367, 22);
@@ -125,7 +123,7 @@ namespace MyQuizifyGUI
             this.botonInicioSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.botonInicioSesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.botonInicioSesion.Location = new System.Drawing.Point(383, 556);
-            this.botonInicioSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botonInicioSesion.Margin = new System.Windows.Forms.Padding(4);
             this.botonInicioSesion.Name = "botonInicioSesion";
             this.botonInicioSesion.Size = new System.Drawing.Size(365, 55);
             this.botonInicioSesion.TabIndex = 11;
@@ -140,7 +138,7 @@ namespace MyQuizifyGUI
             this.botonRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonRegistrar.ForeColor = System.Drawing.Color.Blue;
             this.botonRegistrar.Location = new System.Drawing.Point(383, 619);
-            this.botonRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botonRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.botonRegistrar.Name = "botonRegistrar";
             this.botonRegistrar.Size = new System.Drawing.Size(93, 28);
             this.botonRegistrar.TabIndex = 15;
@@ -152,7 +150,7 @@ namespace MyQuizifyGUI
             // 
             this.buttonAlumno.AutoSize = true;
             this.buttonAlumno.Location = new System.Drawing.Point(431, 425);
-            this.buttonAlumno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAlumno.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAlumno.Name = "buttonAlumno";
             this.buttonAlumno.Size = new System.Drawing.Size(76, 21);
             this.buttonAlumno.TabIndex = 16;
@@ -165,7 +163,7 @@ namespace MyQuizifyGUI
             // 
             this.buttonInstructor.AutoSize = true;
             this.buttonInstructor.Location = new System.Drawing.Point(591, 425);
-            this.buttonInstructor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonInstructor.Margin = new System.Windows.Forms.Padding(4);
             this.buttonInstructor.Name = "buttonInstructor";
             this.buttonInstructor.Size = new System.Drawing.Size(88, 21);
             this.buttonInstructor.TabIndex = 17;
@@ -173,16 +171,6 @@ namespace MyQuizifyGUI
             this.buttonInstructor.Text = "Instructor";
             this.buttonInstructor.UseVisualStyleBackColor = true;
             this.buttonInstructor.CheckedChanged += new System.EventHandler(this.buttonInstructor_CheckedChanged);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(47, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // InicioSesion
             // 
@@ -199,7 +187,7 @@ namespace MyQuizifyGUI
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "InicioSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InicioSesion";
@@ -224,6 +212,5 @@ namespace MyQuizifyGUI
         private System.Windows.Forms.Button botonRegistrar;
         private System.Windows.Forms.RadioButton buttonAlumno;
         private System.Windows.Forms.RadioButton buttonInstructor;
-        private System.Windows.Forms.Button button1;
     }
 }

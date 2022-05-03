@@ -51,9 +51,9 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
         public void añadirPregunta(string id, string enunciado, string imagen, double puntuacion, string explicacion)
         {
             string tipo = "";
-            if (this.GetType().Name == "QuizMO") tipo = "MultiOpcion";
-            if (this.GetType().Name == "QuizVF") tipo = "VerdaderoFalso";
-            if (this.GetType().Name == "QuizPA") tipo = "Abierta";
+            if (this.GetType().Name == "QuizMO") tipo = "PreguntasMultiOpcion";
+            if (this.GetType().Name == "QuizVF") tipo = "PreguntasVerdaderoFalso";
+            if (this.GetType().Name == "QuizPA") tipo = "PreguntasAbiertas";
 
             Pregunta p = crearPregunta(id, enunciado, imagen, puntuacion, explicacion);
             preguntas.Add(p);
