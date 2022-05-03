@@ -21,5 +21,6 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
             Respuesta r = new RespuestaVF(enunciado);
             return r;
         }
+
     }
 }

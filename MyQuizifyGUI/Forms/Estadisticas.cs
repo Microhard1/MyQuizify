@@ -1,6 +1,9 @@
 ﻿using FireSharp.Response;
 using MyQuizifyLib.BussinessLogic.Entidades;
+<<<<<<< HEAD
 using MyQuizifyLib.BussinessLogic.Servicios;
+=======
+>>>>>>> dc5f3a276ef3c4fd4be29d84c230f7b932f28d38
 using MyQuizifyLib.Persistencia;
 using Newtonsoft.Json;
 using System;
@@ -18,9 +21,13 @@ namespace MyQuizifyGUI.Forms
     public partial class Estadisticas : Form
     {
         ConexionBD cf = ConexionBD.getInstancia();
+<<<<<<< HEAD
         Quiz quiz;
         MyQuizifyServices services = new MyQuizifyServices();
         public Estadisticas(Quiz q)
+=======
+        public Estadisticas()
+>>>>>>> dc5f3a276ef3c4fd4be29d84c230f7b932f28d38
         {
             InitializeComponent();
             quiz = q;
@@ -60,6 +67,11 @@ namespace MyQuizifyGUI.Forms
         private void btbVolver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Estadisticas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

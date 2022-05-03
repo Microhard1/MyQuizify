@@ -43,8 +43,14 @@ namespace MyQuizifyGUI
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+=======
+            this.btbClonarQuiz = new System.Windows.Forms.Button();
+            this.btbEstadisticasQuiz = new System.Windows.Forms.Button();
+            this.botonCargarQuizes = new System.Windows.Forms.Button();
+>>>>>>> dc5f3a276ef3c4fd4be29d84c230f7b932f28d38
             ((System.ComponentModel.ISupportInitialize)(this.dataGridQuizes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -195,16 +201,38 @@ namespace MyQuizifyGUI
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btbClonarQuiz
             // 
-            this.button3.AccessibleName = "botonCrearQuiz";
-            this.button3.Location = new System.Drawing.Point(136, 479);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 48);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Clonar Quizes";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btbClonarQuiz.AccessibleName = "botonCrearQuiz";
+            this.btbClonarQuiz.Location = new System.Drawing.Point(136, 479);
+            this.btbClonarQuiz.Name = "btbClonarQuiz";
+            this.btbClonarQuiz.Size = new System.Drawing.Size(94, 48);
+            this.btbClonarQuiz.TabIndex = 13;
+            this.btbClonarQuiz.Text = "Clonar Quizes";
+            this.btbClonarQuiz.UseVisualStyleBackColor = true;
+            this.btbClonarQuiz.Click += new System.EventHandler(this.btbClonarQuiz_Click);
+            // 
+            // btbEstadisticasQuiz
+            // 
+            this.btbEstadisticasQuiz.AccessibleName = "botonEstadisticasQuiz";
+            this.btbEstadisticasQuiz.Location = new System.Drawing.Point(235, 479);
+            this.btbEstadisticasQuiz.Name = "btbEstadisticasQuiz";
+            this.btbEstadisticasQuiz.Size = new System.Drawing.Size(94, 48);
+            this.btbEstadisticasQuiz.TabIndex = 14;
+            this.btbEstadisticasQuiz.Text = "Estadisticas del Quiz";
+            this.btbEstadisticasQuiz.UseVisualStyleBackColor = true;
+            this.btbEstadisticasQuiz.Click += new System.EventHandler(this.btbEstadisticasQuiz_Click);
+            // 
+            // botonCargarQuizes
+            // 
+            this.botonCargarQuizes.AccessibleName = "botonEstadisticasQuiz";
+            this.botonCargarQuizes.Location = new System.Drawing.Point(392, 75);
+            this.botonCargarQuizes.Name = "botonCargarQuizes";
+            this.botonCargarQuizes.Size = new System.Drawing.Size(107, 33);
+            this.botonCargarQuizes.TabIndex = 15;
+            this.botonCargarQuizes.Text = "Cargar Quizes";
+            this.botonCargarQuizes.UseVisualStyleBackColor = true;
+            this.botonCargarQuizes.Click += new System.EventHandler(this.botonCargarQuizes_Click);
             // 
             // button4
             // 
@@ -222,8 +250,14 @@ namespace MyQuizifyGUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1090, 539);
+<<<<<<< HEAD
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
+=======
+            this.Controls.Add(this.botonCargarQuizes);
+            this.Controls.Add(this.btbEstadisticasQuiz);
+            this.Controls.Add(this.btbClonarQuiz);
+>>>>>>> dc5f3a276ef3c4fd4be29d84c230f7b932f28d38
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -262,7 +296,13 @@ namespace MyQuizifyGUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
+<<<<<<< HEAD
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+=======
+        private System.Windows.Forms.Button btbClonarQuiz;
+        private System.Windows.Forms.Button btbEstadisticasQuiz;
+        private System.Windows.Forms.Button botonCargarQuizes;
+>>>>>>> dc5f3a276ef3c4fd4be29d84c230f7b932f28d38
     }
 }

@@ -31,15 +31,26 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
 
         public void añadirRespuesta(string enunciado)
         {
+
             string tipo = "";
             if (this.GetType().Name == "PreguntaMO") tipo = "RespuestasMultiOpcion";
             if (this.GetType().Name == "PreguntaA") tipo = "RespuestasAbiertas";
             if (this.GetType().Name == "PreguntaVF") tipo = "RespuestasVerdaderoFalso";
             Respuesta r = crearRespuesta(enunciado);
+
             respuestas.Add(r);
-            FirebaseResponse addRespuesta = cf.client.Set("Respuestas/"+ tipo + "/" + this.id, respuestas);
+            FirebaseResponse addRespuesta = cf.client.Set("Respuestas/" + this.id, respuestas);
         }
 
         public abstract Respuesta crearRespuesta(string enunciado);
+
+        public override string ToString()
+        {
+            return "id: " + id + "\n" + 
+                "Enunciado: " + enunciado + "\n" + 
+                "Explicacion: " + explicacion + "\n" 
+                + "puntuacion: " + puntuacion + "\n" 
+                + "imagen: " + imagen + "\n";
+        }
     }   
 }

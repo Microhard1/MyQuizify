@@ -51,13 +51,13 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
         public void añadirPregunta(string id, string enunciado, string imagen, double puntuacion, string explicacion)
         {
             string tipo = "";
-            if (this.GetType().Name == "QuizMO") tipo = "PreguntasMultiOpcion";
-            if (this.GetType().Name == "QuizVF") tipo = "PreguntasVerdaderoFalso";
-            if (this.GetType().Name == "QuizPA") tipo = "PreguntasAbiertas";
+            if (this.GetType().Name == "QuizMO") tipo = "MultiOpcion";
+            if (this.GetType().Name == "QuizVF") tipo = "VerdaderoFalso";
+            if (this.GetType().Name == "QuizPA") tipo = "Abierta";
 
             Pregunta p = crearPregunta(id, enunciado, imagen, puntuacion, explicacion);
             preguntas.Add(p);
-            FirebaseResponse addPregunta = cf.client.Set("Preguntas/"+ tipo + "/" + this.nombreQuiz + "/" + p.id , p);
+            FirebaseResponse addPregunta = cf.client.Set("Preguntas/"+ tipo + "/" + this.nombreQuiz, p);
         }
 
         public abstract Pregunta crearPregunta(string id, string enunciado, string imagen, double puntuacion, string explicacion);
@@ -118,6 +118,19 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
                 quiz.preguntas = q.preguntas;
                 return quiz;
             }
+        }
+        public override string ToString()
+        {
+            return "Nombre: " + nombreQuiz + "\n" +
+                "Creado por: " + creadoPor.nombre + "\n" +
+                "peso: " + peso + "\n"
+                + "duracion: " + duracion + "\n"
+                + "dificultad: " + dificultad + "\n"
+                + "dificultad: " + dificultad + "\n"
+                +"fechaDeInicio: " + fechaDeInicio + "\n"
+                + "fechaFin: " + fechaFin + "\n"
+                + "estado: " + estado + "\n"
+                + "asignatura: " + asignatura + "\n"; 
         }
     }
 }

@@ -17,6 +17,7 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
         public ICollection<QuizMO> listadoQuizesMO;
         public ICollection<QuizPA> listadoQuizesPA;
         public ICollection<QuizVF> listadoQuizesVF;
+        public ICollection<Bateria> listadoBaterias;
         public ICollection<PreguntaMO> listadoPreguntasMO;
         public ICollection<PreguntaVF> listadoPreguntasVF;
         public ICollection<PreguntaA> listadoPreguntasA;

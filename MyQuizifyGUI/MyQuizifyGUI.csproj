@@ -117,9 +117,10 @@
     <Compile Include="Forms\CreacionQuizes\CrearQuiz.Designer.cs">
       <DependentUpon>CrearQuiz.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CrearBateria.cs">
+    <Compile Include="Forms\CreacionQuizes\PantallaSeleccionTipoQuiz.cs">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Forms\CrearBateria.Designer.cs">
       <DependentUpon>CrearBateria.cs</DependentUpon>
     </Compile>
@@ -140,6 +141,10 @@
     </Compile>
     <Compile Include="Forms\CrearPreguntasBaterias.Designer.cs">
       <DependentUpon>CrearPreguntasBaterias.cs</DependentUpon>
+=======
+    <Compile Include="Forms\CreacionQuizes\PantallaSeleccionTipoQuiz.Designer.cs">
+      <DependentUpon>PantallaSeleccionTipoQuiz.cs</DependentUpon>
+>>>>>>> dc5f3a276ef3c4fd4be29d84c230f7b932f28d38
     </Compile>
     <Compile Include="Forms\CrearPreguntaVF.cs">
       <SubType>Form</SubType>
@@ -230,9 +235,10 @@
     <EmbeddedResource Include="Forms\CreacionQuizes\CrearQuiz.resx">
       <DependentUpon>CrearQuiz.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CrearBateria.resx">
-      <DependentUpon>CrearBateria.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CreacionQuizes\PantallaSeleccionTipoQuiz.resx">
+      <DependentUpon>PantallaSeleccionTipoQuiz.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Forms\CrearPreguntaA.resx">
       <DependentUpon>CrearPreguntaA.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,6 +247,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CrearPreguntasBaterias.resx">
       <DependentUpon>CrearPreguntasBaterias.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Forms\Estadisticas.resx">
+      <DependentUpon>Estadisticas.cs</DependentUpon>
+>>>>>>> dc5f3a276ef3c4fd4be29d84c230f7b932f28d38
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CrearPreguntaVF.resx">
       <DependentUpon>CrearPreguntaVF.cs</DependentUpon>

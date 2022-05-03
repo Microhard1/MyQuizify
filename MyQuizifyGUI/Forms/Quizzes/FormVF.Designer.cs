@@ -29,109 +29,105 @@ namespace MyQuizifyGUI.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxEnunciado = new System.Windows.Forms.TextBox();
+            this.inputImagen = new System.Windows.Forms.PictureBox();
+            this.panelVerdadero = new System.Windows.Forms.Panel();
+            this.botonVerdadero = new System.Windows.Forms.RadioButton();
+            this.panelFalso = new System.Windows.Forms.Panel();
+            this.botonFalso = new System.Windows.Forms.RadioButton();
+            this.botonAñadirImagen = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textboxExplicacion = new System.Windows.Forms.TextBox();
+            this.textBoxPuntuacion = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.inputImagen)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxEnunciado
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(42, 32);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(554, 82);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxEnunciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEnunciado.ForeColor = System.Drawing.Color.Black;
+            this.textBoxEnunciado.Location = new System.Drawing.Point(42, 32);
+            this.textBoxEnunciado.Multiline = true;
+            this.textBoxEnunciado.Name = "textBoxEnunciado";
+            this.textBoxEnunciado.Size = new System.Drawing.Size(554, 82);
+            this.textBoxEnunciado.TabIndex = 1;
+            this.textBoxEnunciado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pictureBox1
+            // inputImagen
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(232, 132);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(165, 128);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.inputImagen.Location = new System.Drawing.Point(224, 132);
+            this.inputImagen.Name = "inputImagen";
+            this.inputImagen.Size = new System.Drawing.Size(203, 140);
+            this.inputImagen.TabIndex = 5;
+            this.inputImagen.TabStop = false;
+            this.inputImagen.Click += new System.EventHandler(this.inputImagen_Click);
             // 
-            // panel2
+            // panelVerdadero
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel2.Location = new System.Drawing.Point(18, 32);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(263, 90);
-            this.panel2.TabIndex = 6;
+            this.panelVerdadero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panelVerdadero.Location = new System.Drawing.Point(18, 32);
+            this.panelVerdadero.Name = "panelVerdadero";
+            this.panelVerdadero.Size = new System.Drawing.Size(263, 90);
+            this.panelVerdadero.TabIndex = 6;
             // 
-            // radioButton2
+            // botonVerdadero
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.radioButton2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(36, 66);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(139, 27);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "VERDADERO";
-            this.radioButton2.UseVisualStyleBackColor = false;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.botonVerdadero.AutoSize = true;
+            this.botonVerdadero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.botonVerdadero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonVerdadero.Location = new System.Drawing.Point(36, 66);
+            this.botonVerdadero.Name = "botonVerdadero";
+            this.botonVerdadero.Size = new System.Drawing.Size(156, 28);
+            this.botonVerdadero.TabIndex = 2;
+            this.botonVerdadero.Text = "VERDADERO";
+            this.botonVerdadero.UseVisualStyleBackColor = false;
+            this.botonVerdadero.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // panel1
+            // panelFalso
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel1.Location = new System.Drawing.Point(287, 32);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(261, 90);
-            this.panel1.TabIndex = 7;
+            this.panelFalso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panelFalso.Location = new System.Drawing.Point(287, 32);
+            this.panelFalso.Name = "panelFalso";
+            this.panelFalso.Size = new System.Drawing.Size(261, 90);
+            this.panelFalso.TabIndex = 7;
+            this.panelFalso.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFalso_Paint);
             // 
-            // radioButton1
+            // botonFalso
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.radioButton1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(310, 66);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 27);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "FALSO";
-            this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton1.UseVisualStyleBackColor = false;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.botonFalso.AutoSize = true;
+            this.botonFalso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.botonFalso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonFalso.Location = new System.Drawing.Point(310, 66);
+            this.botonFalso.Name = "botonFalso";
+            this.botonFalso.Size = new System.Drawing.Size(95, 28);
+            this.botonFalso.TabIndex = 2;
+            this.botonFalso.Text = "FALSO";
+            this.botonFalso.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.botonFalso.UseVisualStyleBackColor = false;
+            this.botonFalso.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // button1
+            // botonAñadirImagen
             // 
-            this.button1.Location = new System.Drawing.Point(294, 195);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 39);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(280, 179);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Añadir imagen";
+            this.botonAñadirImagen.Location = new System.Drawing.Point(254, 426);
+            this.botonAñadirImagen.Name = "botonAñadirImagen";
+            this.botonAñadirImagen.Size = new System.Drawing.Size(146, 39);
+            this.botonAñadirImagen.TabIndex = 8;
+            this.botonAñadirImagen.Text = "Añadir imagen";
+            this.botonAñadirImagen.UseVisualStyleBackColor = true;
+            this.botonAñadirImagen.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.panel2);
-            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Controls.Add(this.botonVerdadero);
+            this.groupBox1.Controls.Add(this.botonFalso);
+            this.groupBox1.Controls.Add(this.panelVerdadero);
+            this.groupBox1.Controls.Add(this.panelFalso);
             this.groupBox1.Location = new System.Drawing.Point(42, 278);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(554, 141);
@@ -147,24 +143,77 @@ namespace MyQuizifyGUI.Forms
             this.label2.TabIndex = 11;
             this.label2.Text = "Escriba el enunciado :";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 132);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Explicación (opcional):";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // textboxExplicacion
+            // 
+            this.textboxExplicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxExplicacion.ForeColor = System.Drawing.Color.Black;
+            this.textboxExplicacion.Location = new System.Drawing.Point(26, 167);
+            this.textboxExplicacion.Multiline = true;
+            this.textboxExplicacion.Name = "textboxExplicacion";
+            this.textboxExplicacion.Size = new System.Drawing.Size(131, 286);
+            this.textboxExplicacion.TabIndex = 12;
+            this.textboxExplicacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxPuntuacion
+            // 
+            this.textBoxPuntuacion.Location = new System.Drawing.Point(26, 49);
+            this.textBoxPuntuacion.Name = "textBoxPuntuacion";
+            this.textBoxPuntuacion.Size = new System.Drawing.Size(131, 20);
+            this.textBoxPuntuacion.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(24, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Puntuacion :";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.textBoxPuntuacion);
+            this.panel1.Controls.Add(this.textboxExplicacion);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(690, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(171, 477);
+            this.panel1.TabIndex = 14;
+            // 
             // FormVF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 443);
+            this.ClientSize = new System.Drawing.Size(861, 477);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.botonAñadirImagen);
+            this.Controls.Add(this.inputImagen);
+            this.Controls.Add(this.textBoxEnunciado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormVF";
             this.Text = "FormVF";
             this.Load += new System.EventHandler(this.FormVF_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputImagen)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,15 +221,19 @@ namespace MyQuizifyGUI.Forms
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxEnunciado;
+        private System.Windows.Forms.PictureBox inputImagen;
+        private System.Windows.Forms.Panel panelVerdadero;
+        private System.Windows.Forms.RadioButton botonVerdadero;
+        private System.Windows.Forms.Panel panelFalso;
+        private System.Windows.Forms.RadioButton botonFalso;
+        private System.Windows.Forms.Button botonAñadirImagen;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textboxExplicacion;
+        private System.Windows.Forms.TextBox textBoxPuntuacion;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
     }
 }

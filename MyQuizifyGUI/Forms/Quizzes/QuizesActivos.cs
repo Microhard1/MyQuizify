@@ -51,7 +51,7 @@ namespace MyQuizifyGUI
             dataGridQuizes.Columns.Add("fechaFin", "Fin");
             dataGridQuizes.Columns.Add("estado", "Estado");
 
-            mostrarQuizes();
+           
 
         }
 
@@ -251,8 +251,6 @@ namespace MyQuizifyGUI
                     }
                 }
             }
-
-            
         }
 
         public void eliminarDatosGrid()
@@ -286,11 +284,17 @@ namespace MyQuizifyGUI
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btbEstadisticasQuiz_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btbClonarQuiz_Click(object sender, EventArgs e)
         {
             clonacionForm.ShowDialog();
         }
 
+<<<<<<< HEAD
         private void button4_Click(object sender, EventArgs e)
         {
             Quiz q = null;
@@ -304,6 +308,13 @@ namespace MyQuizifyGUI
             }
             Estadisticas estadisticas = new Estadisticas(q);
             estadisticas.ShowDialog();
+=======
+        private void botonCargarQuizes_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            mostrarQuizes();
+            Cursor.Current = Cursors.Default;
+>>>>>>> dc5f3a276ef3c4fd4be29d84c230f7b932f28d38
         }
     }
 }
