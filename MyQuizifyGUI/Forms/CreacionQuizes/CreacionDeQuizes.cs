@@ -58,6 +58,7 @@ namespace MyQuizifyGUI.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             int pesoQuiz = Int32.Parse(textBoxPeso.Text);
             string nombreQuiz = textBoxNombreQuiz.Text;
             
@@ -68,24 +69,28 @@ namespace MyQuizifyGUI.Forms
             {
                 MessageBox.Show("El peso del quiz debe estar entre 5% y 65%");
             }
+            else
+            {
+                if (tipoDeQuiz == "MultiOpcion")
+                {
+                    quizActual = new QuizMO(nombreQuiz, servicio.getInstructorById(cf.usuarioConectado.username),
+                        duracion, pesoQuiz, dificultad, dateTimePickerInicio.Value, dateTimePickerFin.Value, "En preparacion", servicio.getCursoById(comboBoxCursos.Text));
+                }
+                else if (tipoDeQuiz == "Verdadero/Falso")
+                {
+                    quizActual = new QuizVF(nombreQuiz, servicio.getInstructorById(cf.usuarioConectado.username),
+                       duracion, pesoQuiz, dificultad, dateTimePickerInicio.Value, dateTimePickerFin.Value, "En preparacion", servicio.getCursoById(comboBoxCursos.Text));
+                    AñadirPreguntas(quizActual);
+                }
+                else if (tipoDeQuiz == "Respuesta Abierta")
+                {
+                    quizActual = new QuizPA(nombreQuiz, servicio.getInstructorById(cf.usuarioConectado.username),
+                       duracion, pesoQuiz, dificultad, dateTimePickerInicio.Value, dateTimePickerFin.Value, "En preparacion", servicio.getCursoById(comboBoxCursos.Text));
 
-            if (tipoDeQuiz == "MultiOpcion")
-            {
-                quizActual = new QuizMO(nombreQuiz,servicio.getInstructorById(cf.usuarioConectado.username),
-                    duracion,pesoQuiz,dificultad,dateTimePickerInicio.Value, dateTimePickerFin.Value,"En preparacion",servicio.getCursoById(comboBoxCursos.Text));
+                }
+                MessageBox.Show("Quiz creado: " + quizActual.ToString());
             }
-            else if (tipoDeQuiz == "Verdadero/Falso")
-            {
-                quizActual = new QuizVF(nombreQuiz, servicio.getInstructorById(cf.usuarioConectado.username),
-                   duracion, pesoQuiz, dificultad, dateTimePickerInicio.Value, dateTimePickerFin.Value, "En preparacion", servicio.getCursoById(comboBoxCursos.Text));
-                AñadirPreguntas(quizActual);
-            }
-            else if (tipoDeQuiz == "Respuesta Abierta")
-            {
-                quizActual = new QuizPA(nombreQuiz, servicio.getInstructorById(cf.usuarioConectado.username),
-                   duracion, pesoQuiz, dificultad, dateTimePickerInicio.Value, dateTimePickerFin.Value, "En preparacion", servicio.getCursoById(comboBoxCursos.Text));
-
-            }
+            Cursor.Current = Cursors.Default;
 
         }
         private void AñadirPreguntas(Quiz q)

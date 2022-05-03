@@ -119,5 +119,18 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
                 return quiz;
             }
         }
+        public override string ToString()
+        {
+            return "Nombre: " + nombreQuiz + "\n" +
+                "Creado por: " + creadoPor.nombre + "\n" +
+                "peso: " + peso + "\n"
+                + "duracion: " + duracion + "\n"
+                + "dificultad: " + dificultad + "\n"
+                + "dificultad: " + dificultad + "\n"
+                +"fechaDeInicio: " + fechaDeInicio + "\n"
+                + "fechaFin: " + fechaFin + "\n"
+                + "estado: " + estado + "\n"
+                + "asignatura: " + asignatura + "\n"; 
+        }
     }
 }

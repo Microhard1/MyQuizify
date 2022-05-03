@@ -30,7 +30,7 @@ namespace MyQuizifyGUI.Forms
             dataGridViewCursos.Columns.Add("nombre", "Nombre");
             dataGridViewCursos.Columns.Add("id", "Id");
 
-            poblarGrid();
+            
             
         }
 
@@ -68,6 +68,14 @@ namespace MyQuizifyGUI.Forms
 
         }
 
-        
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            poblarGrid();
+        }
     }
 }

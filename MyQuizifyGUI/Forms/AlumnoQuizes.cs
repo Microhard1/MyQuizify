@@ -40,7 +40,7 @@ namespace MyQuizifyGUI.Forms
             dataGridQuizes.Columns.Add("fechaDeInicio", "Inicio");
             dataGridQuizes.Columns.Add("fechaFin", "Fin");
 
-            mostrarQuizes();
+           
         }
 
         public void mostrarQuizes()
@@ -82,6 +82,13 @@ namespace MyQuizifyGUI.Forms
         private void dataGridQuizes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            mostrarQuizes();
+            Cursor.Current = Cursors.Default;
         }
     }
 }

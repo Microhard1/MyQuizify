@@ -50,7 +50,7 @@ namespace MyQuizifyGUI
             dataGridQuizes.Columns.Add("fechaFin", "Fin");
             dataGridQuizes.Columns.Add("estado", "Estado");
 
-            mostrarQuizes();
+           
 
         }
 
@@ -291,6 +291,13 @@ namespace MyQuizifyGUI
         private void btbClonarQuiz_Click(object sender, EventArgs e)
         {
             clonacionForm.ShowDialog();
+        }
+
+        private void botonCargarQuizes_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            mostrarQuizes();
+            Cursor.Current = Cursors.Default;
         }
     }
 }

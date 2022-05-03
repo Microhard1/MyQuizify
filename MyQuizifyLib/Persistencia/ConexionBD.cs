@@ -32,7 +32,7 @@ namespace MyQuizifyLib.Persistencia
                 BasePath = "https://quizify-62e37-default-rtdb.firebaseio.com/"
             };
 
-            client = new FireSharp.FirebaseClient(conexionMicrohard);
+            client = new FireSharp.FirebaseClient(conexion);
         }
 
         public static ConexionBD getInstancia()
