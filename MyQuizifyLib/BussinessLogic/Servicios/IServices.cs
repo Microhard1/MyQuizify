@@ -17,7 +17,7 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
         string getTipoQuiz(Quiz q);
         List<Curso> listarCursos();
         Curso getCursoById(string id);
-        PreguntaMO getPreguntaMOById(string id);
+        PreguntaMO getPreguntaMOById(string nombreQuiz,string id);
         PreguntaA getPreguntaAById(string id);
         PreguntaVF getPreguntaVFById(string id);
         Dictionary<string, PreguntaVF> obtenerPreguntasVF();

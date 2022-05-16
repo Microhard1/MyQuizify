@@ -15,5 +15,9 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
 
         }
         public abstract void inicialize(bool correcta);
+        public override string ToString()
+        {
+            return this.enunciado;
+        }
     }
 }

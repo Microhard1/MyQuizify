@@ -198,10 +198,10 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
             return preguntas;
         }
 
-        public List<Respuesta> respuestasDeUnaPregunta(string idPregunta)
+        public List<Respuesta> respuestasDeUnaPregunta(String quiz,string idPregunta)
         {
             List<Respuesta> respuestas = new List<Respuesta>();
-            if (getPreguntaMOById(idPregunta) != null)
+            if (getPreguntaMOById(quiz,idPregunta) != null)
             {
 
                 FirebaseResponse resp1 = cf.client.Get("Respuestas/RespuestasMultiOpcion/" + idPregunta + "/0");
@@ -251,9 +251,9 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
             return respuestas;
         }
 
-        public PreguntaMO getPreguntaMOById(string id)
+        public PreguntaMO getPreguntaMOById(string quiz,string id)
         {
-            FirebaseResponse preguntaMO = cf.client.Get("Preguntas/PreguntasMultiOpcion/" + id);
+            FirebaseResponse preguntaMO = cf.client.Get("Preguntas/PreguntasMultiOpcion/"+quiz + id);
             PreguntaMO p1 = preguntaMO.ResultAs<PreguntaMO>();
             if (preguntaMO != null) return p1;
 

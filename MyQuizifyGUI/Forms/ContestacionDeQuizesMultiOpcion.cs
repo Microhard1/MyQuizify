@@ -31,7 +31,7 @@ namespace MyQuizifyGUI.Forms
         {
             button2.Enabled = false;
             Pregunta p = aContestar.preguntas.ToArray<Pregunta>()[contadorPregunta];
-            p.respuestas = servicios.respuestasDeUnaPregunta(p.id);
+            p.respuestas = servicios.respuestasDeUnaPregunta(aContestar.nombreQuiz,p.id);
             labelEnunciado.Text = p.enunciado;
             labelP1.Text = p.respuestas.ToArray<Respuesta>()[0].enunciado;
             labelP2.Text = p.respuestas.ToArray<Respuesta>()[1].enunciado;
@@ -45,7 +45,7 @@ namespace MyQuizifyGUI.Forms
             button1.Enabled = true;
             if (contadorPregunta == 0) button2.Enabled = false;
             Pregunta p = aContestar.preguntas.ToArray<Pregunta>()[contadorPregunta];
-            p.respuestas = servicios.respuestasDeUnaPregunta(p.id);
+            p.respuestas = servicios.respuestasDeUnaPregunta(aContestar.nombreQuiz,p.id);
             labelEnunciado.Text = p.enunciado;
             labelP1.Text = p.respuestas.ToArray<Respuesta>()[0].enunciado;
             labelP2.Text = p.respuestas.ToArray<Respuesta>()[1].enunciado;
@@ -59,7 +59,7 @@ namespace MyQuizifyGUI.Forms
             contadorPregunta++;
             if (contadorPregunta + 1 == aContestar.preguntas.Count) button1.Enabled = false;
             Pregunta p = aContestar.preguntas.ToArray<Pregunta>()[contadorPregunta];
-            p.respuestas = servicios.respuestasDeUnaPregunta(p.id);
+            p.respuestas = servicios.respuestasDeUnaPregunta(aContestar.nombreQuiz,p.id);
             labelEnunciado.Text = p.enunciado;
             labelP1.Text = p.respuestas.ToArray<Respuesta>()[0].enunciado;
             labelP2.Text = p.respuestas.ToArray<Respuesta>()[1].enunciado;

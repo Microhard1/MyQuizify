@@ -240,6 +240,7 @@ namespace MyQuizifyGUI.Forms
                 }
                 else if (c is Panel)
                 {
+                   
                     foreach (Control p in c.Controls)
                     {
                         if (p.GetType() == typeof(TextBox))
@@ -253,10 +254,10 @@ namespace MyQuizifyGUI.Forms
                                 explicacion = ((TextBox)p).Text;
                             }
                         }
-                        else if (c.GetType() == typeof(CheckBox))
+                        else if (p.GetType() == typeof(RadioButton))
                         {
 
-                            CheckBox aux = (CheckBox)c;
+                            RadioButton aux = (RadioButton)p;
 
 
                             if (aux.Name == "ckeckPregunta1")
@@ -379,7 +380,7 @@ namespace MyQuizifyGUI.Forms
             pregunta.añadirRespuesta(enunciado);
 
             preguntas.Add(pregunta);
-
+            MessageBox.Show("Se ha insertado una respuesta: " + r.ToString());
             MessageBox.Show("Se ha insertado una pregunta: " + pregunta.ToString()) ;
         }
         private void añadirRespuestas(List<Respuesta> respuestas, Pregunta p)
@@ -396,24 +397,17 @@ namespace MyQuizifyGUI.Forms
 
             foreach (Control c in objetosDelFormulario)
             {
-                if(c is GroupBox)
-                {
-                    ControlCollection objetosBox = (ControlCollection)c.Controls;
-                    foreach (Control p in objetosBox)
-                    {
-                        if (c is Panel)
+                 if (c is Panel)
                         {
-                            foreach (Control p in c.Controls)
+                            foreach (Control q in c.Controls)
                             {
-                                if (c.GetType() == typeof(TextBox))
+                                if (q.GetType() == typeof(TextBox))
                                 {
-                                    TextBox aux = (TextBox)c;
+                                    TextBox aux = (TextBox)q;
                                     respuestas.Add(aux);
                                 }
                             }
                         }
-                    }
-                    }
             }
 
             return respuestas;

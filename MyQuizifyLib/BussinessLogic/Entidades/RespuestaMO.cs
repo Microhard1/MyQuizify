@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyQuizifyLib.Persistencia;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,6 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
         public bool correcta;
         public RespuestaMO(string enunciado) : base(enunciado)
         {
-
         }
         public override void inicialize(bool correcta)
         {

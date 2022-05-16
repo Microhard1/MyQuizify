@@ -178,7 +178,6 @@ C:\Users\Pc\Documents\upv\soft\PSW\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI
 C:\Users\Pc\Documents\upv\soft\PSW\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.ContestacionDeQuizesMultiOpcion.resources
 C:\Users\Pc\Documents\upv\soft\PSW\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.CreacionDeQuizes.resources
 C:\Users\Pc\Documents\upv\soft\PSW\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.CrearQuiz.resources
-C:\Users\Pc\Documents\upv\soft\PSW\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.CreacionQuizes.PantallaSeleccionTipoQuiz.resources
 C:\Users\Pc\Documents\upv\soft\PSW\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.Estadisticas.resources
 C:\Users\Pc\Documents\upv\soft\PSW\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.InicioSesion.InicioInstructor.resources
 C:\Users\Pc\Documents\upv\soft\PSW\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.Quizzes.Clonacion_de_Quizes.resources
