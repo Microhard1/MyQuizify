@@ -71,5 +71,10 @@ namespace MyQuizifyGUI.Forms
         {
 
         }
+
+        private void labelEnunciado_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

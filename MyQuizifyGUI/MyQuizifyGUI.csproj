@@ -99,11 +99,17 @@
     <Compile Include="Forms\CaracterisiticasPrincipales.Designer.cs">
       <DependentUpon>CaracterisiticasPrincipales.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ContestacionDeQuizesMultiOpcion.cs">
+    <Compile Include="Forms\ContestacionQuizes\ContestacionDeQuizesMultiOpcion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ContestacionDeQuizesMultiOpcion.Designer.cs">
+    <Compile Include="Forms\ContestacionQuizes\ContestacionDeQuizesMultiOpcion.Designer.cs">
       <DependentUpon>ContestacionDeQuizesMultiOpcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ContestacionQuizes\ContestacionQuizVF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ContestacionQuizes\ContestacionQuizVF.Designer.cs">
+      <DependentUpon>ContestacionQuizVF.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CreacionQuizes\CreacionDeQuizes.cs">
       <SubType>Form</SubType>
@@ -140,6 +146,12 @@
     </Compile>
     <Compile Include="Forms\Quizzes\Clonacion de Quizes.Designer.cs">
       <DependentUpon>Clonacion de Quizes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Quizzes\Competencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Quizzes\Competencias.Designer.cs">
+      <DependentUpon>Competencias.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Quizzes\FormAbierto.cs">
       <SubType>Form</SubType>
@@ -197,8 +209,11 @@
     <EmbeddedResource Include="Forms\CaracterisiticasPrincipales.resx">
       <DependentUpon>CaracterisiticasPrincipales.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ContestacionDeQuizesMultiOpcion.resx">
+    <EmbeddedResource Include="Forms\ContestacionQuizes\ContestacionDeQuizesMultiOpcion.resx">
       <DependentUpon>ContestacionDeQuizesMultiOpcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContestacionQuizes\ContestacionQuizVF.resx">
+      <DependentUpon>ContestacionQuizVF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreacionQuizes\CreacionDeQuizes.resx">
       <DependentUpon>CreacionDeQuizes.cs</DependentUpon>
@@ -217,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Quizzes\Clonacion de Quizes.resx">
       <DependentUpon>Clonacion de Quizes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Quizzes\Competencias.resx">
+      <DependentUpon>Competencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Quizzes\FormAbierto.resx">
       <DependentUpon>FormAbierto.cs</DependentUpon>

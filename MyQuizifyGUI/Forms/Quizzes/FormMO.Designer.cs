@@ -43,7 +43,6 @@ namespace MyQuizifyGUI.Forms
             this.textPregunta4 = new System.Windows.Forms.TextBox();
             this.ckeckPregunta4 = new System.Windows.Forms.RadioButton();
             this.inputImagen = new System.Windows.Forms.PictureBox();
-            this.groupBoxOpciones = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,7 +55,6 @@ namespace MyQuizifyGUI.Forms
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputImagen)).BeginInit();
-            this.groupBoxOpciones.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,8 +73,9 @@ namespace MyQuizifyGUI.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.ckeckPregunta1);
             this.panel1.Controls.Add(this.textPregunta1);
-            this.panel1.Location = new System.Drawing.Point(13, 27);
+            this.panel1.Location = new System.Drawing.Point(62, 253);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(308, 78);
@@ -96,7 +95,7 @@ namespace MyQuizifyGUI.Forms
             // 
             this.ckeckPregunta1.AutoSize = true;
             this.ckeckPregunta1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ckeckPregunta1.Location = new System.Drawing.Point(28, 53);
+            this.ckeckPregunta1.Location = new System.Drawing.Point(4, 27);
             this.ckeckPregunta1.Margin = new System.Windows.Forms.Padding(4);
             this.ckeckPregunta1.Name = "ckeckPregunta1";
             this.ckeckPregunta1.Size = new System.Drawing.Size(38, 21);
@@ -109,7 +108,8 @@ namespace MyQuizifyGUI.Forms
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel2.Controls.Add(this.textPregunta2);
-            this.panel2.Location = new System.Drawing.Point(377, 27);
+            this.panel2.Controls.Add(this.ckeckPregunta2);
+            this.panel2.Location = new System.Drawing.Point(501, 253);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(315, 78);
@@ -128,7 +128,7 @@ namespace MyQuizifyGUI.Forms
             // 
             this.ckeckPregunta2.AutoSize = true;
             this.ckeckPregunta2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ckeckPregunta2.Location = new System.Drawing.Point(388, 53);
+            this.ckeckPregunta2.Location = new System.Drawing.Point(17, 27);
             this.ckeckPregunta2.Margin = new System.Windows.Forms.Padding(4);
             this.ckeckPregunta2.Name = "ckeckPregunta2";
             this.ckeckPregunta2.Size = new System.Drawing.Size(38, 21);
@@ -140,8 +140,9 @@ namespace MyQuizifyGUI.Forms
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel3.Controls.Add(this.ckeckPregunta3);
             this.panel3.Controls.Add(this.textPregunta3);
-            this.panel3.Location = new System.Drawing.Point(13, 143);
+            this.panel3.Location = new System.Drawing.Point(62, 382);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(308, 78);
@@ -160,7 +161,7 @@ namespace MyQuizifyGUI.Forms
             // 
             this.ckeckPregunta3.AutoSize = true;
             this.ckeckPregunta3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ckeckPregunta3.Location = new System.Drawing.Point(28, 169);
+            this.ckeckPregunta3.Location = new System.Drawing.Point(4, 30);
             this.ckeckPregunta3.Margin = new System.Windows.Forms.Padding(4);
             this.ckeckPregunta3.Name = "ckeckPregunta3";
             this.ckeckPregunta3.Size = new System.Drawing.Size(38, 21);
@@ -173,7 +174,8 @@ namespace MyQuizifyGUI.Forms
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.panel4.Controls.Add(this.textPregunta4);
-            this.panel4.Location = new System.Drawing.Point(377, 143);
+            this.panel4.Controls.Add(this.ckeckPregunta4);
+            this.panel4.Location = new System.Drawing.Point(501, 386);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(315, 78);
@@ -193,7 +195,7 @@ namespace MyQuizifyGUI.Forms
             // 
             this.ckeckPregunta4.AutoSize = true;
             this.ckeckPregunta4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.ckeckPregunta4.Location = new System.Drawing.Point(388, 169);
+            this.ckeckPregunta4.Location = new System.Drawing.Point(17, 27);
             this.ckeckPregunta4.Margin = new System.Windows.Forms.Padding(4);
             this.ckeckPregunta4.Name = "ckeckPregunta4";
             this.ckeckPregunta4.Size = new System.Drawing.Size(39, 21);
@@ -211,25 +213,6 @@ namespace MyQuizifyGUI.Forms
             this.inputImagen.TabIndex = 4;
             this.inputImagen.TabStop = false;
             this.inputImagen.Click += new System.EventHandler(this.inputImagen_Click);
-            // 
-            // groupBoxOpciones
-            // 
-            this.groupBoxOpciones.Controls.Add(this.ckeckPregunta1);
-            this.groupBoxOpciones.Controls.Add(this.ckeckPregunta4);
-            this.groupBoxOpciones.Controls.Add(this.ckeckPregunta2);
-            this.groupBoxOpciones.Controls.Add(this.ckeckPregunta3);
-            this.groupBoxOpciones.Controls.Add(this.panel1);
-            this.groupBoxOpciones.Controls.Add(this.panel3);
-            this.groupBoxOpciones.Controls.Add(this.panel2);
-            this.groupBoxOpciones.Controls.Add(this.panel4);
-            this.groupBoxOpciones.Location = new System.Drawing.Point(59, 204);
-            this.groupBoxOpciones.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBoxOpciones.Name = "groupBoxOpciones";
-            this.groupBoxOpciones.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxOpciones.Size = new System.Drawing.Size(704, 256);
-            this.groupBoxOpciones.TabIndex = 8;
-            this.groupBoxOpciones.TabStop = false;
-            this.groupBoxOpciones.Enter += new System.EventHandler(this.groupBoxOpciones_Enter);
             // 
             // label1
             // 
@@ -313,11 +296,14 @@ namespace MyQuizifyGUI.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 590);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBoxOpciones);
             this.Controls.Add(this.inputImagen);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.enunciadoTipoTest);
+            this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMO";
@@ -332,8 +318,6 @@ namespace MyQuizifyGUI.Forms
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputImagen)).EndInit();
-            this.groupBoxOpciones.ResumeLayout(false);
-            this.groupBoxOpciones.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
@@ -357,7 +341,6 @@ namespace MyQuizifyGUI.Forms
         private System.Windows.Forms.RadioButton ckeckPregunta4;
         private System.Windows.Forms.TextBox textPregunta4;
         private System.Windows.Forms.PictureBox inputImagen;
-        private System.Windows.Forms.GroupBox groupBoxOpciones;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label4;

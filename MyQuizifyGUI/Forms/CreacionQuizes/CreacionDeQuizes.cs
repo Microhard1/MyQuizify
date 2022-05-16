@@ -216,6 +216,7 @@ namespace MyQuizifyGUI.Forms
         public void CrearPreguntaTipoTest()
         {
             List<TextBox> listaRespuestas = getListaRespuestas();
+            List<RadioButton> listaChecRadioBtn = getListaRadioBtn();
             ControlCollection objetosDelFormulario = (ControlCollection)formularioActual.Controls;
             List<Respuesta> respuestas = new List<Respuesta>();
             string enunciado = "";
@@ -253,66 +254,6 @@ namespace MyQuizifyGUI.Forms
                                 explicacion = ((TextBox)p).Text;
                             }
                         }
-                        else if (c.GetType() == typeof(CheckBox))
-                        {
-
-                            CheckBox aux = (CheckBox)c;
-
-
-                            if (aux.Name == "ckeckPregunta1")
-                            {
-                                foreach (TextBox t in listaRespuestas)
-                                {
-                                    if (t.Name == "textPregunta1")
-                                    {
-                                        resp = new RespuestaMO(t.Text);
-                                        if (aux.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
-                                        respuestas.Add(resp);
-                                    }
-                                }
-                            }
-                            else if (aux.Name == "ckeckPregunta2")
-                            {
-                                foreach (TextBox t in listaRespuestas)
-                                {
-                                    if (t.Name == "textPregunta2")
-                                    {
-                                        resp = new RespuestaMO(t.Text);
-                                        if (aux.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
-                                        respuestas.Add(resp);
-
-                                    }
-
-                                }
-                            }
-                            else if (aux.Name == "ckeckPregunta3")
-                            {
-                                foreach (TextBox t in listaRespuestas)
-                                {
-                                    if (t.Name == "textPregunta3")
-                                    {
-                                        resp = new RespuestaMO(t.Text);
-                                        if (aux.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
-                                        respuestas.Add(resp);
-
-                                    }
-                                }
-                            }
-                            else if (aux.Name == "ckeckPregunta4")
-                            {
-                                foreach (TextBox t in listaRespuestas)
-                                {
-                                    if (t.Name == "textPregunta4")
-                                    {
-                                        resp = new RespuestaMO(t.Text);
-                                        if (aux.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
-                                        respuestas.Add(resp);
-                                    }
-                                }
-                            }
-
-
-                        }
                     }
                 }
                 else if (c.GetType() == typeof(PictureBox))
@@ -320,6 +261,66 @@ namespace MyQuizifyGUI.Forms
                     imagen = convertirImagen((PictureBox)c);
                 }
 
+            }
+            foreach (TextBox t in listaRespuestas)
+            {
+                if (t.Name == "textBoxPuntuacion")
+                {
+                puntuacion = Double.Parse(t.Text);
+                }
+                else if (t.Name == "textboxExplicacion")
+                {
+                explicacion = t.Text;
+                }
+                
+                else if (t.Name == "textPregunta1")
+                {
+                    resp = new RespuestaMO(t.Text);
+                    foreach (RadioButton check in listaChecRadioBtn)
+                    {
+                        if (check.Name== "ckeckPregunta1")
+                        {
+                            if(check.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
+                        }
+                    }
+                    respuestas.Add(resp);
+                }
+                else if (t.Name == "textPregunta2")
+                {
+                    resp = new RespuestaMO(t.Text);
+                    foreach (RadioButton check in listaChecRadioBtn)
+                    {
+                        if (check.Name == "ckeckPregunta2")
+                        {
+                            if (check.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
+                        }
+                    }
+                    respuestas.Add(resp);
+                }
+                else if(t.Name == "textPregunta3")
+                {
+                    resp = new RespuestaMO(t.Text);
+                    foreach (RadioButton check in listaChecRadioBtn)
+                    {
+                        if (check.Name == "ckeckPregunta3")
+                        {
+                            if (check.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
+                        }
+                    }
+                    respuestas.Add(resp);
+                }
+                else if(t.Name == "textPregunta4")
+                {
+                    resp = new RespuestaMO(t.Text);
+                    foreach (RadioButton check in listaChecRadioBtn)
+                    {
+                        if (check.Name == "ckeckPregunta4")
+                        {
+                            if (check.Checked) { resp.inicialize(true); } else { resp.inicialize(false); }
+                        }
+                    }
+                    respuestas.Add(resp);
+                }
             }
             string id = textBoxNombreQuiz.Text + "_" + numeroDePregunta;
 
@@ -393,32 +394,46 @@ namespace MyQuizifyGUI.Forms
         {
             List<TextBox> respuestas = new List<TextBox>();
             ControlCollection objetosDelFormulario = (ControlCollection)formularioActual.Controls;
-
             foreach (Control c in objetosDelFormulario)
-            {
-                if(c is GroupBox)
-                {
-                    ControlCollection objetosBox = (ControlCollection)c.Controls;
-                    foreach (Control p in objetosBox)
-                    {
-                        if (c is Panel)
+            {   
+                    if (c is Panel)
                         {
-                            foreach (Control p in c.Controls)
+                            foreach (Control t in c.Controls)
                             {
-                                if (c.GetType() == typeof(TextBox))
+                                if (t.GetType() == typeof(TextBox))
                                 {
-                                    TextBox aux = (TextBox)c;
+                                    TextBox aux = (TextBox)t;
                                     respuestas.Add(aux);
                                 }
                             }
                         }
-                    }
-                    }
+                    
+                    
             }
-
             return respuestas;
         }
+        private List<RadioButton> getListaRadioBtn()
+        {
+            List<RadioButton> respuestas = new List<RadioButton>();
+            ControlCollection objetosDelFormulario = (ControlCollection)formularioActual.Controls;
+            foreach (Control c in objetosDelFormulario)
+            {
+                if (c is Panel)
+                {
+                    foreach (Control t in c.Controls)
+                    {
+                        if (t.GetType() == typeof(RadioButton))
+                        {
+                            RadioButton aux = (RadioButton)t;
+                            respuestas.Add(aux);
+                        }
+                    }
+                }
 
+
+            }
+            return respuestas;
+        }
         public string convertirImagen(PictureBox picture)
         {
             if (picture.Image == null) return "";
