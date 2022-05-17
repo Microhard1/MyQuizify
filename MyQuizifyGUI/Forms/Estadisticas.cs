@@ -36,7 +36,6 @@ namespace MyQuizifyGUI.Forms
         }
         public void mostrarEstadisticas()
         {
-
             Dictionary<string, Calificacion> diccionarioCalificacion = services.getDiccionarioCalificacion();
             double media = 0, maxima = 0, minima = 10;
             int count = 0;

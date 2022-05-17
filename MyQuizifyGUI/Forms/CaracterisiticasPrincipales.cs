@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyQuizifyGUI.Forms.ContestacionQuizes;
 using MyQuizifyLib.BussinessLogic.Entidades;
 
 namespace MyQuizifyGUI.Forms
@@ -34,8 +35,21 @@ namespace MyQuizifyGUI.Forms
 
         private void btbAceptar_Click(object sender, EventArgs e)
         {
-           ContestacionDeQuizesMultiOpcion contestacionDeQuizesMultiOpcion = new ContestacionDeQuizesMultiOpcion(quiz);
-           contestacionDeQuizesMultiOpcion.ShowDialog();
+            if (quiz.GetType().Name=="QuizMO")
+            {
+                ContestacionDeQuizesMultiOpcion contestacionDeQuizesMultiOpcion = new ContestacionDeQuizesMultiOpcion(quiz);
+                contestacionDeQuizesMultiOpcion.ShowDialog();
+            }
+            else if (quiz.GetType().Name == "QuizVF")
+            {
+                ContestacionQuizVF contQuizVF = new ContestacionQuizVF(quiz) ;
+                contQuizVF.ShowDialog();
+            }
+            else if (quiz.GetType().Name == "QuizPA")
+            {
+
+            }
+            
         }
     }
 }

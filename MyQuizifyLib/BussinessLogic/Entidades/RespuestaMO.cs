@@ -12,6 +12,7 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
         public bool correcta;
         public RespuestaMO(string enunciado) : base(enunciado)
         {
+            this.correcta = false;
         }
         public override void inicialize(bool correcta)
         {

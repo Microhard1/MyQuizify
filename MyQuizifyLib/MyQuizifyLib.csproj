@@ -70,6 +70,7 @@
     <Compile Include="BussinessLogic\Entidades\BateriaMultiOpcion.cs" />
     <Compile Include="BussinessLogic\Entidades\BateriaVerdaderoFalso.cs" />
     <Compile Include="BussinessLogic\Entidades\Calificacion.cs" />
+    <Compile Include="BussinessLogic\Entidades\Competencia.cs" />
     <Compile Include="BussinessLogic\Entidades\Curso.cs" />
     <Compile Include="BussinessLogic\Entidades\Encriptador.cs" />
     <Compile Include="BussinessLogic\Entidades\Instructor.cs" />

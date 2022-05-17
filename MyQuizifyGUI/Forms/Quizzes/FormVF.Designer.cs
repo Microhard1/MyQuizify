@@ -36,7 +36,6 @@ namespace MyQuizifyGUI.Forms
             this.panelFalso = new System.Windows.Forms.Panel();
             this.botonFalso = new System.Windows.Forms.RadioButton();
             this.botonAñadirImagen = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textboxExplicacion = new System.Windows.Forms.TextBox();
@@ -44,7 +43,8 @@ namespace MyQuizifyGUI.Forms
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.inputImagen)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.panelVerdadero.SuspendLayout();
+            this.panelFalso.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +71,8 @@ namespace MyQuizifyGUI.Forms
             // panelVerdadero
             // 
             this.panelVerdadero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panelVerdadero.Location = new System.Drawing.Point(18, 32);
+            this.panelVerdadero.Controls.Add(this.botonVerdadero);
+            this.panelVerdadero.Location = new System.Drawing.Point(42, 311);
             this.panelVerdadero.Name = "panelVerdadero";
             this.panelVerdadero.Size = new System.Drawing.Size(263, 90);
             this.panelVerdadero.TabIndex = 6;
@@ -81,7 +82,7 @@ namespace MyQuizifyGUI.Forms
             this.botonVerdadero.AutoSize = true;
             this.botonVerdadero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.botonVerdadero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonVerdadero.Location = new System.Drawing.Point(36, 66);
+            this.botonVerdadero.Location = new System.Drawing.Point(48, 33);
             this.botonVerdadero.Name = "botonVerdadero";
             this.botonVerdadero.Size = new System.Drawing.Size(156, 28);
             this.botonVerdadero.TabIndex = 2;
@@ -92,7 +93,8 @@ namespace MyQuizifyGUI.Forms
             // panelFalso
             // 
             this.panelFalso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panelFalso.Location = new System.Drawing.Point(287, 32);
+            this.panelFalso.Controls.Add(this.botonFalso);
+            this.panelFalso.Location = new System.Drawing.Point(401, 311);
             this.panelFalso.Name = "panelFalso";
             this.panelFalso.Size = new System.Drawing.Size(261, 90);
             this.panelFalso.TabIndex = 7;
@@ -103,7 +105,7 @@ namespace MyQuizifyGUI.Forms
             this.botonFalso.AutoSize = true;
             this.botonFalso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.botonFalso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonFalso.Location = new System.Drawing.Point(310, 66);
+            this.botonFalso.Location = new System.Drawing.Point(82, 33);
             this.botonFalso.Name = "botonFalso";
             this.botonFalso.Size = new System.Drawing.Size(95, 28);
             this.botonFalso.TabIndex = 2;
@@ -121,18 +123,6 @@ namespace MyQuizifyGUI.Forms
             this.botonAñadirImagen.Text = "Añadir imagen";
             this.botonAñadirImagen.UseVisualStyleBackColor = true;
             this.botonAñadirImagen.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.botonVerdadero);
-            this.groupBox1.Controls.Add(this.botonFalso);
-            this.groupBox1.Controls.Add(this.panelVerdadero);
-            this.groupBox1.Controls.Add(this.panelFalso);
-            this.groupBox1.Location = new System.Drawing.Point(42, 278);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(554, 141);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
             // 
             // label2
             // 
@@ -200,8 +190,9 @@ namespace MyQuizifyGUI.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 477);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelFalso);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panelVerdadero);
             this.Controls.Add(this.botonAñadirImagen);
             this.Controls.Add(this.inputImagen);
             this.Controls.Add(this.textBoxEnunciado);
@@ -210,8 +201,10 @@ namespace MyQuizifyGUI.Forms
             this.Text = "FormVF";
             this.Load += new System.EventHandler(this.FormVF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.inputImagen)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.panelVerdadero.ResumeLayout(false);
+            this.panelVerdadero.PerformLayout();
+            this.panelFalso.ResumeLayout(false);
+            this.panelFalso.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -228,7 +221,6 @@ namespace MyQuizifyGUI.Forms
         private System.Windows.Forms.Panel panelFalso;
         private System.Windows.Forms.RadioButton botonFalso;
         private System.Windows.Forms.Button botonAñadirImagen;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textboxExplicacion;

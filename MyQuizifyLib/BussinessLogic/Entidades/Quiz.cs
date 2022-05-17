@@ -17,6 +17,7 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
 
         public ICollection<Pregunta> preguntas;
         public ICollection<Alumno> hechoPor;
+        public ICollection<Competencia> competencias = new List<Competencia>();
 
         public Curso asignatura;
         public Instructor creadoPor;
@@ -45,7 +46,6 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
             this.asignatura = asignatura;
 
             preguntas = new List<Pregunta>();
-
         }
 
         public void añadirPregunta(string id, string enunciado, string imagen, double puntuacion, string explicacion)
@@ -58,6 +58,13 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
             Pregunta p = crearPregunta(id, enunciado, imagen, puntuacion, explicacion);
             preguntas.Add(p);
             FirebaseResponse addPregunta = cf.client.Set("Preguntas/"+ tipo + "/" + this.nombreQuiz+"/" + p.id, p);
+        }
+
+        public void añadirCompetencia(string nombreComp)
+        {
+            Competencia comp = new Competencia(nombreComp);
+            competencias.Add(comp);
+            FirebaseResponse añadirCompetencia = cf.client.Set("CompetenciasQuiz/" + this.nombreQuiz + "/" + nombreComp, comp);
         }
 
         public abstract Pregunta crearPregunta(string id, string enunciado, string imagen, double puntuacion, string explicacion);

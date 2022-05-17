@@ -333,5 +333,21 @@ namespace MyQuizifyGUI
                 }
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Quiz q = null;
+            List<Quiz> listaQuizes = new List<Quiz>();
+            for (int i = 0; i < dataGridQuizes.Rows.Count - 1; i++)
+            {
+                bool isCellChecked = (bool)dataGridQuizes.Rows[i].Cells[0].Value;
+                if (isCellChecked == true)
+                {
+                    q = services.getQuizById((string)dataGridQuizes.Rows[i].Cells[1].Value);
+                    listaQuizes.Add(q);
+                }
+            }
+            new Competencias(listaQuizes).ShowDialog();
+        }
     }
 }

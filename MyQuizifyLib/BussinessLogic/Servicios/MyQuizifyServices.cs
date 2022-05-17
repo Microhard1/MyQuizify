@@ -186,7 +186,7 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
             }
             if (getTipoQuiz(q) == "QuizVF")
             {
-                FirebaseResponse preguntasDelQuiz = cf.client.Get(@"Preguntas/PreguntasverdaderoFalso/" + q.nombreQuiz);
+                FirebaseResponse preguntasDelQuiz = cf.client.Get(@"Preguntas/PreguntasVerdaderoFalso/" + q.nombreQuiz);
                 Dictionary<string, PreguntaVF> p =
                     JsonConvert.DeserializeObject<Dictionary<string, PreguntaVF>>(preguntasDelQuiz.Body.ToString());
                 foreach (var preg in p)
@@ -198,6 +198,11 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
             return preguntas;
         }
 
+        public string getRespuestaVF(Pregunta p)
+        {
+            FirebaseResponse res = cf.client.Get("Respuestas/RespuestasVerdaderoFalso/" + p.id + "/0/");
+            return res.Body.ToString();
+        }
         public List<Respuesta> respuestasDeUnaPregunta(String quiz,string idPregunta)
         {
             List<Respuesta> respuestas = new List<Respuesta>();
@@ -299,5 +304,12 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
             return diccionarioCalificacion;
         }
 
+        public Dictionary<string, Competencia> getListaCompetencias()
+        {
+            FirebaseResponse competencias = cf.client.Get(@"Competencias");
+            Dictionary<string, Competencia> diccionarioCalificacion =
+                JsonConvert.DeserializeObject<Dictionary<string, Competencia>>(competencias.Body.ToString());
+            return diccionarioCalificacion;
+        }
     }
 }

@@ -47,6 +47,7 @@ namespace MyQuizifyGUI
             this.btbEstadisticasQuiz = new System.Windows.Forms.Button();
             this.botonCargarQuizes = new System.Windows.Forms.Button();
             this.botonBorrar = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridQuizes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@ namespace MyQuizifyGUI
             this.dataGridQuizes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Selecciona});
             this.dataGridQuizes.Location = new System.Drawing.Point(48, 170);
-            this.dataGridQuizes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridQuizes.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridQuizes.Name = "dataGridQuizes";
             this.dataGridQuizes.RowHeadersWidth = 51;
             this.dataGridQuizes.Size = new System.Drawing.Size(1264, 389);
@@ -87,7 +88,7 @@ namespace MyQuizifyGUI
             // 
             this.button1.AccessibleName = "botonCrearQuiz";
             this.button1.Location = new System.Drawing.Point(48, 590);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 59);
             this.button1.TabIndex = 2;
@@ -98,7 +99,7 @@ namespace MyQuizifyGUI
             // botonPreparado
             // 
             this.botonPreparado.Location = new System.Drawing.Point(1320, 229);
-            this.botonPreparado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botonPreparado.Margin = new System.Windows.Forms.Padding(4);
             this.botonPreparado.Name = "botonPreparado";
             this.botonPreparado.Size = new System.Drawing.Size(177, 28);
             this.botonPreparado.TabIndex = 3;
@@ -109,7 +110,7 @@ namespace MyQuizifyGUI
             // botonCompleto
             // 
             this.botonCompleto.Location = new System.Drawing.Point(1320, 277);
-            this.botonCompleto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botonCompleto.Margin = new System.Windows.Forms.Padding(4);
             this.botonCompleto.Name = "botonCompleto";
             this.botonCompleto.Size = new System.Drawing.Size(177, 28);
             this.botonCompleto.TabIndex = 4;
@@ -120,7 +121,7 @@ namespace MyQuizifyGUI
             // botonLanzado
             // 
             this.botonLanzado.Location = new System.Drawing.Point(1320, 326);
-            this.botonLanzado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botonLanzado.Margin = new System.Windows.Forms.Padding(4);
             this.botonLanzado.Name = "botonLanzado";
             this.botonLanzado.Size = new System.Drawing.Size(177, 28);
             this.botonLanzado.TabIndex = 5;
@@ -131,7 +132,7 @@ namespace MyQuizifyGUI
             // botonCancelado
             // 
             this.botonCancelado.Location = new System.Drawing.Point(1320, 380);
-            this.botonCancelado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botonCancelado.Margin = new System.Windows.Forms.Padding(4);
             this.botonCancelado.Name = "botonCancelado";
             this.botonCancelado.Size = new System.Drawing.Size(177, 28);
             this.botonCancelado.TabIndex = 6;
@@ -142,7 +143,7 @@ namespace MyQuizifyGUI
             // botonTerminado
             // 
             this.botonTerminado.Location = new System.Drawing.Point(1320, 437);
-            this.botonTerminado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botonTerminado.Margin = new System.Windows.Forms.Padding(4);
             this.botonTerminado.Name = "botonTerminado";
             this.botonTerminado.Size = new System.Drawing.Size(177, 28);
             this.botonTerminado.TabIndex = 7;
@@ -153,7 +154,7 @@ namespace MyQuizifyGUI
             // botonRPublicados
             // 
             this.botonRPublicados.Location = new System.Drawing.Point(1320, 486);
-            this.botonRPublicados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botonRPublicados.Margin = new System.Windows.Forms.Padding(4);
             this.botonRPublicados.Name = "botonRPublicados";
             this.botonRPublicados.Size = new System.Drawing.Size(177, 28);
             this.botonRPublicados.TabIndex = 8;
@@ -172,7 +173,7 @@ namespace MyQuizifyGUI
             "Completo",
             "Resultados publicados"});
             this.comboBoxEstados.Location = new System.Drawing.Point(1008, 101);
-            this.comboBoxEstados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxEstados.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxEstados.Name = "comboBoxEstados";
             this.comboBoxEstados.Size = new System.Drawing.Size(160, 24);
             this.comboBoxEstados.TabIndex = 9;
@@ -202,7 +203,7 @@ namespace MyQuizifyGUI
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(1105, 590);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(207, 44);
             this.button2.TabIndex = 12;
@@ -214,7 +215,7 @@ namespace MyQuizifyGUI
             // 
             this.btbClonarQuiz.AccessibleName = "botonCrearQuiz";
             this.btbClonarQuiz.Location = new System.Drawing.Point(181, 590);
-            this.btbClonarQuiz.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btbClonarQuiz.Margin = new System.Windows.Forms.Padding(4);
             this.btbClonarQuiz.Name = "btbClonarQuiz";
             this.btbClonarQuiz.Size = new System.Drawing.Size(125, 59);
             this.btbClonarQuiz.TabIndex = 13;
@@ -226,7 +227,7 @@ namespace MyQuizifyGUI
             // 
             this.btbEstadisticasQuiz.AccessibleName = "botonEstadisticasQuiz";
             this.btbEstadisticasQuiz.Location = new System.Drawing.Point(313, 590);
-            this.btbEstadisticasQuiz.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btbEstadisticasQuiz.Margin = new System.Windows.Forms.Padding(4);
             this.btbEstadisticasQuiz.Name = "btbEstadisticasQuiz";
             this.btbEstadisticasQuiz.Size = new System.Drawing.Size(125, 59);
             this.btbEstadisticasQuiz.TabIndex = 14;
@@ -238,7 +239,7 @@ namespace MyQuizifyGUI
             // 
             this.botonCargarQuizes.AccessibleName = "botonEstadisticasQuiz";
             this.botonCargarQuizes.Location = new System.Drawing.Point(523, 92);
-            this.botonCargarQuizes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botonCargarQuizes.Margin = new System.Windows.Forms.Padding(4);
             this.botonCargarQuizes.Name = "botonCargarQuizes";
             this.botonCargarQuizes.Size = new System.Drawing.Size(143, 41);
             this.botonCargarQuizes.TabIndex = 15;
@@ -258,11 +259,24 @@ namespace MyQuizifyGUI
             this.botonBorrar.UseVisualStyleBackColor = true;
             this.botonBorrar.Click += new System.EventHandler(this.botonBorrar_Click);
             // 
+            // button3
+            // 
+            this.button3.AccessibleName = "botonEstadisticasQuiz";
+            this.button3.Location = new System.Drawing.Point(457, 590);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(125, 59);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "Asaignar competencias";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // QuizesActivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1535, 680);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.botonBorrar);
             this.Controls.Add(this.botonCargarQuizes);
             this.Controls.Add(this.btbEstadisticasQuiz);
@@ -280,7 +294,7 @@ namespace MyQuizifyGUI
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridQuizes);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "QuizesActivos";
             this.Text = "InicioInstructor";
             this.Load += new System.EventHandler(this.InicioInstructor_Load);
@@ -310,5 +324,6 @@ namespace MyQuizifyGUI
         private System.Windows.Forms.Button btbEstadisticasQuiz;
         private System.Windows.Forms.Button botonCargarQuizes;
         private System.Windows.Forms.Button botonBorrar;
+        private System.Windows.Forms.Button button3;
     }
 }

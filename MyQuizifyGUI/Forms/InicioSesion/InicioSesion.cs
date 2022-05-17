@@ -178,10 +178,11 @@ namespace MyQuizifyGUI
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click_2(object sender, EventArgs e)
         {
-            Alumno nuevoAlumno = new Alumno("a", Encriptador.GetSHA256("111111"),
-                                   "a", "a", "a","a", DateTime.Now);
+            new Competencia("Pensamiento Analitico");
+            new Competencia("Aprendizaje activo");
+            new Competencia("Resolucion de problemas");
         }
     }
 }
