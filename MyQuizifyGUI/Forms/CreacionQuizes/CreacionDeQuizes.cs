@@ -334,7 +334,7 @@ namespace MyQuizifyGUI.Forms
         {
             ControlCollection objetosDelFormulario = (ControlCollection)formularioActual.Controls;
             string enunciado = "";
-
+            string respuesta = "";
             string imagen = "";
             double puntuacion = 0;
             string explicacion = "";
@@ -347,7 +347,10 @@ namespace MyQuizifyGUI.Forms
                     {
                         enunciado = ((TextBox)c).Text;
                     }
-
+                    else if (c.Name == "textBoxResp")
+                    {
+                        respuesta = ((TextBox)c).Text;
+                    }
                 }
                 else if (c is Panel)
                 {
@@ -374,9 +377,9 @@ namespace MyQuizifyGUI.Forms
 
             string id = textBoxNombreQuiz.Text + "_" + numeroDePregunta;
 
-            Pregunta pregunta = new PreguntaA(enunciado, id, imagen, puntuacion, explicacion);
-            Respuesta r = pregunta.crearRespuesta(enunciado);
-            pregunta.añadirRespuesta(enunciado);
+            Pregunta pregunta = new PreguntaA(id,enunciado, imagen, puntuacion, explicacion);
+            Respuesta r = pregunta.crearRespuesta(respuesta);
+            pregunta.añadirRespuesta(respuesta);
 
             preguntas.Add(pregunta);
             MessageBox.Show("Se ha insertado una respuesta: " + r.ToString());

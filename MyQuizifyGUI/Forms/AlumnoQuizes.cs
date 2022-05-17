@@ -20,10 +20,12 @@ namespace MyQuizifyGUI.Forms
         ConexionBD cf = ConexionBD.getInstancia();
         MyQuizifyServices services = new MyQuizifyServices();
         int tiempo = 53;
-        public AlumnoQuizes()
+        int ancho, alto;
+        public AlumnoQuizes(int ancho, int alto)
         {
             InitializeComponent();
-            
+            this.ancho = ancho;
+            this.alto = alto;
         }
 
         private void AlumnoQuizes_Load(object sender, EventArgs e)
@@ -40,12 +42,25 @@ namespace MyQuizifyGUI.Forms
             dataGridQuizes.Columns.Add("duracion", "Duracion");
             dataGridQuizes.Columns.Add("fechaDeInicio", "Inicio");
             dataGridQuizes.Columns.Add("fechaFin", "Fin");
-
-           
+            this.Size = new Size(ancho,alto);
+            setWidthColumnas();
         }
 
+        public void setWidthColumnas()
+        {
+            int w = dataGridQuizes.Width / dataGridQuizes.Columns.Count;
+            for (int i = 0; i <= dataGridQuizes.Columns.Count - 1; i++)
+            {
+                // Remove AutoSizing:
+                dataGridQuizes.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+                // Set Width to calculated AutoSize value:
+                dataGridQuizes.Columns[i].Width = w;
+            }
+        }
         public void mostrarQuizes()
         {
+            dataGridQuizes.Rows.Clear();
             List<Quiz> quizes = services.listaQuizes();
             foreach(var quiz in quizes)
             {

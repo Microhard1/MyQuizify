@@ -29,7 +29,10 @@ namespace MyQuizifyGUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AlumnoQuizes alumnoQuizes = new AlumnoQuizes();
+            int ancho = this.Width - (navBar.Width*2);
+            int alto = this.Height - panel1.Height;
+            AlumnoQuizes alumnoQuizes = new AlumnoQuizes(ancho,alto);
+
             alumnoQuizes.TopLevel = false;
             panelForms.Controls.Add(alumnoQuizes);
             alumnoQuizes.Show();

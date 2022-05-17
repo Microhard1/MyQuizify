@@ -8,17 +8,17 @@ using FireSharp.Response;
 
 namespace MyQuizifyLib.BussinessLogic.Entidades
 {
-    public class Calificacion
+    public class CalificacionVF
     {
         ConexionBD cf = ConexionBD.getInstancia();
 
         public double nota;
-        public Quiz quizRealizado;
+        public QuizVF quizRealizado;
         public Alumno examinado;
 
         public DateTime fecha;
 
-        public Calificacion(double nota, Quiz quizRealizado, Alumno examinado)
+        public CalificacionVF(double nota, QuizVF quizRealizado, Alumno examinado)
         {
             this.nota = nota;
             this.quizRealizado = quizRealizado;

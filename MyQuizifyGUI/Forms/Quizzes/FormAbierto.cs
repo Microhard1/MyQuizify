@@ -40,5 +40,10 @@ namespace MyQuizifyGUI.Forms
         {
 
         }
+
+        private void textBoxResp_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

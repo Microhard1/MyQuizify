@@ -69,6 +69,7 @@
     <Compile Include="BussinessLogic\Entidades\BateriaAbierta.cs" />
     <Compile Include="BussinessLogic\Entidades\BateriaMultiOpcion.cs" />
     <Compile Include="BussinessLogic\Entidades\BateriaVerdaderoFalso.cs" />
+    <Compile Include="BussinessLogic\Entidades\CalificacionVF.cs" />
     <Compile Include="BussinessLogic\Entidades\Calificacion.cs" />
     <Compile Include="BussinessLogic\Entidades\Competencia.cs" />
     <Compile Include="BussinessLogic\Entidades\Curso.cs" />

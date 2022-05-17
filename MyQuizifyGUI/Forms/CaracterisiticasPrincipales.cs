@@ -19,7 +19,7 @@ namespace MyQuizifyGUI.Forms
         {
             InitializeComponent();
             lblNombreQuiz.Text = quiz.nombreQuiz;
-            lblDuracion.Text = quiz.duracion + "";
+            lblDuracion.Text = quiz.duracion + " minutos";
             lblDificultad.Text = quiz.dificultad;
             lblCurso.Text = quiz.asignatura.nombre;
             lblPeso.Text = quiz.peso + "";
@@ -39,17 +39,26 @@ namespace MyQuizifyGUI.Forms
             {
                 ContestacionDeQuizesMultiOpcion contestacionDeQuizesMultiOpcion = new ContestacionDeQuizesMultiOpcion(quiz);
                 contestacionDeQuizesMultiOpcion.ShowDialog();
+                this.Close();
             }
             else if (quiz.GetType().Name == "QuizVF")
             {
                 ContestacionQuizVF contQuizVF = new ContestacionQuizVF(quiz) ;
                 contQuizVF.ShowDialog();
+                this.Close();
             }
             else if (quiz.GetType().Name == "QuizPA")
             {
-
+                ContestacionQuizRA contQuizRA = new ContestacionQuizRA(quiz);
+                contQuizRA.ShowDialog();
+                this.Close();
             }
             
+        }
+
+        private void lblDuracion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

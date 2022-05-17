@@ -33,7 +33,6 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
 
         public void añadirRespuesta(string enunciado)
         {
-
             string tipo = "";
             if (this.GetType().Name == "PreguntaMO") tipo = "RespuestasMultiOpcion";
             if (this.GetType().Name == "PreguntaA") tipo = "RespuestasAbiertas";

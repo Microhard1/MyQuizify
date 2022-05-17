@@ -203,6 +203,11 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
             FirebaseResponse res = cf.client.Get("Respuestas/RespuestasVerdaderoFalso/" + p.id + "/0/");
             return res.Body.ToString();
         }
+        public string getRespuestaA(Pregunta p)
+        {
+            FirebaseResponse res = cf.client.Get("Respuestas/RespuestasAbiertas/" + p.id + "/0/");
+            return res.Body.ToString();
+        }
         public List<Respuesta> respuestasDeUnaPregunta(String quiz,string idPregunta)
         {
             List<Respuesta> respuestas = new List<Respuesta>();
