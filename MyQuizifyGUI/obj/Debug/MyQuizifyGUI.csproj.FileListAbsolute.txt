@@ -260,7 +260,6 @@ C:\Users\Pc\Documents\upv\soft\PSW\Adrian\MyQuizify\MyQuizifyGUI\obj\Debug\MyQui
 C:\Users\Pc\Documents\upv\soft\PSW\Adrian\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.pdb
 C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.CaracteristicasPrincipales.resources
 C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.ContestacionDeQuizesMultiOpcion.resources
-C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.CreacionQuizes.PantallaSeleccionTipoQuiz.resources
 C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.Estadisticas.resources
 C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.Quizzes.Clonacion_de_Quizes.resources
 C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.Quizzes.Competencias.resources
