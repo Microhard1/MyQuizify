@@ -301,9 +301,9 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
             b = bateria.ResultAs<BateriaMultiOpcion>();
             return b;
         }
-        public Dictionary<string, Calificacion> getDiccionarioCalificacion()
+        public Dictionary<string, Calificacion> getDiccionarioCalificacion(Quiz q)
         {
-            FirebaseResponse calificaciones = cf.client.Get(@"Calificaciones");
+            FirebaseResponse calificaciones = cf.client.Get("Calificaciones/" + q.nombreQuiz + "/");
             Dictionary<string, Calificacion> diccionarioCalificacion =
                 JsonConvert.DeserializeObject<Dictionary<string, Calificacion>>(calificaciones.Body.ToString());
             return diccionarioCalificacion;

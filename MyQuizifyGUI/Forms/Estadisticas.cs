@@ -20,6 +20,8 @@ namespace MyQuizifyGUI.Forms
         ConexionBD cf = ConexionBD.getInstancia();
         Quiz quiz;
         MyQuizifyServices services = new MyQuizifyServices();
+        Dictionary<string, CalificacionVF> diccionarioCalificacion = new Dictionary<string, CalificacionVF>();
+        Dictionary<string, CalificacionVF> diccionarioFiltrado = new Dictionary<string, CalificacionVF>();
         public Estadisticas(Quiz q)
         {
             InitializeComponent();
@@ -32,11 +34,12 @@ namespace MyQuizifyGUI.Forms
             dataGridEstadisticas.Columns.Add("nombre", "Nombre");
             dataGridEstadisticas.Columns.Add("apellidos", "Apellidos");
             dataGridEstadisticas.Columns.Add("nota", "Nota");
+            diccionarioCalificacion = services.getDiccionarioCalificacionVF(quiz);
+            diccionarioFiltrado = diccionarioCalificacion;
             mostrarEstadisticas();
         }
         public void mostrarEstadisticas()
         {
-            Dictionary<string, CalificacionVF> diccionarioCalificacion = services.getDiccionarioCalificacionVF(quiz);
             double media = 0, maxima = 0, minima = 10;
             int count = 0;
             foreach (var calificacion in diccionarioCalificacion)
@@ -60,5 +63,30 @@ namespace MyQuizifyGUI.Forms
         {
             this.Close();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void botonBuscar_Click(object sender, EventArgs e)
+        {
+            string texto = textoBusqueda.Text;
+            dataGridEstadisticas.Rows.Clear();
+            foreach (var calificacion in diccionarioCalificacion)
+            {
+                if (calificacion.Value.examinado.nombre == texto || calificacion.Value.examinado.apellidos == texto)
+                {
+                    dataGridEstadisticas.Rows.Add(calificacion.Value.examinado.nombre, calificacion.Value.examinado.apellidos, calificacion.Value.nota);
+                }
+            }
+        }
+
+        private void botonRecargar_Click(object sender, EventArgs e)
+        {
+            dataGridEstadisticas.Rows.Clear();
+            mostrarEstadisticas();
+        }
+
     }
 }
