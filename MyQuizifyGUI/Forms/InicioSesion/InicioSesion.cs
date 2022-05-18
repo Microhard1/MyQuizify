@@ -62,15 +62,17 @@ namespace MyQuizifyGUI
                     {
                         if (validarContraseña(_usuario, _password))
                         {
-                            cf.usuarioConectado = services.getInstructorById(_usuario);
+                            
                             if (buttonAlumno.Checked)
                             {
+                                cf.usuarioConectado = services.getAlumnoById(_usuario);
                                 inicioAlumno.WindowState = FormWindowState.Maximized;
                                 inicioAlumno.Show();
                                 this.Hide();
                             }
                             else
                             {
+                                cf.usuarioConectado = services.getInstructorById(_usuario);
                                 inicioInstructor.Show();
                                 this.Hide();
                             }

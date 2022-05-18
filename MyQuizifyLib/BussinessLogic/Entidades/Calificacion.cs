@@ -25,7 +25,7 @@ namespace MyQuizifyLib.BussinessLogic.Entidades
             this.examinado = examinado;
 
             FirebaseResponse nuevaCalificacion = 
-                cf.client.Set("Calificaciones/" + quizRealizado.nombreQuiz, this);
+                cf.client.Set("Calificaciones/" + quizRealizado.nombreQuiz + "/" + examinado.username+"/", this);
         }
     }
 }

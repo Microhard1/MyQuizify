@@ -267,3 +267,4 @@ C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyGUI\obj
 C:\Users\Pc\Documents\upv\soft\PSW\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.ContestacionQuizes.ContestacionQuizVF.resources
 C:\Users\Pc\Documents\upv\soft\PSW\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.Quizzes.Competencias.resources
 C:\Users\Usuario\OneDrive\Documentos\upv\software\psw\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.ContestacionQuizes.ContestacionQuizRA.resources
+C:\Users\Pc\Documents\upv\soft\PSW\MyQuizify\MyQuizifyGUI\obj\Debug\MyQuizifyGUI.Forms.ContestacionQuizes.ContestacionQuizRA.resources

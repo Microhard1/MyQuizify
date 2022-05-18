@@ -27,7 +27,7 @@ namespace MyQuizifyLib.BussinessLogic.Servicios
         List<Quiz> listaQuizes();
         List<Pregunta> preguntasDeUnQuiz(string nombreQuiz);
         BateriaMultiOpcion getBateriaMOById(string nombreBat);
-        Dictionary<string, Calificacion> getDiccionarioCalificacion();
+        Dictionary<string, CalificacionVF> getDiccionarioCalificacionVF(Quiz q);
         Dictionary<string, Competencia> getListaCompetencias();
 
     }
