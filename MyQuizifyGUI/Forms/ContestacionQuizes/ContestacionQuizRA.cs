@@ -166,5 +166,11 @@ namespace MyQuizifyGUI.Forms.ContestacionQuizes
         {
 
         }
+
+        private void botonAyuda_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(preguntasSinContestar.ElementAt(0).explicacion, "Ayuda",
+            MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
     }
 }

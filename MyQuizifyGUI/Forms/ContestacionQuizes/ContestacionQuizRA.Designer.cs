@@ -41,6 +41,7 @@ namespace MyQuizifyGUI.Forms.ContestacionQuizes
             this.label1 = new System.Windows.Forms.Label();
             this.TiempoQuiz = new System.Windows.Forms.Timer(this.components);
             this.Peso = new System.Windows.Forms.Label();
+            this.botonAyuda = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.inputImagen)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -158,11 +159,23 @@ namespace MyQuizifyGUI.Forms.ContestacionQuizes
             this.Peso.TabIndex = 28;
             this.Peso.Text = "label1";
             // 
+            // botonAyuda
+            // 
+            this.botonAyuda.Location = new System.Drawing.Point(1032, 679);
+            this.botonAyuda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.botonAyuda.Name = "botonAyuda";
+            this.botonAyuda.Size = new System.Drawing.Size(87, 37);
+            this.botonAyuda.TabIndex = 29;
+            this.botonAyuda.Text = "Ayuda";
+            this.botonAyuda.UseVisualStyleBackColor = true;
+            this.botonAyuda.Click += new System.EventHandler(this.botonAyuda_Click);
+            // 
             // ContestacionQuizRA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1138, 759);
+            this.Controls.Add(this.botonAyuda);
             this.Controls.Add(this.Peso);
             this.Controls.Add(this.botonSiguiente);
             this.Controls.Add(this.Enunciado);
@@ -194,5 +207,6 @@ namespace MyQuizifyGUI.Forms.ContestacionQuizes
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer TiempoQuiz;
         private System.Windows.Forms.Label Peso;
+        private System.Windows.Forms.Button botonAyuda;
     }
 }

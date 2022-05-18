@@ -68,6 +68,10 @@ namespace MyQuizifyGUI.Forms.ContestacionQuizes
         {
             byte[] img = Convert.FromBase64String(preguntasSinContestar.ElementAt(0).imagen);
             MemoryStream ms = new MemoryStream(img);
+            if (ms.Length==0)
+            {
+                return Image.FromFile("C:/Users/Usuario/OneDrive/Documentos/upv/software/psw/MyQuizify/MyQuizifyGUI/Forms/ContestacionQuizes/pregunta.jpg");
+            }
             return Image.FromStream(ms);
         }
         private void ContestacionQuizVF_Load(object sender, EventArgs e)
@@ -178,6 +182,13 @@ namespace MyQuizifyGUI.Forms.ContestacionQuizes
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void botonAyuda_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(preguntasSinContestar.ElementAt(0).explicacion, "Ayuda",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Question);
         }
     }
 }

@@ -34,6 +34,7 @@ namespace MyQuizifyGUI
             inicioAlumno.WindowState = FormWindowState.Maximized;
             inicioInstructor = new InicioInstructor();
             inicioInstructor.WindowState = FormWindowState.Maximized;
+
         }
 
 
@@ -185,6 +186,11 @@ namespace MyQuizifyGUI
             new Competencia("Pensamiento Analitico");
             new Competencia("Aprendizaje activo");
             new Competencia("Resolucion de problemas");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

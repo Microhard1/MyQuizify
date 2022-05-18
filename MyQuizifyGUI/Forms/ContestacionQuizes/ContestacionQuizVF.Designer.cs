@@ -44,6 +44,7 @@ namespace MyQuizifyGUI.Forms.ContestacionQuizes
             this.botonSiguiente = new System.Windows.Forms.Button();
             this.TiempoQuiz = new System.Windows.Forms.Timer(this.components);
             this.Peso = new System.Windows.Forms.Label();
+            this.botonAyuda = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputImagen)).BeginInit();
             this.panel1.SuspendLayout();
@@ -123,7 +124,7 @@ namespace MyQuizifyGUI.Forms.ContestacionQuizes
             // 
             this.Enunciado.AutoSize = true;
             this.Enunciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Enunciado.Location = new System.Drawing.Point(67, 130);
+            this.Enunciado.Location = new System.Drawing.Point(59, 114);
             this.Enunciado.Name = "Enunciado";
             this.Enunciado.Size = new System.Drawing.Size(127, 29);
             this.Enunciado.TabIndex = 16;
@@ -196,17 +197,29 @@ namespace MyQuizifyGUI.Forms.ContestacionQuizes
             // 
             this.Peso.AutoSize = true;
             this.Peso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Peso.Location = new System.Drawing.Point(1028, 135);
+            this.Peso.Location = new System.Drawing.Point(1028, 119);
             this.Peso.Name = "Peso";
             this.Peso.Size = new System.Drawing.Size(60, 24);
             this.Peso.TabIndex = 21;
             this.Peso.Text = "label1";
+            // 
+            // botonAyuda
+            // 
+            this.botonAyuda.Location = new System.Drawing.Point(1020, 680);
+            this.botonAyuda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.botonAyuda.Name = "botonAyuda";
+            this.botonAyuda.Size = new System.Drawing.Size(87, 37);
+            this.botonAyuda.TabIndex = 22;
+            this.botonAyuda.Text = "Ayuda";
+            this.botonAyuda.UseVisualStyleBackColor = true;
+            this.botonAyuda.Click += new System.EventHandler(this.botonAyuda_Click);
             // 
             // ContestacionQuizVF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1143, 758);
+            this.Controls.Add(this.botonAyuda);
             this.Controls.Add(this.Peso);
             this.Controls.Add(this.botonSiguiente);
             this.Controls.Add(this.panel1);
@@ -243,5 +256,6 @@ namespace MyQuizifyGUI.Forms.ContestacionQuizes
         private System.Windows.Forms.Timer TiempoQuiz;
         private System.Windows.Forms.Label labelTiempo;
         private System.Windows.Forms.Label Peso;
+        private System.Windows.Forms.Button botonAyuda;
     }
 }
